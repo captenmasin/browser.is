@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="{{ mix('/css/app.css') }}" />
-<script src="{{ mix('/js/app.js') }}"></script>
+@extends('layouts.default')
 
-
+@section('body')
 <ul>
     @foreach($data as $key => $value)
     <li>
@@ -14,3 +13,4 @@
     </li>
     @endforeach
 </ul>
+@endsection
