@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="caac9092-f177-4407-908d-50deff07e9c1" name="Browser.is">
+        <fileTransfer accessType="SFTP" host="64.227.35.23" port="22" sshConfigId="1adf2d14-0cb7-4ea9-8640-f6b76283b102" sshConfig="ploi@64.227.35.23:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
