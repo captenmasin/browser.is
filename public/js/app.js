@@ -19332,6 +19332,12 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+window.onload = function () {
+  var screenWidth = window.innerWidth;
+  var screenHeight = window.innerHeight;
+  document.getElementById("window_dimensions").innerHTML = screenWidth + ' x ' + screenHeight;
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
