@@ -17,12 +17,12 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
 
-    <link rel="stylesheet" href="{{ mix('/css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}" data-turbolinks-track="reload"/>
 
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="antialiased font-sans bg-gray-200">
 
 @yield('body')
 
@@ -38,7 +38,7 @@
     ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
-<script src="{{ mix('/js/app.js') }}" async></script>
+<script src="{{ mix('/js/app.js') }}" async data-turbolinks-track="reload"></script>
 </body>
 
 </html>
