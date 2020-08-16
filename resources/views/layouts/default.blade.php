@@ -27,6 +27,7 @@
 <body class="antialiased font-sans bg-gray-200">
 @yield('body')
 @include('partials.analytics')
+@include('partials.ads')
 <script src="{{ mix('/js/app.js') }}" async></script>
 </body>
 </html>
