@@ -40,7 +40,7 @@
         ga('send', 'pageview')
     </script>
 @endif
-<script src="{{ mix('/js/app.js') }}" async data-turbolinks-track="reload"></script>
+<script src="{{ mix('/js/app.js') }}" async></script>
 </body>
 
 </html>

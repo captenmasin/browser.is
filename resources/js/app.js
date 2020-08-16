@@ -1,8 +1,6 @@
 require('./bootstrap');
 import {isPrivateMode} from './packages/is-private';
 
-const Turbolinks = require("turbolinks");
-
 if(document.getElementById("window_dimensions")) {
     document.getElementById("window_dimensions").innerHTML = window.innerWidth + ' x ' + window.innerHeight;
 }
@@ -14,5 +12,3 @@ setTimeout(function () {
         }
     });
 }, 100);
-
-Turbolinks.start();
