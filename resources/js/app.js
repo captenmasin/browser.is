@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./packages/modernizr');
 import {isPrivateMode} from './packages/is-private';
 
 if(document.getElementById("window_dimensions")) {
