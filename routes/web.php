@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\RobotsController;
 
+Route::get('robots.txt', RobotsController::class)->name('robots');
 Route::get('/{type?}', HomeController::class)->name('home');

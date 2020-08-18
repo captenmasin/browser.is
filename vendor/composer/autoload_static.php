@@ -36,6 +36,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '1e298922c3e2134d42dcdb03e6d5f55a' => __DIR__ . '/..' . '/torann/geoip/src/helpers.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -98,6 +99,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\RobotsMiddleware\\' => 24,
         ),
         'R' => 
         array (
@@ -336,6 +338,10 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\RobotsMiddleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-robots-middleware/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -548,6 +554,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\Robots' => __DIR__ . '/../..' . '/app/Http/Middleware/Robots.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -557,6 +564,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Services\\BuildData' => __DIR__ . '/../..' . '/app/Services/BuildData.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
@@ -708,6 +716,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         'DeviceDetector\\Parser\\Device\\DeviceParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/DeviceParserAbstract.php',
         'DeviceDetector\\Parser\\Device\\HbbTv' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/HbbTv.php',
         'DeviceDetector\\Parser\\Device\\Mobile' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/Mobile.php',
+        'DeviceDetector\\Parser\\Device\\Notebook' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/Notebook.php',
         'DeviceDetector\\Parser\\Device\\PortableMediaPlayer' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/PortableMediaPlayer.php',
         'DeviceDetector\\Parser\\OperatingSystem' => __DIR__ . '/..' . '/piwik/device-detector/Parser/OperatingSystem.php',
         'DeviceDetector\\Parser\\ParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/ParserAbstract.php',
@@ -3592,6 +3601,7 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         'PhpParser\\Node\\Expr\\StaticCall' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/StaticCall.php',
         'PhpParser\\Node\\Expr\\StaticPropertyFetch' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/StaticPropertyFetch.php',
         'PhpParser\\Node\\Expr\\Ternary' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Ternary.php',
+        'PhpParser\\Node\\Expr\\Throw_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Throw_.php',
         'PhpParser\\Node\\Expr\\UnaryMinus' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryMinus.php',
         'PhpParser\\Node\\Expr\\UnaryPlus' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryPlus.php',
         'PhpParser\\Node\\Expr\\Variable' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Expr/Variable.php',
@@ -4181,6 +4191,8 @@ class ComposerStaticInit4ef6ac65840c57ad6e4942806437345b
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'Spatie\\RobotsMiddleware\\InvalidIndexRule' => __DIR__ . '/..' . '/spatie/laravel-robots-middleware/src/InvalidIndexRule.php',
+        'Spatie\\RobotsMiddleware\\RobotsMiddleware' => __DIR__ . '/..' . '/spatie/laravel-robots-middleware/src/RobotsMiddleware.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
