@@ -1,17 +1,17 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <title>
         {{ config('app.name') }}
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="Get details about your browser/device/location for easier site checking and bug replicability">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:title" content="{{ config('app.name') }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:image" content="{{ config('app.url') }}/images/apple-touch-icon.png">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
