@@ -47,8 +47,8 @@
                     </div>
                 @endforeach
             </div>
-            <div class="mt-4 flex space-x-4">
-                <button type="button" class="btn btn-primary w-1/3 " x-data="{ clicked:false }"
+            <div class="mt-4 flex space-y-4 sm:space-y-0 mb-4 sm:space-x-4 flex-col sm:flex-row w-100 px-4 sm:px-0">
+                <button type="button" class="btn btn-primary w-full sm:w-1/3 " x-data="{ clicked:false }"
                         @click="copyClipboard(); clicked=true">
                     <template x-if="!clicked">
                         <div class="flex mx-auto">
@@ -71,7 +71,7 @@
                         </div>
                     </template>
                 </button>
-                <button type="button" class="btn w-1/3 " x-data="{ clicked:false }"
+                <button type="button" class="btn w-full sm:w-1/3 " x-data="{ clicked:false }"
                         @click="saveImage(); clicked=false">
                     <div class="flex mx-auto">
                         <svg viewBox="0 0 20 20" fill="currentColor" class="-ml-1 mr-2 h-5 w-5">
@@ -82,7 +82,7 @@
                         Save screenshot
                     </div>
                 </button>
-                <button type="button" class="btn w-1/3 " x-data="{ clicked:false }"
+                <button type="button" class="btn w-full sm:w-1/3" x-data="{ clicked:false }"
                         @click="sendEmail(); clicked=false">
                     <div class="flex mx-auto">
                         <svg viewBox="0 0 20 20" fill="currentColor" class="-ml-1 mr-2 h-5 w-5">
