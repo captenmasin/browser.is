@@ -1,14 +1,9 @@
 @if(!config('general.is_staging'))
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script>
-        window.ga = function () {
-            ga.q.push(arguments)
-        };
-        ga.q = [];
-        ga.l = +new Date;
-        ga('create', '{{ config('general.ga.id') }}', 'auto');
-        ga('set', 'anonymizeIp', true);
-        ga('set', 'transport', 'beacon');
-        ga('send', 'pageview')
-    </script>
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" site="{{ config('general.fathom.live_id') }}" defer></script>
+    <!-- / Fathom -->
+@else
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" site="{{ config('general.fathom.staging_id') }}" defer></script>
+    <!-- / Fathom -->
 @endif

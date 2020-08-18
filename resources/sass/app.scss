@@ -2,4 +2,21 @@
 
 @tailwind components;
 
+.btn {
+    @apply cursor-pointer text-center inline-flex items-center px-8 py-3 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-400 text-gray-700 transition duration-150 ease-in-out;
+    &:hover {
+        @apply bg-gray-300;
+    }
+    &:focus {
+        @apply outline-none;
+        }
+
+    &.btn-primary{
+        @apply bg-blue-500 text-white;
+        &:hover {
+            @apply bg-blue-400;
+        }
+    }
+}
+
 @tailwind utilities;

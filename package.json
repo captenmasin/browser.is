@@ -21,6 +21,9 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "alpinejs": "^2.6.0",
+        "downloadjs": "^1.4.7",
+        "html-to-image": "^0.1.1",
         "tailwindcss": "^1.6.2",
         "turbolinks": "^5.2.0"
     }

@@ -20,14 +20,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#428DFF">
     <link rel="manifest" href="site.webmanifest">
-
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}" data-turbolinks-track="reload"/>
+    @include('partials.analytics')
 </head>
 
 <body class="antialiased font-sans bg-gray-200">
 @yield('body')
-@include('partials.analytics')
-@include('partials.ads')
 <script src="{{ mix('/js/app.js') }}" async></script>
 </body>
 </html>
