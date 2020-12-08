@@ -314,7 +314,11 @@ class CacheManager implements FactoryContract
      */
     protected function getConfig($name)
     {
-        return $this->app['config']["cache.stores.{$name}"];
+        if (! is_null($name) && $name !== 'null') {
+            return $this->app['config']["cache.stores.{$name}"];
+        }
+
+        return ['driver' => 'null'];
     }
 
     /**
@@ -355,6 +359,19 @@ class CacheManager implements FactoryContract
         }
 
         return $this;
+    }
+
+    /**
+     * Disconnect the given driver and remove from local cache.
+     *
+     * @param  string|null  $name
+     * @return void
+     */
+    public function purge($name = null)
+    {
+        $name = $name ?? $this->getDefaultDriver();
+
+        unset($this->stores[$name]);
     }
 
     /**

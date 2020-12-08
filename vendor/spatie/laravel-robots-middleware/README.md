@@ -1,8 +1,8 @@
 # Enable or disable the indexing of your app
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-robots-middleware.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-robots-middleware)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-blink/run-tests?label=tests)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-robots-middleware.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-robots-middleware)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-robots-middleware/run-tests?label=tests)
+![Check & fix styling](https://github.com/spatie/laravel-robots-middleware/workflows/Check%20&%20fix%20styling/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-robots-middleware.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-robots-middleware)
 
 A tiny, opinionated package to enable or disable indexing your site via a middleware in Laravel.
@@ -13,7 +13,9 @@ Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview 
 
 ## Support us
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us). 
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-robots-middleware.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-robots-middleware)
+
+We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
