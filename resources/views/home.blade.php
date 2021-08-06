@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('body')
-    <div class="max-w-7xl mx-auto sm:py-12 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:pb-24 sm:pt-12 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
             <div class="bg-white shadow overflow-hidden sm:rounded-lg" id="data">
                 <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
