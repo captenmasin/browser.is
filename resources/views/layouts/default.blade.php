@@ -22,6 +22,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}" data-turbolinks-track="reload"/>
     @include('partials.analytics')
+    @include('partials.ads')
 </head>
 
 <body class="antialiased font-sans bg-gray-200">
