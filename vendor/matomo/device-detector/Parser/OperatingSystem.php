@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * Device Detector - The Universal Device Detection library for parsing User Agents
@@ -47,19 +49,27 @@ class OperatingSystem extends AbstractParser
         'BLB' => 'BlackBerry OS',
         'QNX' => 'BlackBerry Tablet OS',
         'BMP' => 'Brew',
+        'CAI' => 'Caixa Mágica',
         'CES' => 'CentOS',
         'COS' => 'Chrome OS',
         'CYN' => 'CyanogenMod',
         'DEB' => 'Debian',
+        'DEE' => 'Deepin',
         'DFB' => 'DragonFly',
+        'DVK' => 'DVKBuntu',
         'FED' => 'Fedora',
+        'FEN' => 'Fenix',
         'FOS' => 'Firefox OS',
         'FIR' => 'Fire OS',
+        'FRE' => 'Freebox',
         'BSD' => 'FreeBSD',
+        'FYD' => 'FydeOS',
         'GNT' => 'Gentoo',
+        'GRI' => 'GridOS',
         'GTV' => 'Google TV',
         'HPX' => 'HP-UX',
         'HAI' => 'Haiku OS',
+        'HAS' => 'HasCodingOS',
         'IRI' => 'IRIX',
         'INF' => 'Inferno',
         'KOS' => 'KaiOS',
@@ -67,9 +77,11 @@ class OperatingSystem extends AbstractParser
         'KBT' => 'Kubuntu',
         'LIN' => 'GNU/Linux',
         'LBT' => 'Lubuntu',
+        'LOS' => 'Lumin OS',
         'VLN' => 'VectorLinux',
         'MAC' => 'Mac',
         'MAE' => 'Maemo',
+        'MAG' => 'Mageia',
         'MDR' => 'Mandriva',
         'SMG' => 'MeeGo',
         'MCD' => 'MocorDroid',
@@ -85,6 +97,7 @@ class OperatingSystem extends AbstractParser
         'T64' => 'OSF1',
         'OBS' => 'OpenBSD',
         'ORD' => 'Ordissimo',
+        'PCL' => 'PCLinuxOS',
         'PSP' => 'PlayStation Portable',
         'PS3' => 'PlayStation',
         'RHT' => 'Red Hat',
@@ -95,6 +108,7 @@ class OperatingSystem extends AbstractParser
         'SAB' => 'Sabayon',
         'SSE' => 'SUSE',
         'SAF' => 'Sailfish OS',
+        'SEE' => 'SeewoOS',
         'SLW' => 'Slackware',
         'SOS' => 'Solaris',
         'SYL' => 'Syllable',
@@ -107,7 +121,9 @@ class OperatingSystem extends AbstractParser
         'TIZ' => 'Tizen',
         'TOS' => 'TmaxOS',
         'UBT' => 'Ubuntu',
+        'WAS' => 'watchOS',
         'WTV' => 'WebTV',
+        'WHS' => 'Whale OS',
         'WIN' => 'Windows',
         'WCE' => 'Windows CE',
         'WIO' => 'Windows IoT',
@@ -128,23 +144,24 @@ class OperatingSystem extends AbstractParser
      * @var array
      */
     protected static $osFamilies = [
-        'Android'               => ['AND', 'CYN', 'FIR', 'REM', 'RZD', 'MLD', 'MCD', 'YNS'],
+        'Android'               => ['AND', 'CYN', 'FIR', 'REM', 'RZD', 'MLD', 'MCD', 'YNS', 'GRI'],
         'AmigaOS'               => ['AMG', 'MOR'],
         'Apple TV'              => ['ATV'],
         'BlackBerry'            => ['BLB', 'QNX'],
         'Brew'                  => ['BMP'],
         'BeOS'                  => ['BEO', 'HAI'],
-        'Chrome OS'             => ['COS'],
+        'Chrome OS'             => ['COS', 'FYD', 'SEE'],
         'Firefox OS'            => ['FOS', 'KOS'],
         'Gaming Console'        => ['WII', 'PS3'],
         'Google TV'             => ['GTV'],
         'IBM'                   => ['OS2'],
-        'iOS'                   => ['IOS'],
+        'iOS'                   => ['IOS', 'WAS'],
         'RISC OS'               => ['ROS'],
         'GNU/Linux'             => [
             'LIN', 'ARL', 'DEB', 'KNO', 'MIN', 'UBT', 'KBT', 'XBT', 'LBT', 'FED',
             'RHT', 'VLN', 'MDR', 'GNT', 'SAB', 'SLW', 'SSE', 'CES', 'BTR', 'SAF',
-            'ORD', 'TOS', 'RSO',
+            'ORD', 'TOS', 'RSO', 'DEE', 'FRE', 'MAG', 'FEN', 'CAI', 'PCL', 'HAS',
+            'LOS', 'DVK',
         ],
         'Mac'                   => ['MAC'],
         'Mobile Gaming Console' => ['PSP', 'NDS', 'XBX'],
@@ -155,6 +172,7 @@ class OperatingSystem extends AbstractParser
         'WebTV'                 => ['WTV'],
         'Windows'               => ['WIN'],
         'Windows Mobile'        => ['WPH', 'WMO', 'WCE', 'WRT', 'WIO'],
+        'Other Smart TV'        => ['WHS'],
     ];
 
     /**
@@ -268,15 +286,23 @@ class OperatingSystem extends AbstractParser
      */
     protected function parsePlatform(): string
     {
-        if ($this->matchUserAgent('arm')) {
+        if ($this->matchUserAgent('arm|aarch64|Watch ?OS|Watch1,[12]')) {
             return 'ARM';
         }
 
-        if ($this->matchUserAgent('WOW64|x64|win64|amd64|x86_64')) {
+        if ($this->matchUserAgent('mips')) {
+            return 'MIPS';
+        }
+
+        if ($this->matchUserAgent('sh4')) {
+            return 'SuperH';
+        }
+
+        if ($this->matchUserAgent('WOW64|x64|win64|amd64|x86_?64')) {
             return 'x64';
         }
 
-        if ($this->matchUserAgent('i[0-9]86|i86pc')) {
+        if ($this->matchUserAgent('(?:i[0-9]|x)86|i86pc')) {
             return 'x86';
         }
 
