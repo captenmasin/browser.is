@@ -1,7 +1,6 @@
 require('./bootstrap');
 require('./packages/modernizr');
 import {isPrivateMode} from './packages/is-private';
-import 'alpinejs';
 import htmlToImage from 'html-to-image';
 import download from 'downloadjs';
 
@@ -16,12 +15,6 @@ setTimeout(function () {
         }
     });
 }, 100);
-
-window.sendEmail = function () {
-    const node = document.getElementById('data').innerText;
-    let mailToLink = "mailto:?body=" + encodeURIComponent(node);
-    window.open(mailToLink, '_blank');
-}
 
 window.copyClipboard = function () {
     const navLinks = document.getElementById("nav-links");

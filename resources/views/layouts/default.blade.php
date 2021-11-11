@@ -25,8 +25,9 @@
     @include('partials.ads')
 </head>
 
-<body class="antialiased font-sans bg-gray-200">
+<body class="antialiased font-sans" style="background-color: #F4F4F5">
 @yield('body')
 <script src="{{ mix('/js/app.js') }}" async></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

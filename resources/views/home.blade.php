@@ -1,31 +1,43 @@
 @extends('layouts.default')
 
 @section('body')
-    <div class="max-w-7xl mx-auto sm:pb-24 sm:pt-12 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white shadow overflow-hidden sm:rounded-lg" id="data">
-                <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        Browser.is
-                    </h3>
-                    <nav class="mt-1 max-w-2xl text-sm leading-5 text-gray-600" id="nav-links">
+    <div class="max-w-7xl mx-auto pt-6 px-6 lg:px-8" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+        <header class="flex justify-between">
+            <div class="flex flex-col mb-8">
+                <img src="/images/logo.svg" width="200" alt="Browser.is SVG logo"/>
+                <small>
+                    Quick and easy information
+                </small>
+            </div>
+            <div>
+                <button class="btn btn-primary" @click="showModal = true">
+                    What is this?
+                </button>
+            </div>
+        </header>
+
+
+        <main class="max-w-4xl mx-auto">
+            <div class="bg-white shadow-sm overflow-hidden sm:rounded-sm" id="data">
+                <div class="px-4 py-5 border-b border-gray-200 sm:px-6 bg-gray-100 bg-opacity-75">
+                    <nav class="max-w-2xl text-sm leading-5 text-gray-600" id="nav-links">
                         <a href="{{ route('home', ['type' => null]) }}"
-                           class="text-blue-600 hover:underline {{ $type == null ? 'font-bold' : '' }}">All</a>
+                           class="text-primary hover:underline {{ $type == null ? 'font-black' : '' }}">All</a>
                         <span> / </span>
                         <a href="{{ route('home', ['type' => 'device']) }}"
-                           class="text-blue-600 hover:underline {{ $type == 'device' ? 'font-bold' : '' }}">Device</a>
+                           class="text-primary hover:underline {{ $type == 'device' ? 'font-black' : '' }}">Device</a>
                         <span> / </span>
                         <a href="{{ route('home', ['type' => 'browser']) }}"
-                           class="text-blue-600 hover:underline {{ $type == 'browser' ? 'font-bold' : '' }}">Browser</a>
+                           class="text-primary hover:underline {{ $type == 'browser' ? 'font-black' : '' }}">Browser</a>
                         <span> / </span>
                         <a href="{{ route('home', ['type' => 'location']) }}"
-                           class="text-blue-600 hover:underline {{ $type == 'location' ? 'font-bold' : '' }}">Location</a>
+                           class="text-primary hover:underline {{ $type == 'location' ? 'font-black' : '' }}">Location</a>
                     </nav>
                 </div>
                 @foreach($data as $title => $values)
                     @if(!$type)
                         <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            <h3 class="text-lg leading-6 font-black text-gray-900">
                                 {{ $title }}
                             </h3>
                         </div>
@@ -33,11 +45,11 @@
                     <div>
                         <dl>
                             @foreach($values as $key => $value)
-                                <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border-gray-200 border-b">
-                                    <dt class="text-sm leading-5 font-medium text-gray-600">
+                                <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border-gray-200 @if(!$loop->last) border-b @endif">
+                                    <dt class="text-sm leading-5 font-medium text-primary">
                                         {{ $key }}
                                     </dt>
-                                    <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2"
+                                    <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2 font-mono"
                                         id="{{ \Illuminate\Support\Str::slug($key, '_') }}">
                                         {!! $value !!}
                                     </dd>
@@ -48,8 +60,7 @@
                 @endforeach
             </div>
             <div class="mt-4 flex space-y-4 sm:space-y-0 mb-4 sm:space-x-4 flex-col sm:flex-row w-100 px-4 sm:px-0">
-                <button type="button" class="btn btn-primary w-full sm:w-1/3 " x-data="{ clicked:false }"
-                        @click="copyClipboard(); clicked=true">
+                <button type="button" class="btn btn-primary w-full sm:w-1/2 " x-data="{ clicked:false }" @click="copyClipboard(); clicked=true">
                     <template x-if="!clicked">
                         <span class="flex mx-auto">
                             <svg viewBox="0 0 20 20" fill="currentColor" class="-ml-1 mr-2 h-5 w-5">
@@ -71,7 +82,7 @@
                         </span>
                     </template>
                 </button>
-                <button type="button" class="btn w-full sm:w-1/3 " x-data="{ clicked:false }"
+                <button type="button" class="btn w-full sm:w-1/2 " x-data="{ clicked:false }"
                         @click="saveImage(); clicked=false">
                     <span class="flex mx-auto">
                         <svg viewBox="0 0 20 20" fill="currentColor" class="-ml-1 mr-2 h-5 w-5">
@@ -82,17 +93,46 @@
                         Save screenshot
                     </span>
                 </button>
-                <button type="button" class="btn w-full sm:w-1/3" x-data="{ clicked:false }"
-                        @click="sendEmail(); clicked=false">
-                    <span class="flex mx-auto">
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="-ml-1 mr-2 h-5 w-5">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                        </svg>
-                        Send as email
-                    </span>
-                </button>
             </div>
-        </div>
+
+            <div style="background-color: rgba(0,0,0,0.5)" x-cloak x-show="showModal" class="overflow-auto fixed inset-0 z-10 flex items-center justify-center">
+                <!--Dialog-->
+                <div class="bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg py-4 text-left px-6" x-cloak x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+                    <!--Title-->
+                    <div class="flex justify-between items-center pb-3">
+                        <p class="text-2xl font-bold">
+                            What is browser.is?
+                        </p>
+                        <div class="cursor-pointer z-50" @click="showModal = false">
+                            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <p>
+                            Browser.is is a quick, easy, accessible way to display and share data about your browser/device/location.
+                        </p>
+                        <p>
+                            It's great for debugging issues on sites or apps and provides a nice friendly UI to share these details with developers or I.T support.
+                        </p>
+                        <p>
+                            No data is ever stored on our server, nor do we share anything with any third parties.
+                        </p>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="flex justify-end pt-2">
+                        <button class="btn btn-primary" @click="showModal = false">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+
+    <footer class="mt-16 px-6 py-6 text-xs font-bold">
+        © {{ date('Y') }} Browser.is - All rights reserved
+    </footer>
 @endsection
