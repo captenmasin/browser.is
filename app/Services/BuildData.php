@@ -46,8 +46,8 @@ class BuildData
                 break;
             default:
                 return [
-                    'Device' => $this->getDeviceData(),
-                    'Browser' => $this->getBrowserData(),
+                    'Device'   => $this->getDeviceData(),
+                    'Browser'  => $this->getBrowserData(),
                     'Location' => $this->getLocationData()
                 ];
         }
@@ -64,7 +64,7 @@ class BuildData
         }
 
         return $this->deviceData = [
-            'IP address'      => $this->request->ip(),
+            'IP address'   => $this->request->ip(),
             'Device'       => $device,
             'User agent'   => $this->browser::getUserAgentString(),
             'OS'           => $this->browser::platformFamily(),
@@ -78,20 +78,20 @@ class BuildData
     {
         return $this->browserData = [
             'Window dimensions' => '',
-            'Browser name'    => $this->browser::browserFamily(),
-            'Browser version' => $this->browser::browserVersion(),
-            'Browser engine'  => $this->browser::browserEngine(),
-            'Is Incognito'      => '',
+            'Browser name'      => $this->browser::browserFamily(),
+            'Browser version'   => $this->browser::browserVersion(),
+            'Browser engine'    => $this->browser::browserEngine(),
+            'Incognito mode'    => '',
         ];
     }
 
     public function getLocationData()
     {
         return $this->locationData = [
-            'Country Code'    => $this->location->iso_code,
-            'Country name'    => $this->location->country,
-            'City'            => $this->location->city,
-            'Lat/Lng'         => $this->location->lat . ' / ' . $this->location->lon,
+            'Country Code' => $this->location->iso_code,
+            'Country name' => $this->location->country,
+            'City'         => $this->location->city,
+            'Lat/Lng'      => $this->location->lat . ' / ' . $this->location->lon,
         ];
     }
 }

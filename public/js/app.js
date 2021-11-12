@@ -20393,8 +20393,8 @@ if (document.getElementById("window_dimensions")) {
 
 setTimeout(function () {
   Object(_packages_is_private__WEBPACK_IMPORTED_MODULE_0__["isPrivateMode"])().then(function (isPrivate) {
-    if (document.getElementById("is_incognito")) {
-      document.getElementById("is_incognito").innerHTML = isPrivate.toString();
+    if (document.getElementById("incognito_mode")) {
+      document.getElementById("incognito_mode").innerHTML = isPrivate.toString();
     }
   });
 }, 100);

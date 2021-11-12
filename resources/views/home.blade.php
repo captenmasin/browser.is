@@ -2,15 +2,19 @@
 
 @section('body')
     <div class="max-w-7xl mx-auto pt-6 px-6 lg:px-8" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
-        <header class="flex justify-between">
-            <div class="flex flex-col mb-8">
-                <img src="/images/logo.svg" width="200" alt="Browser.is SVG logo"/>
+        <header class="flex justify-between flex-col md:flex-row">
+            <div class="flex flex-col mb-2 md:mb-8 text-center md:text-left">
+                <h1>
+                    <a href="/">
+                        <img src="/images/logo.svg" width="200" alt="Browser.is SVG logo" class="mx-auto md:mx-0"/>
+                    </a>
+                </h1>
                 <small>
                     Quick and easy information
                 </small>
             </div>
-            <div>
-                <button class="btn btn-primary" @click="showModal = true">
+            <div class="items-center mb-4 md:mb-0">
+                <button class="btn btn-primary mx-auto w-full block text-center" @click="showModal = true">
                     What is this?
                 </button>
             </div>
