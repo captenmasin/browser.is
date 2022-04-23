@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.laravel.component" name="Laravel_11/11/2021, 22:24" invoke="/Users/mason/Sites/browser.is/artisan" alias="artisan" enabled="true" version="2">
+<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.laravel.component" name="Laravel_23/04/2022, 20:35" invoke="/Users/mason/Sites/browser.is/artisan" alias="artisan" enabled="true" version="2">
   <extraData><![CDATA[version:3]]></extraData>
   <command>
     <name>clear-compiled</name>
@@ -1027,11 +1027,17 @@
   </command>
   <command>
     <name>make:command</name>
-    <help><![CDATA[Create a new Artisan command<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--command</td><td></td><td>The terminal command that should be assigned</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new Artisan command<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--command</td><td></td><td>The terminal command that should be assigned</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Console command</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Console command</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--command" shortcut="" pattern="equals">
         <help><![CDATA[The terminal command that should be assigned]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Console command]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Console command]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1098,7 +1104,7 @@
   </command>
   <command>
     <name>make:controller</name>
-    <help><![CDATA[Create a new controller class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--api</td><td></td><td>Exclude the create and edit methods from the controller.</td></tr> <tr><td>--type</td><td></td><td>Manually specify the controller stub file to use.</td></tr> <tr><td>--force</td><td></td><td>Create the class even if the controller already exists</td></tr> <tr><td>--invokable</td><td>(-i)</td><td>Generate a single method, invokable controller class.</td></tr> <tr><td>--model</td><td>(-m)</td><td>Generate a resource controller for the given model.</td></tr> <tr><td>--parent</td><td>(-p)</td><td>Generate a nested resource controller class.</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Generate a resource controller class.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new controller class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--api</td><td></td><td>Exclude the create and edit methods from the controller.</td></tr> <tr><td>--type</td><td></td><td>Manually specify the controller stub file to use.</td></tr> <tr><td>--force</td><td></td><td>Create the class even if the controller already exists</td></tr> <tr><td>--invokable</td><td>(-i)</td><td>Generate a single method, invokable controller class.</td></tr> <tr><td>--model</td><td>(-m)</td><td>Generate a resource controller for the given model.</td></tr> <tr><td>--parent</td><td>(-p)</td><td>Generate a nested resource controller class.</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Generate a resource controller class.</td></tr> <tr><td>--requests</td><td>(-R)</td><td>Generate FormRequest classes for store and update.</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Controller</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Controller</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--api" shortcut="">
@@ -1121,6 +1127,15 @@
       </option>
       <option name="--resource" shortcut="-r">
         <help><![CDATA[Generate a resource controller class.]]></help>
+      </option>
+      <option name="--requests" shortcut="-R">
+        <help><![CDATA[Generate FormRequest classes for store and update.]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Controller]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Controller]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1252,11 +1267,17 @@
   </command>
   <command>
     <name>make:job</name>
-    <help><![CDATA[Create a new job class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--sync</td><td></td><td>Indicates that job should be synchronous</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new job class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--sync</td><td></td><td>Indicates that job should be synchronous</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Job</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Job</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--sync" shortcut="">
         <help><![CDATA[Indicates that job should be synchronous]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Job]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Job]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1286,7 +1307,7 @@
   </command>
   <command>
     <name>make:listener</name>
-    <help><![CDATA[Create a new event listener class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--event</td><td>(-e)</td><td>The event class being listened for</td></tr> <tr><td>--queued</td><td></td><td>Indicates the event listener should be queued</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new event listener class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--event</td><td>(-e)</td><td>The event class being listened for</td></tr> <tr><td>--queued</td><td></td><td>Indicates the event listener should be queued</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Listener</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Listener</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--event" shortcut="-e" pattern="equals">
@@ -1294,6 +1315,12 @@
       </option>
       <option name="--queued" shortcut="">
         <help><![CDATA[Indicates the event listener should be queued]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Listener]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Listener]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1323,7 +1350,7 @@
   </command>
   <command>
     <name>make:mail</name>
-    <help><![CDATA[Create a new email class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the mailable already exists</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the mailable</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new email class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the mailable already exists</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the mailable</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Mail</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Mail</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--force" shortcut="-f">
@@ -1331,6 +1358,12 @@
       </option>
       <option name="--markdown" shortcut="-m" pattern="equals">
         <help><![CDATA[Create a new Markdown template for the mailable]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Mail]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Mail]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1360,9 +1393,15 @@
   </command>
   <command>
     <name>make:middleware</name>
-    <help><![CDATA[Create a new middleware class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new middleware class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Middleware</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Middleware</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Middleware]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Middleware]]></help>
+      </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
       </option>
@@ -1437,11 +1476,11 @@
   </command>
   <command>
     <name>make:model</name>
-    <help><![CDATA[Create a new Eloquent model class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--all</td><td>(-a)</td><td>Generate a migration, seeder, factory, and resource controller for the model</td></tr> <tr><td>--controller</td><td>(-c)</td><td>Create a new controller for the model</td></tr> <tr><td>--factory</td><td>(-f)</td><td>Create a new factory for the model</td></tr> <tr><td>--force</td><td></td><td>Create the class even if the model already exists</td></tr> <tr><td>--migration</td><td>(-m)</td><td>Create a new migration file for the model</td></tr> <tr><td>--seed</td><td>(-s)</td><td>Create a new seeder file for the model</td></tr> <tr><td>--pivot</td><td>(-p)</td><td>Indicates if the generated model should be a custom intermediate table model</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Indicates if the generated controller should be a resource controller</td></tr> <tr><td>--api</td><td></td><td>Indicates if the generated controller should be an API controller</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new Eloquent model class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--all</td><td>(-a)</td><td>Generate a migration, seeder, factory, policy, and resource controller for the model</td></tr> <tr><td>--controller</td><td>(-c)</td><td>Create a new controller for the model</td></tr> <tr><td>--factory</td><td>(-f)</td><td>Create a new factory for the model</td></tr> <tr><td>--force</td><td></td><td>Create the class even if the model already exists</td></tr> <tr><td>--migration</td><td>(-m)</td><td>Create a new migration file for the model</td></tr> <tr><td>--policy</td><td></td><td>Create a new policy for the model</td></tr> <tr><td>--seed</td><td>(-s)</td><td>Create a new seeder for the model</td></tr> <tr><td>--pivot</td><td>(-p)</td><td>Indicates if the generated model should be a custom intermediate table model</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Indicates if the generated controller should be a resource controller</td></tr> <tr><td>--api</td><td></td><td>Indicates if the generated controller should be an API controller</td></tr> <tr><td>--requests</td><td>(-R)</td><td>Create new form request classes and use them in the resource controller</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Model</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Model</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--all" shortcut="-a">
-        <help><![CDATA[Generate a migration, seeder, factory, and resource controller for the model]]></help>
+        <help><![CDATA[Generate a migration, seeder, factory, policy, and resource controller for the model]]></help>
       </option>
       <option name="--controller" shortcut="-c">
         <help><![CDATA[Create a new controller for the model]]></help>
@@ -1455,8 +1494,11 @@
       <option name="--migration" shortcut="-m">
         <help><![CDATA[Create a new migration file for the model]]></help>
       </option>
+      <option name="--policy" shortcut="">
+        <help><![CDATA[Create a new policy for the model]]></help>
+      </option>
       <option name="--seed" shortcut="-s">
-        <help><![CDATA[Create a new seeder file for the model]]></help>
+        <help><![CDATA[Create a new seeder for the model]]></help>
       </option>
       <option name="--pivot" shortcut="-p">
         <help><![CDATA[Indicates if the generated model should be a custom intermediate table model]]></help>
@@ -1466,6 +1508,15 @@
       </option>
       <option name="--api" shortcut="">
         <help><![CDATA[Indicates if the generated controller should be an API controller]]></help>
+      </option>
+      <option name="--requests" shortcut="-R">
+        <help><![CDATA[Create new form request classes and use them in the resource controller]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Model]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Model]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1495,7 +1546,7 @@
   </command>
   <command>
     <name>make:notification</name>
-    <help><![CDATA[Create a new notification class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the notification already exists</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the notification</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new notification class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the notification already exists</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the notification</td></tr> <tr><td>--test</td><td></td><td>Generate an accompanying PHPUnit test for the Notification</td></tr> <tr><td>--pest</td><td></td><td>Generate an accompanying Pest test for the Notification</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--force" shortcut="-f">
@@ -1503,6 +1554,12 @@
       </option>
       <option name="--markdown" shortcut="-m" pattern="equals">
         <help><![CDATA[Create a new Markdown template for the notification]]></help>
+      </option>
+      <option name="--test" shortcut="">
+        <help><![CDATA[Generate an accompanying PHPUnit test for the Notification]]></help>
+      </option>
+      <option name="--pest" shortcut="">
+        <help><![CDATA[Generate an accompanying Pest test for the Notification]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -1699,9 +1756,12 @@
   </command>
   <command>
     <name>make:rule</name>
-    <help><![CDATA[Create a new validation rule<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new validation rule<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--implicit</td><td>(-i)</td><td>Generate an implicit rule.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
+      <option name="--implicit" shortcut="-i">
+        <help><![CDATA[Generate an implicit rule.]]></help>
+      </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
       </option>
@@ -1761,11 +1821,14 @@
   </command>
   <command>
     <name>make:test</name>
-    <help><![CDATA[Create a new test class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--unit</td><td>(-u)</td><td>Create a unit test.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new test class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--unit</td><td>(-u)</td><td>Create a unit test.</td></tr> <tr><td>--pest</td><td>(-p)</td><td>Create a Pest test.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
       <option name="--unit" shortcut="-u">
         <help><![CDATA[Create a unit test.]]></help>
+      </option>
+      <option name="--pest" shortcut="-p">
+        <help><![CDATA[Create a Pest test.]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
@@ -2071,13 +2134,16 @@
   </command>
   <command>
     <name>model:prune</name>
-    <help><![CDATA[Prune models that are no longer needed<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--model</td><td></td><td>Class names of the models to be pruned</td></tr> <tr><td>--chunk</td><td></td><td>The number of models to retrieve per chunk of models to be deleted</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Prune models that are no longer needed<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--model</td><td></td><td>Class names of the models to be pruned</td></tr> <tr><td>--chunk</td><td></td><td>The number of models to retrieve per chunk of models to be deleted</td></tr> <tr><td>--pretend</td><td></td><td>Display the number of prunable records found instead of deleting them</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <optionsBefore>
       <option name="--model" shortcut="" pattern="equals">
         <help><![CDATA[Class names of the models to be pruned]]></help>
       </option>
       <option name="--chunk" shortcut="" pattern="equals">
         <help><![CDATA[The number of models to retrieve per chunk of models to be deleted]]></help>
+      </option>
+      <option name="--pretend" shortcut="">
+        <help><![CDATA[Display the number of prunable records found instead of deleting them]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>

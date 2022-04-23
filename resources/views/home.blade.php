@@ -13,11 +13,6 @@
                     Quick and easy information
                 </small>
             </div>
-            <div class="items-center mb-4 md:mb-0">
-                <button class="btn btn-primary mx-auto w-full block text-center" @click="showModal = true">
-                    What is this?
-                </button>
-            </div>
         </header>
 
 
@@ -63,6 +58,18 @@
                     </div>
                 @endforeach
             </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9293785362154547"
+                    crossorigin="anonymous"></script>
+            <!-- Browser.is - primary -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9293785362154547"
+                 data-ad-slot="5503343588"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+		        (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             <div class="mt-4 flex space-y-4 sm:space-y-0 mb-4 sm:space-x-4 flex-col sm:flex-row w-100 px-4 sm:px-0">
                 <button type="button" class="btn btn-primary w-full sm:w-1/2 " x-data="{ clicked:false }" @click="copyClipboard(); clicked=true">
                     <template x-if="!clicked">
@@ -99,40 +106,23 @@
                 </button>
             </div>
 
-            <div style="background-color: rgba(0,0,0,0.5)" x-cloak x-show="showModal" class="overflow-auto fixed inset-0 z-10 flex items-center justify-center">
-                <!--Dialog-->
-                <div class="bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg py-4 text-left px-6" x-cloak x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                    <!--Title-->
-                    <div class="flex justify-between items-center pb-3">
-                        <p class="text-2xl font-bold">
-                            What is browser.is?
-                        </p>
-                        <div class="cursor-pointer z-50" @click="showModal = false">
-                            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- content -->
-                    <div class="space-y-4">
-                        <p>
-                            Browser.is is a quick, easy, accessible way to display and share data about your browser/device/location.
-                        </p>
-                        <p>
-                            It's great for debugging issues on sites or apps and provides a nice friendly UI to share these details with developers or I.T support.
-                        </p>
-                        <p>
-                            No data is ever stored on our server, nor do we share anything with any third parties.
-                        </p>
-                    </div>
-
-                    <!--Footer-->
-                    <div class="flex justify-end pt-2">
-                        <button class="btn btn-primary" @click="showModal = false">Close</button>
-                    </div>
+            <div class="mt-12 text-center">
+                <p class="text-2xl font-bold">
+                    What is browser.is?
+                </p>
+                <div class="space-y-4">
+                    <p>
+                        Browser.is is a quick, easy, accessible way to display and share data about your browser/device/location.
+                    </p>
+                    <p>
+                        It's great for debugging issues on sites or apps and provides a nice friendly UI to share these details with developers or I.T support.
+                    </p>
+                    <p>
+                        No data is ever stored on our server, nor do we share anything with any third parties.
+                    </p>
                 </div>
             </div>
+
         </main>
     </div>
 
