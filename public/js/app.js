@@ -20964,8 +20964,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mason/Sites/browser.is/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mason/Sites/browser.is/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/masonday/Sites/browser.is/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/masonday/Sites/browser.is/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

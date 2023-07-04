@@ -11,7 +11,7 @@
     <meta property="og:title" content="{{ config('app.name') }}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ config('app.url') }}">
-    <meta property="og:image" content="{{ config('app.url') }}/images/apple-touch-icon.png">
+    <meta property="og:image" content="{{ config('app.url') }}/images/social.png">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
