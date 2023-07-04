@@ -17,7 +17,7 @@
 
 
         <main class="max-w-4xl mx-auto">
-            <div class="bg-white shadow-sm overflow-hidden sm:rounded-sm" id="data">
+            <div class="bg-white border border-black/25 overflow-hidden sm:rounded-sm" id="data">
                 <div class="px-4 py-5 border-b border-gray-200 sm:px-6 bg-gray-100 bg-opacity-75">
                     <nav class="max-w-2xl text-sm leading-5 text-gray-600" id="nav-links">
                         <a href="{{ route('home', ['type' => null]) }}"
