@@ -1,3 +1,24 @@
+### Changes in 4.5.2
+
+---
+
+- Improved the inApp detection
+- Small fix for new PHP versions
+
+### Change in 4.5.1
+
+---
+
+- Added Prerender as bot
+
+### Change in 4.5.0
+
+---
+
+- New shortcut call for deviceType (by @mylesduncanking)
+- Testing on PHP 8.1
+- Testing with Laravel 9.x
+
 ### Changes in 4.4.0
 
 ---

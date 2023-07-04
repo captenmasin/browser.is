@@ -32,6 +32,7 @@ By default, the middleware enables indexing on all pages. You'll probably want t
 
 ```php
 // app/Http/Middleware/MyRobotsMiddleware.php
+namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Spatie\RobotsMiddleware\RobotsMiddleware;
@@ -78,11 +79,11 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details. Due to nature of this package, there's a fair chance features won't be accepted to keep it light and opinionated.
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details. Due to nature of this package, there's a fair chance features won't be accepted to keep it light and opinionated.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be) instead of using the issue tracker.
 
 ## Credits
 

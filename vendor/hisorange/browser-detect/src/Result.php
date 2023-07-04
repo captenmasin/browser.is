@@ -227,6 +227,19 @@ class Result implements ResultInterface
     /**
      * @inheritdoc
      */
+    public function deviceType(): string
+    {
+        foreach (['Mobile', 'Tablet', 'Bot', 'Desktop'] as $deviceType) {
+            if ($this->{'is' . $deviceType}()) {
+                return $deviceType;
+            }
+        }
+        return 'Unknown';
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function isChrome(): bool
     {
         return $this->isChrome;
