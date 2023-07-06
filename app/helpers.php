@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Str;
-
-if(!function_exists('is_staging')){
-    function is_staging()
+if (!function_exists('getDomain')) {
+    function getDomain($url): string
     {
-        return Str::contains(url()->current(), 'staging');
+        $parse = parse_url($url);
+        return $parse['host'];
     }
 }

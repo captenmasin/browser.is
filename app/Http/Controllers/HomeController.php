@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\BuildData;
+use Inertia\Inertia;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
-    public function __invoke(String $type = null)
+    public function __invoke(Request $request)
     {
-        return view('home', [
-            'data' => (new BuildData($type))->getData(),
-            'type' => $type
+        return Inertia::render('Home', [
+        ])->withMeta([
+            'image'       => '',
+            'title'       => 'Home',
+            'description' => ''
         ]);
     }
 }

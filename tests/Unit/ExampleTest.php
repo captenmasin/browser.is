@@ -1,18 +1,10 @@
 <?php
 
-namespace Tests\Unit;
+use Inertia\Testing\AssertableInertia;
 
-use PHPUnit\Framework\TestCase;
-
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
-    {
-        $this->assertTrue(true);
-    }
-}
+it('has a home page', function () {
+    $this->get('/')->assertStatus(200);
+    $this->get('/')->assertInertia(function (AssertableInertia $inertia) {
+        $inertia->component('Home');
+    });
+});

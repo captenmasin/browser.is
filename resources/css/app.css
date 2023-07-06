@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cursor-disabled{
+    @apply cursor-not-allowed;
+}
+
+#nprogress .bar {
+    background: var(--colors-primary) !important;
+}
+
+#nprogress .peg {
+    box-shadow: 0 0 10px var(--colors-primary), 0 0 5px var(--colors-primary);
+}
+
+.Toastify__toast{
+    border-radius: 50px !important;
+    min-height: 52px !important;
+
+    box-shadow: 0 1px 10px 0 rgba(var(--colors-primary-rgb),.1), 0 2px 15px 0 rgba(var(--colors-primary-rgb),.05) !important;
+}
+.Toastify__close-button{
+    align-self: center !important;;
+    margin-right: 10px !important;;
+}
+.Toastify__toast-icon{
+    display: none !important;;
+}
+.Toastify__toast-body>div:last-child{
+    padding-left: 18px !important;;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--error{
+    background: var(--colors-primary) !important;
+}
+
+:root {
+    --popper-theme-background-color: var(--colors-secondary);
+    --popper-theme-background-color-hover: var(--colors-secondary);
+    --popper-theme-text-color: #ffffff;
+    --popper-theme-border-width: 0px;
+    --popper-theme-border-style: solid;
+    --popper-theme-border-radius: 6px;
+    --popper-theme-padding: 12px 16px;
+    --popper-theme-box-shadow: 0 6px 30px -6px rgba(var(--colors-secondary-rgb), 0.25);
+}
+
+.dark{
+    --popper-theme-background-color: var(--colors-primary);
+    --popper-theme-background-color-hover: var(--colors-primary);
+    --popper-theme-padding: 8px 16px;
+}

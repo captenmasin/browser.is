@@ -1,42 +1,61 @@
-require('./bootstrap');
-require('./packages/modernizr');
-import {isPrivateMode} from './packages/is-private';
-import htmlToImage from 'html-to-image';
-import download from 'downloadjs';
+import '../css/app.css'
+import '../css/fonts.css'
+import 'vue3-toastify/dist/index.css'
+import.meta.glob([
+    '../images/**',
+]);
+import {createApp, h} from 'vue'
+import mitt from 'mitt';
+import {createInertiaApp} from '@inertiajs/vue3'
+import Layout from "./Layouts/Layout.vue";
 
-if (document.getElementById("window_dimensions")) {
-    document.getElementById("window_dimensions").innerHTML = window.innerWidth + ' x ' + window.innerHeight;
-}
+const emitter = mitt();
 
-setTimeout(function () {
-    isPrivateMode().then(function (isPrivate) {
-        if (document.getElementById("incognito_mode")) {
-            document.getElementById("incognito_mode").innerHTML = isPrivate.toString();
-        }
-    });
-}, 100);
-
-window.copyClipboard = function () {
-    const navLinks = document.getElementById("nav-links");
-    navLinks.style.display = "none";
-    const textToCopy = document.getElementById("data").innerText;
-    const myTemporaryInputElement = document.createElement("textarea");
-    navLinks.style.display = "block";
-    myTemporaryInputElement.value = textToCopy;
-    document.body.appendChild(myTemporaryInputElement);
-    myTemporaryInputElement.select();
-    document.execCommand("Copy");
-    document.body.removeChild(myTemporaryInputElement);
-}
-
-window.saveImage = function () {
-    const node = document.getElementById('data');
-    htmlToImage.toPng(node)
-        .then(function (dataUrl) {
-            let date = new Date();
-            download(dataUrl, 'browser_is-'+date.toUTCString()+'.png');
-        })
-        .catch(function (error) {
-            console.error('oops, something went wrong!', error);
+createInertiaApp({
+    title: title => `${title} - ${import.meta.env.VITE_APP_NAME}`,
+    resolve: name => {
+        const pages = import.meta.glob('./Pages/**/*.vue', {eager: true})
+        let page = pages[`./Pages/${name}.vue`]
+        page.default.layout = page.default.layout || Layout
+        return page
+    },
+    setup({el, App, props, plugin}) {
+        const app = createApp({
+            render: () => h(App, props)
         });
-}
+        app.use(plugin)
+        app.config.globalProperties.route = window.route
+        app.provide('emitter', emitter);
+
+        app.mount(el)
+    },
+}).then(r => '')
+
+import NProgress from 'nprogress'
+import { router } from '@inertiajs/vue3'
+
+let timeout = null
+
+router.on('start', () => {
+    timeout = setTimeout(() => NProgress.start(), 1)
+})
+
+router.on('progress', (event) => {
+    if (NProgress.isStarted() && event.detail.progress.percentage) {
+        NProgress.set((event.detail.progress.percentage / 100) * 0.9)
+    }
+})
+
+router.on('finish', (event) => {
+    clearTimeout(timeout)
+    if (!NProgress.isStarted()) {
+        // Do nothing
+    } else if (event.detail.visit.completed) {
+        NProgress.done()
+    } else if (event.detail.visit.interrupted) {
+        NProgress.set(0)
+    } else if (event.detail.visit.cancelled) {
+        NProgress.done()
+        NProgress.remove()
+    }
+})

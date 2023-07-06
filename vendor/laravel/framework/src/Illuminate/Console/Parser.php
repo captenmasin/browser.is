@@ -2,7 +2,6 @@
 
 namespace Illuminate\Console;
 
-use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -21,10 +20,8 @@ class Parser
     {
         $name = static::name($expression);
 
-        if (preg_match_all('/\{\s*(.*?)\s*\}/', $expression, $matches)) {
-            if (count($matches[1])) {
-                return array_merge([$name], static::parameters($matches[1]));
-            }
+        if (preg_match_all('/\{\s*(.*?)\s*\}/', $expression, $matches) && count($matches[1])) {
+            return array_merge([$name], static::parameters($matches[1]));
         }
 
         return [$name, [], []];
@@ -81,11 +78,11 @@ class Parser
         [$token, $description] = static::extractDescription($token);
 
         switch (true) {
-            case Str::endsWith($token, '?*'):
+            case str_ends_with($token, '?*'):
                 return new InputArgument(trim($token, '?*'), InputArgument::IS_ARRAY, $description);
-            case Str::endsWith($token, '*'):
+            case str_ends_with($token, '*'):
                 return new InputArgument(trim($token, '*'), InputArgument::IS_ARRAY | InputArgument::REQUIRED, $description);
-            case Str::endsWith($token, '?'):
+            case str_ends_with($token, '?'):
                 return new InputArgument(trim($token, '?'), InputArgument::OPTIONAL, $description);
             case preg_match('/(.+)\=\*(.+)/', $token, $matches):
                 return new InputArgument($matches[1], InputArgument::IS_ARRAY, $description, preg_split('/,\s?/', $matches[2]));
@@ -108,17 +105,17 @@ class Parser
 
         $matches = preg_split('/\s*\|\s*/', $token, 2);
 
+        $shortcut = null;
+
         if (isset($matches[1])) {
             $shortcut = $matches[0];
             $token = $matches[1];
-        } else {
-            $shortcut = null;
         }
 
         switch (true) {
-            case Str::endsWith($token, '='):
+            case str_ends_with($token, '='):
                 return new InputOption(trim($token, '='), $shortcut, InputOption::VALUE_OPTIONAL, $description);
-            case Str::endsWith($token, '=*'):
+            case str_ends_with($token, '=*'):
                 return new InputOption(trim($token, '=*'), $shortcut, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, $description);
             case preg_match('/(.+)\=\*(.+)/', $token, $matches):
                 return new InputOption($matches[1], $shortcut, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, $description, preg_split('/,\s?/', $matches[2]));
