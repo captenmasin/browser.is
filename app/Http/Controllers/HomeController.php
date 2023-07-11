@@ -11,6 +11,7 @@ class HomeController extends BaseController
     public function __invoke(Request $request)
     {
         return Inertia::render('Home', [
+
         ])->withMeta([
             'image'       => '',
             'title'       => 'Home',

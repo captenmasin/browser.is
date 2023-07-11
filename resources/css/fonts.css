@@ -1,0 +1,377 @@
+/* Header fonts */
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Hairline"), local("Escalator-Hairline"),
+    url("../fonts/Escalator/hairline.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Thin"), local("Escalator-Thin"),
+    url("../fonts/Escalator/thin.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Extralight"), local("Escalator-Extralight"),
+    url("../fonts/Escalator/extralight.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Light"), local("Escalator-Light"),
+    url("../fonts/Escalator/light.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black Regular"), local("Escalator-Regular"),
+    url("../fonts/Escalator/regular.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black Medium"), local("Escalator-Medium"),
+    url("../fonts/Escalator/medium.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Semibold"), local("Escalator-Semibold"),
+    url("../fonts/Escalator/semibold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Bold"), local("Escalator-Bold"),
+    url("../fonts/Escalator/bold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black"), local("Escalator-Black"),
+    url("../fonts/Escalator/black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/** Italics **/
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Hailine Italic"), local("Escalator-Hairline-Italic"),
+    url("../fonts/Escalator/hairline-italic.woff2") format("woff2");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Thin Italic"), local("Escalator-Thin-Italic"),
+    url("../fonts/Escalator/thin-italic.woff2") format("woff2");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Extralight Italic"),
+    local("Escalator-Extralight-Italic"),
+    url("../fonts/Escalator/extralight-italic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Light Italic"), local("Escalator-Light-Italic"),
+    url("../fonts/Escalator/light-italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black Regular Italic"),
+    local("Escalator-Regular-Italic"),
+    url("../fonts/Escalator/regular-italic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black Medium Italic"), local("Escalator-Medium-Italic"),
+    url("../fonts/Escalator/medium-italic.woff2") format("woff2");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Semibold Italic"), local("Escalator-Semibold-Italic"),
+    url("../fonts/Escalator/semibold-italic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Bold Italic"), local("Escalator-Bold-Italic"),
+    url("../fonts/Escalator/bold-italic.woff2") format("woff2");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Escalator";
+    src: local("Escalator Black Italic"), local("Escalator-Black-Italic"),
+    url("../fonts/Escalator/black-italic.woff2") format("woff2");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+.font-heading,
+.font-heading-thin {
+    font-weight: 800;
+    /*font-feature-settings: 'tnum' off, 'ss12' on, 'ss11' on, 'kern' on, 'case' on;*/
+    font-feature-settings: "tnum" off, "ss11" on, "kern" on, "case" on;
+}
+
+
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-weight: 100 900;*/
+/*    font-display: swap;*/
+/*    font-style: normal;*/
+/*    font-named-instance: 'Regular';*/
+/*    src: url("../fonts/Inter/Inter-roman.var.woff2?v=3.19") format("woff2");*/
+/*}*/
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-weight: 100 900;*/
+/*    font-display: swap;*/
+/*    font-style: italic;*/
+/*    font-named-instance: 'Italic';*/
+/*    src: url("../fonts/Inter/Inter-italic.var.woff2?v=3.19") format("woff2");*/
+/*}*/
+
+.font-body-settings {
+    /*font-feature-settings: "calt", "ss01", "ss04", "ss03", "cv11", "cv06", "cv10";*/
+    /*font-weight: 500;*/
+    /*letter-spacing: normal;*/
+}
+
+
+/*.font-heading-thin{*/
+/*    font-weight: 800;*/
+/*    font-feature-settings: 'tnum' off, 'ss12' on, 'ss11' on, 'kern' on;*/
+/*}*/
+
+/* Body fonts */
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 100;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Thin.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Thin.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 100;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-ThinItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-ThinItalic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 200;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-ExtraLight.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-ExtraLight.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 200;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-ExtraLightItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-ExtraLightItalic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 300;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Light.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Light.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 300;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-LightItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-LightItalic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Regular.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Regular.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 400;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Italic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Italic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Medium.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Medium.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 500;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-MediumItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-MediumItalic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 600;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-SemiBold.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-SemiBold.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 600;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-SemiBoldItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-SemiBoldItalic.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-Bold.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-Bold.woff") format("woff");*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Inter";*/
+/*    font-style: italic;*/
+/*    font-weight: 700;*/
+/*    font-display: swap;*/
+/*    src: url("../fonts/Inter/Inter-BoldItalic.woff2") format("woff2"),*/
+/*    url("../fonts/Inter/Inter-BoldItalic.woff") format("woff");*/
+/*}*/
+
+
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-style: normal;*/
+/*    font-weight: 800;*/
+/*    font-display: swap;*/
+/*    src: url('../fonts/Inter/Inter-ExtraBold.woff2') format('woff2'),*/
+/*    url('../fonts/Inter/Inter-ExtraBold.woff') format('woff');*/
+/*}*/
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-style: italic;*/
+/*    font-weight: 800;*/
+/*    font-display: swap;*/
+/*    src: url('../fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'),*/
+/*    url('../fonts/Inter/Inter-ExtraBoldItalic.woff') format('woff');*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-style: normal;*/
+/*    font-weight: 900;*/
+/*    font-display: swap;*/
+/*    src: url('../fonts/Inter/Inter-Black.woff2') format('woff2'),*/
+/*    url('../fonts/Inter/Inter-Black.woff') format('woff');*/
+/*}*/
+/*@font-face {*/
+/*    font-family: 'Inter';*/
+/*    font-style: italic;*/
+/*    font-weight: 900;*/
+/*    font-display: swap;*/
+/*    src: url('../fonts/Inter/Inter-BlackItalic.woff2') format('woff2'),*/
+/*    url('../fonts/Inter/Inter-BlackItalic.woff') format('woff');*/
+/*}*/
+
+/* --------------------------------------------------------------------------
+[EXPERIMENTAL] Multi-axis, single variable font.
+*/
+/*@font-face {*/
+/*    font-family: 'Inter var experimental';*/
+/*    font-weight: 100 900;*/
+/*    font-display: swap;*/
+/*    font-style: oblique 0deg 10deg;*/
+/*    src: url("../fonts/Inter/Inter.var.woff2?v=3.19") format("woff2");*/
+/*}*/

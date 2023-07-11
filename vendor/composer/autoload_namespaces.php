@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ML\\IRI' => array($vendorDir . '/ml/iri'),
+    'Detection' => array($vendorDir . '/mobiledetect/mobiledetectlib/namespaced'),
     'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
 );

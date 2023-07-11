@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '6aafcee994dac9a07e2c520a3943e921f1ddc9be',
+        'pretty_version' => '2.x-dev',
+        'version' => '2.9999999.9999999.9999999-dev',
+        'reference' => '0e1264e61ee9593d049d6c1eaac3554bfe9716f6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -271,6 +271,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'hisorange/browser-detect' => array(
+            'pretty_version' => '4.5.4',
+            'version' => '4.5.4.0',
+            'reference' => '2a7c2b140209aa8477424614eb3aa6f7a7b9f429',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hisorange/browser-detect',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -487,6 +496,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'jaybizzle/crawler-detect' => array(
+            'pretty_version' => 'v1.2.115',
+            'version' => '1.2.115.0',
+            'reference' => '4531e4a70d55d10cbe7d41ac1ff0d75a5fe2ef1e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jaybizzle/crawler-detect',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -530,9 +548,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '6aafcee994dac9a07e2c520a3943e921f1ddc9be',
+            'pretty_version' => '2.x-dev',
+            'version' => '2.9999999.9999999.9999999-dev',
+            'reference' => '0e1264e61ee9593d049d6c1eaac3554bfe9716f6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -637,6 +655,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'league/pipeline' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => 'aa14b0e3133121f8be39e9a3b6ddd011fc5bb9a8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/pipeline',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'lorisleiva/laravel-actions' => array(
             'pretty_version' => 'v2.6.0',
             'version' => '2.6.0.0',
@@ -664,6 +691,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'matomo/device-detector' => array(
+            'pretty_version' => '6.1.3',
+            'version' => '6.1.3.0',
+            'reference' => '3e0fac7e77f3faadc3858fea9f5fa7efeb9cf239',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../matomo/device-detector',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'ml/iri' => array(
             'pretty_version' => '1.1.4',
             'version' => '1.1.4.0',
@@ -679,6 +715,15 @@
             'reference' => '537e68e87a6bce23e57c575cd5dcac1f67ce25d8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ml/json-ld',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mobiledetect/mobiledetectlib' => array(
+            'pretty_version' => '2.8.41',
+            'version' => '2.8.41.0',
+            'reference' => 'fc9cccd4d3706d5a7537b562b59cc18f9e4c0cb1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mobiledetect/mobiledetectlib',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -705,6 +750,15 @@
             'replaced' => array(
                 0 => '^1.0',
             ),
+        ),
+        'mustangostang/spyc' => array(
+            'pretty_version' => '0.6.3',
+            'version' => '0.6.3.0',
+            'reference' => '4627c838b16550b666d15aeae1e5289dd5b77da0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mustangostang/spyc',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',
@@ -942,6 +996,12 @@
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'piwik/device-detector' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '6.1.3',
+            ),
         ),
         'psr/cache' => array(
             'pretty_version' => '3.0.0',
@@ -1718,6 +1778,24 @@
             'reference' => 'c42125b83a4fa63b187fdf29f9c93cb7733da30c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'torann/geoip' => array(
+            'pretty_version' => '3.0.5',
+            'version' => '3.0.5.0',
+            'reference' => 'af934013bdc073c8f4775e62cac8cc89b3de3ce6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../torann/geoip',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'ua-parser/uap-php' => array(
+            'pretty_version' => 'v3.9.14',
+            'version' => '3.9.14.0',
+            'reference' => 'b796c5ea5df588e65aeb4e2c6cce3811dec4fed6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ua-parser/uap-php',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

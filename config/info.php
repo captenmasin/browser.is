@@ -2,10 +2,10 @@
 
 return [
     'author' => [
-        'username' => env('AUTHOR_USERNAME'),
-        'url' => env('AUTHOR_URL'),
+        'username' => env('AUTHOR_USERNAME', ''),
+        'url' => env('AUTHOR_URL', ''),
     ],
     'reporting' => [
-        'email' => env('REPORTING_EMAIL')
+        'email' => env('REPORTING_EMAIL', '')
     ]
 ];

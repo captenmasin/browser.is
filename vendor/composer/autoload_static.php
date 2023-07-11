@@ -30,6 +30,7 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
+        '04c6c5c2f7095ccf6c481d3e53e1776f' => __DIR__ . '/..' . '/mustangostang/spyc/Spyc.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         'f83ed111c2f97a0449abf067f157f418' => __DIR__ . '/..' . '/pestphp/pest/src/Functions.php',
         '7d2876738dc0328edeb8a103c76cd8e7' => __DIR__ . '/..' . '/pestphp/pest/src/Pest.php',
@@ -41,6 +42,7 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'd634523d799d97a8ab4807b650bf5cea' => __DIR__ . '/..' . '/pestphp/pest-plugin-laravel/src/Autoload.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '1e298922c3e2134d42dcdb03e6d5f55a' => __DIR__ . '/..' . '/torann/geoip/src/helpers.php',
         'be2dabd89e6571c763d3c521b1c3701e' => __DIR__ . '/../..' . '/app/Helpers.php',
     );
 
@@ -53,14 +55,23 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'h' => 
+        array (
+            'hisorange\\BrowserDetect\\' => 24,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'UAParser\\' => 9,
+        ),
         'T' => 
         array (
             'Tree\\' => 5,
+            'Torann\\GeoIP\\' => 13,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tightenco\\Ziggy\\' => 16,
             'Tests\\' => 6,
@@ -153,6 +164,7 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         array (
             'Lorisleiva\\Lody\\' => 16,
             'Lorisleiva\\Actions\\' => 19,
+            'League\\Pipeline\\' => 16,
             'League\\MimeTypeDetection\\' => 25,
             'League\\Glide\\' => 13,
             'League\\Flysystem\\Local\\' => 23,
@@ -166,6 +178,10 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
             'Laravel\\Horizon\\' => 16,
             'Laravel\\Dusk\\' => 13,
             'LaraBug\\' => 8,
+        ),
+        'J' => 
+        array (
+            'Jaybizzle\\CrawlerDetect\\' => 24,
         ),
         'I' => 
         array (
@@ -208,6 +224,7 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
             'Dflydev\\DotAccessData\\' => 22,
+            'DeviceDetector\\' => 15,
             'DeepCopy\\' => 9,
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
@@ -242,6 +259,10 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'hisorange\\BrowserDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hisorange/browser-detect/src',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
@@ -250,9 +271,17 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'UAParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ua-parser/uap-php/src',
+        ),
         'Tree\\' => 
         array (
             0 => __DIR__ . '/..' . '/nicmart/tree/src',
+        ),
+        'Torann\\GeoIP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/torann/geoip/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -551,6 +580,10 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         array (
             0 => __DIR__ . '/..' . '/lorisleiva/laravel-actions/src',
         ),
+        'League\\Pipeline\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/pipeline/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -602,6 +635,10 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'LaraBug\\' => 
         array (
             0 => __DIR__ . '/..' . '/larabug/larabug/src',
+        ),
+        'Jaybizzle\\CrawlerDetect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -701,6 +738,10 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
         ),
+        'DeviceDetector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matomo/device-detector',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -762,6 +803,13 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
                 0 => __DIR__ . '/..' . '/ml/iri',
             ),
         ),
+        'D' => 
+        array (
+            'Detection' => 
+            array (
+                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+            ),
+        ),
         'B' => 
         array (
             'Barryvdh' => 
@@ -773,26 +821,12 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
 
     public static $classMap = array (
         'App\\Actions\\BaseAction' => __DIR__ . '/../..' . '/app/Actions/BaseAction.php',
-        'App\\Actions\\Domain\\GetDnsRecords' => __DIR__ . '/../..' . '/app/Actions/Domain/GetDnsRecords.php',
-        'App\\Actions\\Domain\\GetDomainRegistrar' => __DIR__ . '/../..' . '/app/Actions/Domain/GetDomainRegistrar.php',
-        'App\\Actions\\Domain\\GetWhoIsData' => __DIR__ . '/../..' . '/app/Actions/Domain/GetWhoIsData.php',
-        'App\\Actions\\GenerateLighthouseResults' => __DIR__ . '/../..' . '/app/Actions/GenerateLighthouseResults.php',
-        'App\\Actions\\GetCertificateInformation' => __DIR__ . '/../..' . '/app/Actions/GetCertificateInformation.php',
-        'App\\Actions\\GetDomainInformation' => __DIR__ . '/../..' . '/app/Actions/GetDomainInformation.php',
-        'App\\Actions\\GetJobStatus' => __DIR__ . '/../..' . '/app/Actions/GetJobStatus.php',
-        'App\\Actions\\GetUrlMeta' => __DIR__ . '/../..' . '/app/Actions/GetUrlMeta.php',
-        'App\\Actions\\Links\\AddEmailToTrackingJob' => __DIR__ . '/../..' . '/app/Actions/Links/AddEmailToTrackingJob.php',
-        'App\\Actions\\Links\\GetBrokenLinksResults' => __DIR__ . '/../..' . '/app/Actions/Links/GetBrokenLinksResults.php',
-        'App\\Actions\\ScanForBrokenLinks' => __DIR__ . '/../..' . '/app/Actions/ScanForBrokenLinks.php',
+        'App\\Actions\\GetLocationData' => __DIR__ . '/../..' . '/app/Actions/GetLocationData.php',
         'App\\Console\\Commands\\GenerateManifest' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateManifest.php',
-        'App\\Console\\Commands\\PurgeFiles' => __DIR__ . '/../..' . '/app/Console/Commands/PurgeFiles.php',
-        'App\\Console\\Commands\\SendJobEmail' => __DIR__ . '/../..' . '/app/Console/Commands/SendJobEmail.php',
+        'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Enums\\DnsRecordType' => __DIR__ . '/../..' . '/app/Enums/DnsRecordType.php',
-        'App\\Enums\\JobStatus' => __DIR__ . '/../..' . '/app/Enums/JobStatus.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\ToolsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ToolsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -804,23 +838,15 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Jobs\\ProcessCrawl' => __DIR__ . '/../..' . '/app/Jobs/ProcessCrawl.php',
-        'App\\Mail\\BrokenLinksResult' => __DIR__ . '/../..' . '/app/Mail/BrokenLinksResult.php',
-        'App\\Models\\TrackableJob' => __DIR__ . '/../..' . '/app/Models/TrackableJob.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\HorizonServiceProvider' => __DIR__ . '/../..' . '/app/Providers/HorizonServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Support\\CrawlAllUrls' => __DIR__ . '/../..' . '/app/Support/CrawlAllUrls.php',
-        'App\\Support\\CrawlLogger' => __DIR__ . '/../..' . '/app/Support/CrawlLogger.php',
-        'App\\Support\\CrawlSingleUrl' => __DIR__ . '/../..' . '/app/Support/CrawlSingleUrl.php',
-        'App\\Support\\CrawlSiteUrls' => __DIR__ . '/../..' . '/app/Support/CrawlSiteUrls.php',
         'App\\Traits\\BasicEnum' => __DIR__ . '/../..' . '/app/Traits/BasicEnum.php',
         'App\\Traits\\EnumToArray' => __DIR__ . '/../..' . '/app/Traits/EnumToArray.php',
         'App\\Traits\\IsCacheable' => __DIR__ . '/../..' . '/app/Traits/IsCacheable.php',
-        'App\\Traits\\TrackJob' => __DIR__ . '/../..' . '/app/Traits/TrackJob.php',
         'Artesaos\\SEOTools\\Contracts\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLd.php',
         'Artesaos\\SEOTools\\Contracts\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLdMulti.php',
         'Artesaos\\SEOTools\\Contracts\\MetaTags' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/MetaTags.php',
@@ -1035,6 +1061,44 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Detection\\MobileDetect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced/Detection/MobileDetect.php',
+        'DeviceDetector\\Cache\\CacheInterface' => __DIR__ . '/..' . '/matomo/device-detector/Cache/CacheInterface.php',
+        'DeviceDetector\\Cache\\DoctrineBridge' => __DIR__ . '/..' . '/matomo/device-detector/Cache/DoctrineBridge.php',
+        'DeviceDetector\\Cache\\LaravelCache' => __DIR__ . '/..' . '/matomo/device-detector/Cache/LaravelCache.php',
+        'DeviceDetector\\Cache\\PSR16Bridge' => __DIR__ . '/..' . '/matomo/device-detector/Cache/PSR16Bridge.php',
+        'DeviceDetector\\Cache\\PSR6Bridge' => __DIR__ . '/..' . '/matomo/device-detector/Cache/PSR6Bridge.php',
+        'DeviceDetector\\Cache\\StaticCache' => __DIR__ . '/..' . '/matomo/device-detector/Cache/StaticCache.php',
+        'DeviceDetector\\ClientHints' => __DIR__ . '/..' . '/matomo/device-detector/ClientHints.php',
+        'DeviceDetector\\DeviceDetector' => __DIR__ . '/..' . '/matomo/device-detector/DeviceDetector.php',
+        'DeviceDetector\\Parser\\AbstractBotParser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/AbstractBotParser.php',
+        'DeviceDetector\\Parser\\AbstractParser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/AbstractParser.php',
+        'DeviceDetector\\Parser\\Bot' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Bot.php',
+        'DeviceDetector\\Parser\\Client\\AbstractClientParser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/AbstractClientParser.php',
+        'DeviceDetector\\Parser\\Client\\Browser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Browser.php',
+        'DeviceDetector\\Parser\\Client\\Browser\\Engine' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Browser/Engine.php',
+        'DeviceDetector\\Parser\\Client\\Browser\\Engine\\Version' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Browser/Engine/Version.php',
+        'DeviceDetector\\Parser\\Client\\FeedReader' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/FeedReader.php',
+        'DeviceDetector\\Parser\\Client\\Hints\\AppHints' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Hints/AppHints.php',
+        'DeviceDetector\\Parser\\Client\\Hints\\BrowserHints' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Hints/BrowserHints.php',
+        'DeviceDetector\\Parser\\Client\\Library' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/Library.php',
+        'DeviceDetector\\Parser\\Client\\MediaPlayer' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/MediaPlayer.php',
+        'DeviceDetector\\Parser\\Client\\MobileApp' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/MobileApp.php',
+        'DeviceDetector\\Parser\\Client\\PIM' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Client/PIM.php',
+        'DeviceDetector\\Parser\\Device\\AbstractDeviceParser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/AbstractDeviceParser.php',
+        'DeviceDetector\\Parser\\Device\\Camera' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/Camera.php',
+        'DeviceDetector\\Parser\\Device\\CarBrowser' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/CarBrowser.php',
+        'DeviceDetector\\Parser\\Device\\Console' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/Console.php',
+        'DeviceDetector\\Parser\\Device\\HbbTv' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/HbbTv.php',
+        'DeviceDetector\\Parser\\Device\\Mobile' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/Mobile.php',
+        'DeviceDetector\\Parser\\Device\\Notebook' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/Notebook.php',
+        'DeviceDetector\\Parser\\Device\\PortableMediaPlayer' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/PortableMediaPlayer.php',
+        'DeviceDetector\\Parser\\Device\\ShellTv' => __DIR__ . '/..' . '/matomo/device-detector/Parser/Device/ShellTv.php',
+        'DeviceDetector\\Parser\\OperatingSystem' => __DIR__ . '/..' . '/matomo/device-detector/Parser/OperatingSystem.php',
+        'DeviceDetector\\Parser\\VendorFragment' => __DIR__ . '/..' . '/matomo/device-detector/Parser/VendorFragment.php',
+        'DeviceDetector\\Yaml\\ParserInterface' => __DIR__ . '/..' . '/matomo/device-detector/Yaml/ParserInterface.php',
+        'DeviceDetector\\Yaml\\Pecl' => __DIR__ . '/..' . '/matomo/device-detector/Yaml/Pecl.php',
+        'DeviceDetector\\Yaml\\Spyc' => __DIR__ . '/..' . '/matomo/device-detector/Yaml/Spyc.php',
+        'DeviceDetector\\Yaml\\Symfony' => __DIR__ . '/..' . '/matomo/device-detector/Yaml/Symfony.php',
         'Dflydev\\DotAccessData\\Data' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Data.php',
         'Dflydev\\DotAccessData\\DataInterface' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/DataInterface.php',
         'Dflydev\\DotAccessData\\Exception\\DataException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/DataException.php',
@@ -3840,6 +3904,11 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'Intervention\\Image\\Point' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Point.php',
         'Intervention\\Image\\Response' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Response.php',
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
+        'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Exclusions' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Exclusions.php',
+        'Jaybizzle\\CrawlerDetect\\Fixtures\\Headers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Headers.php',
         'LaraBug\\Commands\\TestCommand' => __DIR__ . '/..' . '/larabug/larabug/src/Commands/TestCommand.php',
         'LaraBug\\Concerns\\Larabugable' => __DIR__ . '/..' . '/larabug/larabug/src/Concerns/Larabugable.php',
         'LaraBug\\Facade' => __DIR__ . '/..' . '/larabug/larabug/src/Facade.php',
@@ -4450,6 +4519,14 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
+        'League\\Pipeline\\FingersCrossedProcessor' => __DIR__ . '/..' . '/league/pipeline/src/FingersCrossedProcessor.php',
+        'League\\Pipeline\\InterruptibleProcessor' => __DIR__ . '/..' . '/league/pipeline/src/InterruptibleProcessor.php',
+        'League\\Pipeline\\Pipeline' => __DIR__ . '/..' . '/league/pipeline/src/Pipeline.php',
+        'League\\Pipeline\\PipelineBuilder' => __DIR__ . '/..' . '/league/pipeline/src/PipelineBuilder.php',
+        'League\\Pipeline\\PipelineBuilderInterface' => __DIR__ . '/..' . '/league/pipeline/src/PipelineBuilderInterface.php',
+        'League\\Pipeline\\PipelineInterface' => __DIR__ . '/..' . '/league/pipeline/src/PipelineInterface.php',
+        'League\\Pipeline\\ProcessorInterface' => __DIR__ . '/..' . '/league/pipeline/src/ProcessorInterface.php',
+        'League\\Pipeline\\StageInterface' => __DIR__ . '/..' . '/league/pipeline/src/StageInterface.php',
         'Lorisleiva\\Actions\\Action' => __DIR__ . '/..' . '/lorisleiva/laravel-actions/src/Action.php',
         'Lorisleiva\\Actions\\ActionManager' => __DIR__ . '/..' . '/lorisleiva/laravel-actions/src/ActionManager.php',
         'Lorisleiva\\Actions\\ActionPendingChain' => __DIR__ . '/..' . '/lorisleiva/laravel-actions/src/ActionPendingChain.php',
@@ -4541,6 +4618,7 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'Masterminds\\HTML5\\Serializer\\OutputRules' => __DIR__ . '/..' . '/masterminds/html5/src/HTML5/Serializer/OutputRules.php',
         'Masterminds\\HTML5\\Serializer\\RulesInterface' => __DIR__ . '/..' . '/masterminds/html5/src/HTML5/Serializer/RulesInterface.php',
         'Masterminds\\HTML5\\Serializer\\Traverser' => __DIR__ . '/..' . '/masterminds/html5/src/HTML5/Serializer/Traverser.php',
+        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -7621,6 +7699,22 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Torann\\GeoIP\\Cache' => __DIR__ . '/..' . '/torann/geoip/src/Cache.php',
+        'Torann\\GeoIP\\Console\\Clear' => __DIR__ . '/..' . '/torann/geoip/src/Console/Clear.php',
+        'Torann\\GeoIP\\Console\\Update' => __DIR__ . '/..' . '/torann/geoip/src/Console/Update.php',
+        'Torann\\GeoIP\\Contracts\\ServiceInterface' => __DIR__ . '/..' . '/torann/geoip/src/Contracts/ServiceInterface.php',
+        'Torann\\GeoIP\\Facades\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/Facades/GeoIP.php',
+        'Torann\\GeoIP\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/GeoIP.php',
+        'Torann\\GeoIP\\GeoIPServiceProvider' => __DIR__ . '/..' . '/torann/geoip/src/GeoIPServiceProvider.php',
+        'Torann\\GeoIP\\Location' => __DIR__ . '/..' . '/torann/geoip/src/Location.php',
+        'Torann\\GeoIP\\Services\\AbstractService' => __DIR__ . '/..' . '/torann/geoip/src/Services/AbstractService.php',
+        'Torann\\GeoIP\\Services\\IPApi' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPApi.php',
+        'Torann\\GeoIP\\Services\\IPData' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPData.php',
+        'Torann\\GeoIP\\Services\\IPFinder' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPFinder.php',
+        'Torann\\GeoIP\\Services\\IPGeoLocation' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPGeoLocation.php',
+        'Torann\\GeoIP\\Services\\MaxMindDatabase' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindDatabase.php',
+        'Torann\\GeoIP\\Services\\MaxMindWebService' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindWebService.php',
+        'Torann\\GeoIP\\Support\\HttpClient' => __DIR__ . '/..' . '/torann/geoip/src/Support/HttpClient.php',
         'Tree\\Builder\\NodeBuilder' => __DIR__ . '/..' . '/nicmart/tree/src/Builder/NodeBuilder.php',
         'Tree\\Builder\\NodeBuilderInterface' => __DIR__ . '/..' . '/nicmart/tree/src/Builder/NodeBuilderInterface.php',
         'Tree\\Node\\Node' => __DIR__ . '/..' . '/nicmart/tree/src/Node/Node.php',
@@ -7630,6 +7724,35 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'Tree\\Visitor\\PreOrderVisitor' => __DIR__ . '/..' . '/nicmart/tree/src/Visitor/PreOrderVisitor.php',
         'Tree\\Visitor\\Visitor' => __DIR__ . '/..' . '/nicmart/tree/src/Visitor/Visitor.php',
         'Tree\\Visitor\\YieldVisitor' => __DIR__ . '/..' . '/nicmart/tree/src/Visitor/YieldVisitor.php',
+        'UAParser\\AbstractParser' => __DIR__ . '/..' . '/ua-parser/uap-php/src/AbstractParser.php',
+        'UAParser\\Command\\ConvertCommand' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Command/ConvertCommand.php',
+        'UAParser\\Command\\FetchCommand' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Command/FetchCommand.php',
+        'UAParser\\Command\\LogfileCommand' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Command/LogfileCommand.php',
+        'UAParser\\Command\\ParserCommand' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Command/ParserCommand.php',
+        'UAParser\\Command\\UpdateCommand' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Command/UpdateCommand.php',
+        'UAParser\\DeviceParser' => __DIR__ . '/..' . '/ua-parser/uap-php/src/DeviceParser.php',
+        'UAParser\\Exception\\DomainException' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Exception/DomainException.php',
+        'UAParser\\Exception\\FetcherException' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Exception/FetcherException.php',
+        'UAParser\\Exception\\FileNotFoundException' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Exception/FileNotFoundException.php',
+        'UAParser\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Exception/InvalidArgumentException.php',
+        'UAParser\\Exception\\ReaderException' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Exception/ReaderException.php',
+        'UAParser\\OperatingSystemParser' => __DIR__ . '/..' . '/ua-parser/uap-php/src/OperatingSystemParser.php',
+        'UAParser\\Parser' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Parser.php',
+        'UAParser\\ParserFactoryMethods' => __DIR__ . '/..' . '/ua-parser/uap-php/src/ParserFactoryMethods.php',
+        'UAParser\\Result\\AbstractClient' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/AbstractClient.php',
+        'UAParser\\Result\\AbstractSoftware' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/AbstractSoftware.php',
+        'UAParser\\Result\\AbstractVersionedSoftware' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/AbstractVersionedSoftware.php',
+        'UAParser\\Result\\Client' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/Client.php',
+        'UAParser\\Result\\Device' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/Device.php',
+        'UAParser\\Result\\OperatingSystem' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/OperatingSystem.php',
+        'UAParser\\Result\\UserAgent' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Result/UserAgent.php',
+        'UAParser\\UserAgentParser' => __DIR__ . '/..' . '/ua-parser/uap-php/src/UserAgentParser.php',
+        'UAParser\\Util\\CodeGenerator' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/CodeGenerator.php',
+        'UAParser\\Util\\Converter' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/Converter.php',
+        'UAParser\\Util\\Fetcher' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/Fetcher.php',
+        'UAParser\\Util\\Logfile\\AbstractReader' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/Logfile/AbstractReader.php',
+        'UAParser\\Util\\Logfile\\ApacheCommonLogFormatReader' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/Logfile/ApacheCommonLogFormatReader.php',
+        'UAParser\\Util\\Logfile\\ReaderInterface' => __DIR__ . '/..' . '/ua-parser/uap-php/src/Util/Logfile/ReaderInterface.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
@@ -7656,6 +7779,24 @@ class ComposerStaticInitfc34d70a8e448f97e8a406e1e40afb4a
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'hisorange\\BrowserDetect\\Contracts\\ParserInterface' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Contracts/ParserInterface.php',
+        'hisorange\\BrowserDetect\\Contracts\\PayloadInterface' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Contracts/PayloadInterface.php',
+        'hisorange\\BrowserDetect\\Contracts\\ResultInterface' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Contracts/ResultInterface.php',
+        'hisorange\\BrowserDetect\\Contracts\\StageInterface' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Contracts/StageInterface.php',
+        'hisorange\\BrowserDetect\\Exceptions\\BadMethodCallException' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Exceptions/BadMethodCallException.php',
+        'hisorange\\BrowserDetect\\Exceptions\\Exception' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Exceptions/Exception.php',
+        'hisorange\\BrowserDetect\\Exceptions\\InvalidArgumentException' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Exceptions/InvalidArgumentException.php',
+        'hisorange\\BrowserDetect\\Exceptions\\RuntimeException' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Exceptions/RuntimeException.php',
+        'hisorange\\BrowserDetect\\Facade' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Facade.php',
+        'hisorange\\BrowserDetect\\Parser' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Parser.php',
+        'hisorange\\BrowserDetect\\Payload' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Payload.php',
+        'hisorange\\BrowserDetect\\Result' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Result.php',
+        'hisorange\\BrowserDetect\\ServiceProvider' => __DIR__ . '/..' . '/hisorange/browser-detect/src/ServiceProvider.php',
+        'hisorange\\BrowserDetect\\Stages\\BrowserDetect' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Stages/BrowserDetect.php',
+        'hisorange\\BrowserDetect\\Stages\\CrawlerDetect' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Stages/CrawlerDetect.php',
+        'hisorange\\BrowserDetect\\Stages\\DeviceDetector' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Stages/DeviceDetector.php',
+        'hisorange\\BrowserDetect\\Stages\\MobileDetect' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Stages/MobileDetect.php',
+        'hisorange\\BrowserDetect\\Stages\\UAParser' => __DIR__ . '/..' . '/hisorange/browser-detect/src/Stages/UAParser.php',
         'phpDocumentor\\Reflection\\Element' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/Element.php',
         'phpDocumentor\\Reflection\\File' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/File.php',
         'phpDocumentor\\Reflection\\Fqsen' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/Fqsen.php',

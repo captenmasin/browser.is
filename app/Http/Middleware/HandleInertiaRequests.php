@@ -14,6 +14,25 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'currentRoute' => $request->route()->getName(),
             'currentUrl'   => $request->url(),
+            'info'         => config('info'),
+            'tools' => [
+                'all' => [
+                    'url' => route('home'),
+                    'name' => 'All'
+                ],
+                'device' => [
+                    'url' => route('device'),
+                    'name' => 'Device'
+                ],
+                'browser' => [
+                    'url' => route('browser'),
+                    'name' => 'Browser'
+                ],
+                'location' => [
+                    'url' => route('location'),
+                    'name' => 'Location'
+                ]
+            ]
         ]);
     }
 }

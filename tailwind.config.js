@@ -2,10 +2,9 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
 
-const primary = '#000'
-const primaryLight = '#202020'
-const secondary = '#0000FF'
-const tertiary = '#FFFFFF'
+const primary = '#000000'
+const secondary = '#4E4FEB'
+const tertiary = '#EEEEEE'
 const borderRadius = '0.75rem'
 
 module.exports = {
@@ -20,7 +19,6 @@ module.exports = {
                     primary: primary,
                     black: '#000000',
                     white: '#FFFFFF',
-                    'primary-light': primaryLight,
                     secondary: secondary,
                     tertiary: tertiary,
                 },
@@ -44,9 +42,6 @@ module.exports = {
                 gray: colors.slate,
                 primary: {
                     DEFAULT: colorVariable('--colors-primary')
-                },
-                'primary-light': {
-                    DEFAULT: colorVariable('--colors-primary-light')
                 },
                 secondary: {
                     DEFAULT: colorVariable('--colors-secondary')
