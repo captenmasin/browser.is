@@ -3,6 +3,7 @@ import html2pdf from "html2pdf.js";
 
 import TextInput from "@/Components/Inputs/TextInput.vue";
 import {onMounted, ref} from "vue";
+import AppModal from "@/Components/Global/AppModal.vue";
 
 const props = defineProps({
     uuid: {
@@ -16,6 +17,7 @@ const props = defineProps({
 })
 
 const data = ref({url: ''})
+const showShareModal = ref(false)
 
 function exportToPdf(){
     html2pdf(document.getElementById("results"), {
@@ -35,7 +37,7 @@ onMounted(async () => {
         <div class="w-1/2">
             <ul class="flex items-center space-x-2">
                 <li>
-                    <button @click="exportToPdf" class="bg-secondary text-white rounded px-4 py-1 text-sm">
+                    <button @click="showShareModal = true" class="bg-secondary text-white rounded px-4 py-1 text-sm">
                         Email
                     </button>
                 </li>
@@ -54,5 +56,13 @@ onMounted(async () => {
         <div class="w-1/2">
             <text-input :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
         </div>
+
+        <app-modal :show="showShareModal" @close="showShareModal = false">
+            <template #title>
+                Share results
+            </template>
+            decnjlwdnjlwcenjkcewk
+        </app-modal>
+
     </div>
 </template>
