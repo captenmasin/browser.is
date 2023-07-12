@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -18,8 +18,8 @@
     {!! Twitter::generate() !!}
     {!! JsonLd::generate() !!}
 
-    <link rel="icon" href="{{ url('favicon.ico?v=3') }}" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{{ url('favicon.ico?v=3') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ url('favicon.ico') }}" type="image/x-icon" media="(prefers-color-scheme: light)"/>
+    <link rel="icon" href="{{ url('favicon-white.ico') }}" type="image/x-icon" media="(prefers-color-scheme: dark)"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
 

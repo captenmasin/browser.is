@@ -31,8 +31,9 @@ const data = await response.json()
             <ul>
                 <li>Just copy link</li>
                 <li>Email to someone</li>
+                <li>Social share</li>
                 <li>
-                    <button @click="exportToPdf">
+                    <button @click="exportToPdf" class="bg-secondary text-white rounded px-4 py-1 text-sm">
                         Export
                     </button>
                 </li>

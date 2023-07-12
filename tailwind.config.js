@@ -8,6 +8,7 @@ const tertiary = '#EEEEEE'
 const borderRadius = '0.75rem'
 
 module.exports = {
+	darkMode: 'class',
     content: [
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',

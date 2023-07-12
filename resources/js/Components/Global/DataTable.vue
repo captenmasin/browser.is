@@ -24,11 +24,11 @@ const props = defineProps({
             </tr>
             </thead>
             <tbody>
-            <tr class="border-t border-gray-200 dark:border-gray-700 first:border-0" v-for="item in data">
-                <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white text-secondary dark:bg-gray-800">
+            <tr class="border-t border-gray-200 dark:border-gray-800 first:border-0" v-for="item in data">
+                <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white text-secondary dark:text-white dark:bg-gray-700">
                     {{ item.label }}
                 </th>
-                <td class="px-6 py-4 w-2/3 bg-white font-mono text-primary">
+                <td class="px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono text-primary">
                     <div v-if="isString(item.value)">
                         {{ item.value }}
                     </div>
