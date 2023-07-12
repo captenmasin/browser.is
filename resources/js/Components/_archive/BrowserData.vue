@@ -12,6 +12,8 @@ const props = defineProps({
 const browserDataResponse = await fetch(route('api.browser'));
 const data = await browserDataResponse.json().then(async data => {
     data.window_dimensions.value = window.innerWidth + 'x' + window.innerHeight
+    data.time.value = new Date().toDateString()
+
     if ('storage' in navigator && 'estimate' in navigator.storage) {
         const {usage, quota} = await navigator.storage.estimate();
         data.incognito_mode.value = usage === 0;

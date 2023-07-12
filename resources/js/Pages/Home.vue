@@ -1,19 +1,29 @@
 <script setup>
+import TextInput from "@/Components/Inputs/TextInput.vue";
+
+const props = defineProps({
+    uuid: String,
+    url: String,
+})
+
 import DisplayData from "@/Components/Data/DisplayData.vue";
 import LoadingBlock from "@/Components/Global/LoadingBlock.vue";
 import TableTitle from "@/Components/Global/TableTitle.vue";
+import ShareLink from "@/Components/Data/ShareLink.vue";
 </script>
 
 <template>
     <div class="bg-white shadow rounded overflow-hidden">
-        <div class="w-full bg-gray-100 px-6 py-4">
-            Share etc
-        </div>
+        <Suspense>
+            <share-link type="home" :uuid="uuid"/>
+        </Suspense>
 
         <div>
             <table-title>Browser</table-title>
             <Suspense>
-                <DisplayData :show-table-header="false" table-class="rounded-md" :endpoint="route('api.browser')"/>
+                <DisplayData type="browser" :show-table-header="false"
+                             :save-results="uuid === null" :uuid="uuid"
+                             :endpoint="route('api.browser', {uuid: uuid})"/>
                 <template #fallback>
                     <loading-block text="Loading browser data..."/>
                 </template>
@@ -23,7 +33,9 @@ import TableTitle from "@/Components/Global/TableTitle.vue";
         <div>
             <table-title>Device</table-title>
             <Suspense>
-                <DisplayData :show-table-header="false" table-class="rounded-md" :endpoint="route('api.device')"/>
+                <DisplayData type="device" :show-table-header="false"
+                             :save-results="uuid === null"
+                             :endpoint="route('api.device', {uuid: uuid})"/>
                 <template #fallback>
                     <loading-block text="Loading device data..."/>
                 </template>
@@ -33,7 +45,9 @@ import TableTitle from "@/Components/Global/TableTitle.vue";
         <div>
             <table-title>Location</table-title>
             <Suspense>
-                <DisplayData :show-table-header="false" :endpoint="route('api.location')"/>
+                <DisplayData type="location" :show-table-header="false"
+                             :save-results="uuid === null"
+                             :endpoint="route('api.location', {uuid: uuid})"/>
                 <template #fallback>
                     <loading-block text="Loading location data..."/>
                 </template>

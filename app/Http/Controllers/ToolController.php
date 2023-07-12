@@ -3,41 +3,46 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Routing\Controller as BaseController;
 
 class ToolController extends BaseController
 {
-    public function browser(Request $request)
-    {
-        return Inertia::render('Browser', [
+    public function generate($type, $title = '', ?string $uuid = null, array $meta = []){
+        if($uuid && !Result::where('uuid', $uuid)->exists()){
+            return redirect()->route($type);
+        }
 
-        ])->withMeta([
-            'image'       => '',
-            'title'       => 'Home',
-            'description' => ''
+        $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
+
+        return Inertia::render('Tool', [
+            'type' => $type,
+            'uuid' => $uuid,
+            'title' => $title,
+            'url' => route($type, ['uuid' => $routeUuid])
+        ])->withMeta($meta);
+    }
+
+    public function browser(Request $request, ?string $uuid = null)
+    {
+        return $this->generate('browser', 'Browser', $uuid, [
+            'title' => 'Browser'
         ]);
     }
 
-    public function device(Request $request)
+    public function device(Request $request, ?string $uuid = null)
     {
-        return Inertia::render('Device', [
-
-        ])->withMeta([
-            'image'       => '',
-            'title'       => 'Home',
-            'description' => ''
+        return $this->generate('device', 'Device', $uuid, [
+            'title' => 'Device'
         ]);
     }
 
-    public function location(Request $request)
+    public function location(Request $request, ?string $uuid = null)
     {
-        return Inertia::render('Location', [
-
-        ])->withMeta([
-            'image'       => '',
-            'title'       => 'Home',
-            'description' => ''
+        return $this->generate('location', 'Location', $uuid, [
+            'title' => 'Location'
         ]);
     }
 }

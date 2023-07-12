@@ -2,6 +2,8 @@
 
 namespace App\Actions;
 
+use App\Http\Requests\GetDataRequest;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
@@ -43,8 +45,12 @@ class GetLocationData
         ];
     }
 
-    public function asController(Request $request, ?string $ip = null): array
+    public function asController(GetDataRequest $request, ?string $ip = null, ?string $uuid = null): array
     {
-        return $this->handle($ip ?? $request->ip());
+        if($uuid && Result::where('uuid', $uuid)->exists()){
+            return Result::where('uuid', $uuid)->first()->data['location'];
+        }
+
+        return $this->handle($request->get('ip') ?? $request->ip());
     }
 }

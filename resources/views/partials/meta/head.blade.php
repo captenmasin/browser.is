@@ -18,8 +18,8 @@
     {!! Twitter::generate() !!}
     {!! JsonLd::generate() !!}
 
-    <link rel="icon" href="{{ url('favicon.ico?v=2') }}" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{{ url('favicon.ico?v=2') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ url('favicon.ico?v=3') }}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ url('favicon.ico?v=3') }}" type="image/x-icon"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
 
@@ -39,6 +39,8 @@
 			(window.plausible.q = window.plausible.q || []).push(arguments)
 		}
     </script>
+
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="captenmasin" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
     @routes
     <script>
