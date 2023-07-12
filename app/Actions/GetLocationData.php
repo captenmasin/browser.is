@@ -12,15 +12,34 @@ class GetLocationData
     use AsAction;
     use AsController;
 
-    public function handle(string $ip = '')
+    public function handle(string $ip = ''): array
     {
         $data = geoip()->getLocation($ip);
 
         return [
-            'Country Code' => $data->iso_code,
-            'Country name' => $data->country,
-            'City'         => $data->city,
-            'Lat/Lng'      => $data->lat . ' / ' . $data->lon,
+            'country_code' => [
+                'label'       => 'Country code',
+                'description' => '',
+                'value'        => $data->iso_code,
+            ],
+            'country_name' => [
+                'label'       => 'Country name',
+                'description' => '',
+                'value'        => $data->country,
+            ],
+            'city' => [
+                'label'       => 'City',
+                'description' => '',
+                'value'        => $data->city,
+            ],
+            'coords' => [
+                'label'       => 'Coordinates',
+                'description' => '',
+                'value'        => [
+                    'lat' => $data->lat,
+                    'lon' => $data->lon
+                ]
+            ],
         ];
     }
 

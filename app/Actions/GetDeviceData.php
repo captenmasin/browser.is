@@ -24,13 +24,41 @@ class GetDeviceData
         }
 
         return [
-            'IP address'   => $ip,
-            'Device'       => $device,
-            'User agent'   => $browser::getUserAgentString(),
-            'OS'           => $browser::platformFamily(),
-            'OS Version'   => $browser::platformVersion(),
-            'Device name'  => $browser::deviceFamily(),
-            'Device model' => $browser::deviceModel(),
+            'ip_address' => [
+                'label'       => 'IP Address',
+                'description' => '',
+                'value'        => $ip
+            ],
+            'device' => [
+                'label'       => 'Device',
+                'description' => '',
+                'value'        => $device
+            ],
+            'user_agent' => [
+                'label'       => 'User agent',
+                'description' => '',
+                'value'        => $browser::getUserAgentString(),
+            ],
+            'os' => [
+                'label'       => 'Operating System',
+                'description' => '',
+                'value'        => $browser::platformFamily(),
+            ],
+            'os_version' => [
+                'label'       => 'Operating System Version',
+                'description' => '',
+                'value'        => $browser::platformVersion(),
+            ],
+            'device_name' => [
+                'label'       => 'Device Name',
+                'description' => '',
+                'value'        => $browser::deviceFamily(),
+            ],
+            'device_model' => [
+                'label'       => 'Device model',
+                'description' => '',
+                'value'        => $browser::deviceModel(),
+            ],
         ];
 
     }

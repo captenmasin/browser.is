@@ -5,23 +5,43 @@ namespace App\Actions;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
-use hisorange\BrowserDetect\Parser as Browser;
+use Browser;
 
 class GetBrowserData
 {
     use AsAction;
     use AsController;
 
-    public function handle()
+    public function handle(): array
     {
         $data = new Browser();
 
         return [
-            'Window dimensions' => '',
-            'Browser name'      => $data::browserFamily(),
-            'Browser version'   => $data::browserVersion(),
-            'Browser engine'    => $data::browserEngine(),
-            'Incognito mode'    => '',
+            'window_dimensions' => [
+                'label'       => 'Window dimensions',
+                'description' => '',
+                'value'        => '',
+            ],
+            'name' => [
+                'label'       => 'Name',
+                'description' => '',
+                'value'        => $data::browserFamily(),
+            ],
+            'version' => [
+                'label'       => 'Version',
+                'description' => '',
+                'value'        => $data::browserVersion(),
+            ],
+            'engine' => [
+                'label'       => 'Engine',
+                'description' => '',
+                'value'        => $data::browserEngine(),
+            ],
+            'incognito_mode' => [
+                'label'       => 'Incognito mode',
+                'description' => '',
+                'value'        => ''
+            ],
         ];
     }
 

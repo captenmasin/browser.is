@@ -9,9 +9,11 @@ import AppFooter from "@/Components/Global/AppFooter.vue";
         <meta-head/>
         <article class="flex flex-col flex-1">
             <nav-bar/>
-            <div class="h-full flex flex-1">
+            <div class="h-full flex flex-1 mt-4">
                 <div class="container mx-auto">
-                    <slot/>
+                    <div class="max-w-4xl mx-auto">
+                        <slot/>
+                    </div>
                 </div>
             </div>
             <app-footer/>
