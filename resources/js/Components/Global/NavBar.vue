@@ -40,9 +40,9 @@ router.on('finish', () => {
                 <ul class="flex flex-col px-4 md:px-0 shadow-sm md:shadow-none py-4 mt-4 border border-gray-100 space-y-4 md:space-y-0 rounded-lg bg-white md:flex-row md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-900 md:dark:bg-transparent dark:border-secondary">
                     <li v-for="link in usePage().props.tools">
                         <Link :href="link.url"
-                              class="py-2 flex px-4 md:px-2 lg:px-4 text-secondary md:ml-2 transition-all rounded md:bg-transparent dark:text-white dark:md:text-white"
+                              class="py-2 flex px-4 md:px-2 lg:px-6 text-secondary md:ml-2 transition-all rounded md:bg-transparent dark:text-white dark:md:text-white"
                               :class="[
-                                  linkIsActive(link.url) ? 'md:text-primary md:dark:bg-primary bg-primary text-white' : 'md:text-secondary dark:hover:bg-primary/20 md:hover:text-primary',
+                                  linkIsActive(link.url) ? 'md:text-primary md:dark:bg-secondary bg-secondary text-white' : 'md:text-secondary dark:hover:bg-primary/20 md:hover:text-primary',
                               ]">
                             {{ link.name }}
                         </Link>

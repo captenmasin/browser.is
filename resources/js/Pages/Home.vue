@@ -13,12 +13,12 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
 </script>
 
 <template>
-    <div class="bg-white dark:bg-gray-700 dark:text-white shadow rounded overflow-hidden">
+    <div class="bg-white dark:bg-gray-800 dark:text-white shadow rounded overflow-hidden">
         <Suspense>
             <share-link type="home" :uuid="uuid"/>
         </Suspense>
 
-        <div id="results">
+        <div id="results" class="space-y-2 dark:space-y-0">
             <div>
                 <table-title>Browser</table-title>
                 <Suspense>

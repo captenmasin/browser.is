@@ -4,10 +4,12 @@ import 'vue3-toastify/dist/index.css'
 import.meta.glob([
     '../images/**',
 ]);
-import {createApp, h} from 'vue'
 import mitt from 'mitt';
-import {createInertiaApp} from '@inertiajs/vue3'
+import {createApp, h} from 'vue'
+import NProgress from 'nprogress'
+import { router } from '@inertiajs/vue3'
 import Layout from "./Layouts/Layout.vue";
+import {createInertiaApp} from '@inertiajs/vue3'
 
 const emitter = mitt();
 
@@ -30,9 +32,6 @@ createInertiaApp({
         app.mount(el)
     },
 }).then(r => '')
-
-import NProgress from 'nprogress'
-import { router } from '@inertiajs/vue3'
 
 let timeout = null
 

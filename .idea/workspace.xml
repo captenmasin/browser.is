@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/favicon-white.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/LoadingBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppLogoWhite.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppLogoWhite.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/LoadingBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/LoadingBlock.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/NavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/TableTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/TableTitle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/Layout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Tool.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Tool.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/meta/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/meta/head.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
@@ -281,7 +284,7 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="25224000" />
+      <workItem from="1689063901262" duration="26440000" />
     </task>
     <servers />
   </component>

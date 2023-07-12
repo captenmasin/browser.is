@@ -15,7 +15,7 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
 </script>
 
 <template>
-    <div class="bg-white shadow rounded overflow-hidden">
+    <div class="bg-white dark:bg-gray-800 dark:text-white shadow rounded overflow-hidden">
         <Suspense>
             <share-link :type="type" :uuid="uuid"/>
         </Suspense>
