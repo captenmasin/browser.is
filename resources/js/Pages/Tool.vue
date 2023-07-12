@@ -20,7 +20,7 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
             <share-link :type="type" :uuid="uuid"/>
         </Suspense>
 
-        <div>
+        <div id="results">
             <table-title v-if="title">{{ title }}</table-title>
             <Suspense>
                 <DisplayData :show-table-header="false"

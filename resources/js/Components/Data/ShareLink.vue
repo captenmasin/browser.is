@@ -1,4 +1,6 @@
 <script setup>
+import html2pdf from "html2pdf.js";
+
 import TextInput from "@/Components/Inputs/TextInput.vue";
 
 const props = defineProps({
@@ -12,6 +14,13 @@ const props = defineProps({
     }
 })
 
+function exportToPdf(){
+    html2pdf(document.getElementById("results"), {
+        margin: 1,
+        filename: "results.pdf",
+    });
+}
+
 const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type}));
 const data = await response.json()
 </script>
@@ -22,7 +31,11 @@ const data = await response.json()
             <ul>
                 <li>Just copy link</li>
                 <li>Email to someone</li>
-                <li>Download PDF/PNG</li>
+                <li>
+                    <button @click="exportToPdf">
+                        Export
+                    </button>
+                </li>
             </ul>
         </div>
         <div class="w-1/2">

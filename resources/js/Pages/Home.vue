@@ -18,40 +18,42 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
             <share-link type="home" :uuid="uuid"/>
         </Suspense>
 
-        <div>
-            <table-title>Browser</table-title>
-            <Suspense>
-                <DisplayData type="browser" :show-table-header="false"
-                             :save-results="uuid === null" :uuid="uuid"
-                             :endpoint="route('api.browser', {uuid: uuid})"/>
-                <template #fallback>
-                    <loading-block text="Loading browser data..."/>
-                </template>
-            </Suspense>
-        </div>
+        <div id="results">
+            <div>
+                <table-title>Browser</table-title>
+                <Suspense>
+                    <DisplayData type="browser" :show-table-header="false"
+                                 :save-results="uuid === null" :uuid="uuid"
+                                 :endpoint="route('api.browser', {uuid: uuid})"/>
+                    <template #fallback>
+                        <loading-block text="Loading browser data..."/>
+                    </template>
+                </Suspense>
+            </div>
 
-        <div>
-            <table-title>Device</table-title>
-            <Suspense>
-                <DisplayData type="device" :show-table-header="false"
-                             :save-results="uuid === null"
-                             :endpoint="route('api.device', {uuid: uuid})"/>
-                <template #fallback>
-                    <loading-block text="Loading device data..."/>
-                </template>
-            </Suspense>
-        </div>
+            <div>
+                <table-title>Device</table-title>
+                <Suspense>
+                    <DisplayData type="device" :show-table-header="false"
+                                 :save-results="uuid === null"
+                                 :endpoint="route('api.device', {uuid: uuid})"/>
+                    <template #fallback>
+                        <loading-block text="Loading device data..."/>
+                    </template>
+                </Suspense>
+            </div>
 
-        <div>
-            <table-title>Location</table-title>
-            <Suspense>
-                <DisplayData type="location" :show-table-header="false"
-                             :save-results="uuid === null"
-                             :endpoint="route('api.location', {uuid: uuid})"/>
-                <template #fallback>
-                    <loading-block text="Loading location data..."/>
-                </template>
-            </Suspense>
+            <div>
+                <table-title>Location</table-title>
+                <Suspense>
+                    <DisplayData type="location" :show-table-header="false"
+                                 :save-results="uuid === null"
+                                 :endpoint="route('api.location', {uuid: uuid})"/>
+                    <template #fallback>
+                        <loading-block text="Loading location data..."/>
+                    </template>
+                </Suspense>
+            </div>
         </div>
     </div>
 </template>
