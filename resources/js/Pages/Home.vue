@@ -6,9 +6,9 @@ import TableTitle from "@/Components/Global/TableTitle.vue";
 
 <template>
     <div class="bg-white shadow rounded overflow-hidden">
-<!--        <div class="w-full bg-gray-100 px-6 py-4">-->
-<!--            Title-->
-<!--        </div>-->
+        <div class="w-full bg-gray-100 px-6 py-4">
+            Share etc
+        </div>
 
         <div>
             <table-title>Browser</table-title>

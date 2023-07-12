@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/LoadingBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/TableTitle.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/_archive/BrowserData.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/_archive/DeviceData.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/_archive/LocationData.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Browser.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Device.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Location.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/BrowserData.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DeviceData.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/LocationData.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppLogo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/Layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -43,6 +26,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
@@ -282,7 +266,7 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="10920000" />
+      <workItem from="1689063901262" duration="13673000" />
     </task>
     <servers />
   </component>
