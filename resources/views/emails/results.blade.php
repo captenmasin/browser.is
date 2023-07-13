@@ -2,7 +2,8 @@
 # Results
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean maximus, tellus a volutpat dapibus, neque mauris hendrerit lectus, id iaculis neque lacus sit amet enim.
-
+<br>
+<br>
 
 @foreach($data as $type => $info)
 @if(count($info) > 0)
@@ -29,6 +30,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean maximus, tellus 
 View results
 </x-mail::button>
 
-Thanks,<br>
-{{ config('app.name') }}
 </x-mail::message>

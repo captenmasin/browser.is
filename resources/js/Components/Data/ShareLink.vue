@@ -39,12 +39,7 @@ onMounted(async () => {
             <ul class="flex items-center space-x-2">
                 <li>
                     <button @click="showShareModal = true" class="bg-secondary text-white rounded px-4 py-1 text-sm">
-                        Email
-                    </button>
-                </li>
-                <li>
-                    <button @click="exportToPdf" class="bg-secondary text-white rounded px-4 py-1 text-sm">
-                        Share
+                        Send via Email
                     </button>
                 </li>
                 <li>

@@ -18,9 +18,11 @@ class HomeController extends BaseController
         }
 
         $routeUuid = $uuid ?? \Illuminate\Support\Facades\Cookie::get(config('site.cookie_name'));
+        $result = Result::where('uuid', $uuid)->first();
 
         return Inertia::render('Home', [
             'uuid' => $uuid,
+            'created_at' => $result->created_at ?? null,
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
             'image'       => '',
