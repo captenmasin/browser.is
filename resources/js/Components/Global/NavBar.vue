@@ -18,7 +18,7 @@ router.on('finish', () => {
 </script>
 
 <template>
-    <nav class="bg-transparent border-gray-200 px-4 py-2.5 rounded font-body-settings">
+    <nav class="bg-transparent border-gray-200 px-4 py-2.5 rounded font-body-settings z-10">
         <div class="container relative flex items-center justify-between mx-auto">
             <Link :href="route('home')" class="flex items-center">
                 <app-logo class="w-36 lg:w-48 mr-3 flex dark:hidden"/>
