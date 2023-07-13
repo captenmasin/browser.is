@@ -48,6 +48,9 @@ const data = await response.json().then(async data => {
 
 <template>
     <div>
-        <data-table :class="tableClass" :show-header="showTableHeader" :data="data"/>
+        <data-table :class="tableClass" :show-header="showTableHeader" :data="data" v-if="Object.keys(data).length"/>
+        <div v-else class="text-center p-4 text-sm">
+            No data
+        </div>
     </div>
 </template>

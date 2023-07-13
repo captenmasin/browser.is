@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/results.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetShareUrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetShareUrl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreResultsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreResultsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/mail/html/themes/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +240,7 @@
     "WebServerToolWindowFactoryState": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "2.x",
-    "last_opened_file_path": "/Users/masonday/Sites/browser.is/public",
+    "last_opened_file_path": "/Users/masonday/Sites/browser.is/resources/views/vendor/mail/html/themes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -242,6 +257,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/vendor/mail/html/themes" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/Console/Commands" />
     </key>
@@ -275,7 +291,7 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="28196000" />
+      <workItem from="1689063901262" duration="34654000" />
     </task>
     <servers />
   </component>

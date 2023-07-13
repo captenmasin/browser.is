@@ -5,6 +5,7 @@ use App\Actions\GetDeviceData;
 use App\Actions\GetLocationData;
 use App\Actions\GetShareUrl;
 use App\Actions\SaveResults;
+use App\Actions\SendResultsToEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::name('api.')->group(function () {
@@ -16,6 +17,8 @@ Route::name('api.')->group(function () {
         Route::get('url', GetShareUrl::class)->name('url');
 
         Route::post('store', SaveResults::class)->name('store');
+
+        Route::post('notify', SendResultsToEmail::class)->name('notify');
     });
 });
 

@@ -14,20 +14,20 @@ const emit = defineEmits(['close'])
         <Transition name="slide-up">
             <div class="bg-white text-black absolute top-36 mx-auto w-full max-w-lg rounded" v-show="show">
                 <div class="p-4 justify-between flex items-center">
-                    <div>
+                    <div class="font-heading">
                         <slot name="title"/>
                     </div>
                     <button @click="$emit('close')" class="text-xl">
-                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <svg class="w-4 text-primary/50 hover:text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
                 </div>
-                <div class="flex p-4 pt-0">
+                <div class="flex flex-col p-4 pt-0">
                     <slot name="default"/>
                 </div>
                 <div class="flex items-center p-4 justify-end">
-                    <button @click="$emit('close')" class="bg-secondary text-white rounded-md px-6 py-2 text-sm">
+                    <button @click="$emit('close')" class="bg-primary/5 text-primary hover:bg-primary/10 transition-all rounded-md px-6 py-2 text-sm">
                         Close
                     </button>
                 </div>

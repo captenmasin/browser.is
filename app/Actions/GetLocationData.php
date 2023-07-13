@@ -45,10 +45,11 @@ class GetLocationData
         ];
     }
 
-    public function asController(GetDataRequest $request, ?string $ip = null, ?string $uuid = null): array
+    public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
-        if($uuid && Result::where('uuid', $uuid)->exists()){
-            return Result::where('uuid', $uuid)->first()->data['location'];
+        $result = Result::where('uuid', $uuid);
+        if($uuid && $result->exists()){
+            return $result->first()->data['location'] ?? [];
         }
 
         return $this->handle($request->get('ip') ?? $request->ip());

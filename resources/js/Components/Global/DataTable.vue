@@ -25,22 +25,24 @@ const props = defineProps({
             </thead>
             <tbody>
             <tr class="border-t border-gray-200 dark:border-gray-800 first:border-0" v-for="item in data">
-                <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white text-secondary dark:text-white dark:bg-gray-700">
-                    {{ item.label }}
-                </th>
-                <td class="px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono text-primary">
-                    <div v-if="isString(item.value)">
-                        {{ item.value }}
-                    </div>
-                    <div class="space-x-2" v-else-if="isObject(item.value)">
+                <template v-if="item.value">
+                    <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white text-secondary dark:text-white dark:bg-gray-700">
+                        {{ item.label }}
+                    </th>
+                    <td class="px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono text-primary">
+                        <div v-if="isString(item.value)">
+                            {{ item.value }}
+                        </div>
+                        <div class="space-x-2" v-else-if="isObject(item.value)">
                             <span v-for="(singleValue, singleLabel, index) in item.value">
                                 {{ singleValue }}<span class="ml-2" v-if="(index + 1) !== Object.keys(item.value).length">/</span>
                             </span>
-                    </div>
-                    <div class="space-x-2" v-else-if="isBoolean(item.value)">
-                        {{ item.value ? 'Yes' : 'No' }}
-                    </div>
-                </td>
+                        </div>
+                        <div class="space-x-2" v-else-if="isBoolean(item.value)">
+                            {{ item.value ? 'Yes' : 'No' }}
+                        </div>
+                    </td>
+                </template>
             </tr>
             </tbody>
         </table>

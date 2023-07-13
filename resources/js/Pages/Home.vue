@@ -1,6 +1,4 @@
 <script setup>
-import TextInput from "@/Components/Inputs/TextInput.vue";
-
 const props = defineProps({
     uuid: String,
     url: String,
@@ -20,11 +18,13 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
 
         <div id="results" class="space-y-2 dark:space-y-0">
             <div>
-                <table-title>Browser</table-title>
                 <Suspense>
-                    <DisplayData type="browser" :show-table-header="false"
-                                 :save-results="uuid === null" :uuid="uuid"
-                                 :endpoint="route('api.browser', {uuid: uuid})"/>
+                    <div>
+                        <table-title>Browser</table-title>
+                        <DisplayData type="browser" :show-table-header="false"
+                                     :save-results="uuid === null" :uuid="uuid"
+                                     :endpoint="route('api.browser', {uuid: uuid})"/>
+                    </div>
                     <template #fallback>
                         <loading-block text="Loading browser data..."/>
                     </template>
@@ -32,11 +32,13 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
             </div>
 
             <div>
-                <table-title>Device</table-title>
                 <Suspense>
-                    <DisplayData type="device" :show-table-header="false"
-                                 :save-results="uuid === null"
-                                 :endpoint="route('api.device', {uuid: uuid})"/>
+                    <div>
+                        <table-title>Device</table-title>
+                        <DisplayData type="device" :show-table-header="false"
+                                     :save-results="uuid === null" :uuid="uuid"
+                                     :endpoint="route('api.device', {uuid: uuid})"/>
+                    </div>
                     <template #fallback>
                         <loading-block text="Loading device data..."/>
                     </template>
@@ -44,11 +46,13 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
             </div>
 
             <div>
-                <table-title>Location</table-title>
                 <Suspense>
-                    <DisplayData type="location" :show-table-header="false"
-                                 :save-results="uuid === null"
-                                 :endpoint="route('api.location', {uuid: uuid})"/>
+                    <div>
+                        <table-title>Location</table-title>
+                        <DisplayData type="location" :show-table-header="false"
+                                     :save-results="uuid === null" :uuid="uuid"
+                                     :endpoint="route('api.location', {uuid: uuid})"/>
+                    </div>
                     <template #fallback>
                         <loading-block text="Loading location data..."/>
                     </template>

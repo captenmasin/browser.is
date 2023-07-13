@@ -4,6 +4,7 @@ import html2pdf from "html2pdf.js";
 import TextInput from "@/Components/Inputs/TextInput.vue";
 import {onMounted, ref} from "vue";
 import AppModal from "@/Components/Global/AppModal.vue";
+import EmailForm from "@/Components/Global/EmailForm.vue";
 
 const props = defineProps({
     uuid: {
@@ -13,13 +14,13 @@ const props = defineProps({
     type: {
         type: String || null,
         default: null
-    }
+    },
 })
 
 const data = ref({url: ''})
 const showShareModal = ref(false)
 
-function exportToPdf(){
+function exportToPdf() {
     html2pdf(document.getElementById("results"), {
         margin: 1,
         filename: "results.pdf",
@@ -61,7 +62,7 @@ onMounted(async () => {
             <template #title>
                 Share results
             </template>
-            decnjlwdnjlwcenjkcewk
+            <email-form :type="type" :uuid="data.uuid"/>
         </app-modal>
 
     </div>

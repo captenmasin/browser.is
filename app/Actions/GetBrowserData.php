@@ -2,13 +2,11 @@
 
 namespace App\Actions;
 
-use App\Http\Requests\GetDataRequest;
+use Browser;
 use App\Models\Result;
-use Cookie;
-use Illuminate\Http\Request;
+use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
-use Browser;
 
 class GetBrowserData
 {
@@ -59,8 +57,9 @@ class GetBrowserData
 
     public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
-        if($uuid && Result::where('uuid', $uuid)->exists()){
-            return Result::where('uuid', $uuid)->first()->data['browser'];
+        $result = Result::where('uuid', $uuid);
+        if($uuid && $result->exists()){
+            return $result->first()->data['browser'] ?? [];
         }
 
         return $this->handle();

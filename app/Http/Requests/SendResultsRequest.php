@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Validator;
 
-class StoreResultsRequest extends FormRequest
+class SendResultsRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -16,8 +16,9 @@ class StoreResultsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'data' => ['json'],
-            'type' => ['in:browser,device,location']
+            'email' => ['email', 'required'],
+            'uuid' => ['string', 'required'],
+            'type' => ['string', 'required', 'in:home,device,location,browser']
         ];
     }
 

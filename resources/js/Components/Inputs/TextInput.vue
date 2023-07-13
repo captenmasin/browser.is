@@ -10,6 +10,7 @@ const props = defineProps({
     copyable: {type: Boolean, default: false},
     readonly: {type: Boolean, default: false},
     hasAutofocus: {type: Boolean, default: true},
+    small: {type: Boolean, default: false},
     placeholder: {type: String, default: ''},
     inputType: {type: String, default: 'text'},
     clearable: {type: Boolean, default: true}
@@ -46,10 +47,11 @@ onMounted(() => {
                :id="id" @focus="$event.target.select()"
                :disabled="disabled" :readonly="readonly"
                @input="$emit('update:modelValue', $event.target.value)"
-               class="border border-secondary/20 pl-4 pr-24 py-3 transition-colors w-full focus:border-transparent focus:ring-none rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
-        <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center">
+               :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-24'"
+               class="border border-secondary/20 focus:outline-0 focus:ring-secondary/20 focus:border-secondary transition-colors w-full focus:ring-0 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
+        <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center" v-if="modelValue && clearable">
             <Popper :hover="true" placement="top" content="Clear" :arrow="true">
-                <button type="button" class="bg-secondary/5 mt-[3px] dark:bg-white/5 dark:hover:bg-white/10 hover:bg-secondary/10 rounded-full text-secondary dark:text-white p-[2px]" @click="clear" v-if="modelValue && clearable">
+                <button type="button" class="bg-secondary/5 mt-[3px] dark:bg-white/5 dark:hover:bg-white/10 hover:bg-secondary/10 rounded-full text-secondary dark:text-white p-[2px]" @click="clear">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -57,8 +59,8 @@ onMounted(() => {
             </Popper>
         </div>
 
-        <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center">
-            <button type="button" class="bg-secondary/5 text-xs mr-4 dark:bg-white/5 dark:hover:bg-white/10 hover:bg-secondary/10 rounded-full text-secondary dark:text-white px-4 py-1" @click="copyValue(modelValue)" v-if="copyable">
+        <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center" v-if="copyable">
+            <button type="button" class="bg-secondary/5 text-xs mr-4 dark:bg-white/5 dark:hover:bg-white/10 hover:bg-secondary/10 rounded-full text-secondary dark:text-white px-4 py-1" @click="copyValue(modelValue)">
                 <span v-if="copied">Copied!</span>
                 <span v-else>Copy</span>
             </button>

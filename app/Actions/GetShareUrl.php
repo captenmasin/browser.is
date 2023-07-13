@@ -17,7 +17,8 @@ class GetShareUrl
         }
 
         return [
-            'url' => route($type, ['uuid' => $uuid])
+            'url' => route($type, ['uuid' => $uuid]),
+            'uuid' => $uuid
         ];
     }
 
