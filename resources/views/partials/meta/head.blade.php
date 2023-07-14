@@ -30,7 +30,7 @@
     @include('partials.meta.icons')
     @include('partials.meta.pwa')
 
-    <script defer data-domain="{{ parse_url(config('app.url'))['host'] }}" src="https://plausible.io/js/script.tagged-events.js"></script>
+    <script defer data-domain="{{ App\Services\Helpers::getDomain(config('app.url')) }}" src="https://plausible.io/js/script.tagged-events.js"></script>
 
     <script>
 		window.plausible = window.plausible || function () {

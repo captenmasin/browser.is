@@ -43,6 +43,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\HorizonServiceProvider' => $baseDir . '/app/Providers/HorizonServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Services\\Helpers' => $baseDir . '/app/Services/Helpers.php',
     'App\\Traits\\BasicEnum' => $baseDir . '/app/Traits/BasicEnum.php',
     'App\\Traits\\EnumToArray' => $baseDir . '/app/Traits/EnumToArray.php',
     'App\\Traits\\IsCacheable' => $baseDir . '/app/Traits/IsCacheable.php',

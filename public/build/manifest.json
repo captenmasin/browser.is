@@ -1,0 +1,144 @@
+{
+  "_html2canvas-0ae1a300.js": {
+    "file": "assets/html2canvas-0ae1a300.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true
+  },
+  "node_modules/canvg/lib/index.es.js": {
+    "css": [
+      "assets/app-4cb66aa9.css"
+    ],
+    "file": "assets/index.es-7e396bd2.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "node_modules/canvg/lib/index.es.js"
+  },
+  "node_modules/dompurify/dist/purify.es.js": {
+    "file": "assets/purify.es-cf254a40.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/dompurify/dist/purify.es.js"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-4cb66aa9.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/fonts/Escalator/black-italic.woff2": {
+    "file": "assets/black-italic-366cee53.woff2",
+    "src": "resources/fonts/Escalator/black-italic.woff2"
+  },
+  "resources/fonts/Escalator/black.woff2": {
+    "file": "assets/black-8fca8e2b.woff2",
+    "src": "resources/fonts/Escalator/black.woff2"
+  },
+  "resources/fonts/Escalator/bold-italic.woff2": {
+    "file": "assets/bold-italic-f1e56b74.woff2",
+    "src": "resources/fonts/Escalator/bold-italic.woff2"
+  },
+  "resources/fonts/Escalator/bold.woff2": {
+    "file": "assets/bold-e0680707.woff2",
+    "src": "resources/fonts/Escalator/bold.woff2"
+  },
+  "resources/fonts/Escalator/extralight-italic.woff2": {
+    "file": "assets/extralight-italic-eb460d24.woff2",
+    "src": "resources/fonts/Escalator/extralight-italic.woff2"
+  },
+  "resources/fonts/Escalator/extralight.woff2": {
+    "file": "assets/extralight-3ef63776.woff2",
+    "src": "resources/fonts/Escalator/extralight.woff2"
+  },
+  "resources/fonts/Escalator/hairline-italic.woff2": {
+    "file": "assets/hairline-italic-72f971b5.woff2",
+    "src": "resources/fonts/Escalator/hairline-italic.woff2"
+  },
+  "resources/fonts/Escalator/hairline.woff2": {
+    "file": "assets/hairline-38cb26b0.woff2",
+    "src": "resources/fonts/Escalator/hairline.woff2"
+  },
+  "resources/fonts/Escalator/light-italic.woff2": {
+    "file": "assets/light-italic-a4f5a495.woff2",
+    "src": "resources/fonts/Escalator/light-italic.woff2"
+  },
+  "resources/fonts/Escalator/light.woff2": {
+    "file": "assets/light-2fc8b8cb.woff2",
+    "src": "resources/fonts/Escalator/light.woff2"
+  },
+  "resources/fonts/Escalator/medium-italic.woff2": {
+    "file": "assets/medium-italic-d41f453d.woff2",
+    "src": "resources/fonts/Escalator/medium-italic.woff2"
+  },
+  "resources/fonts/Escalator/medium.woff2": {
+    "file": "assets/medium-097943d6.woff2",
+    "src": "resources/fonts/Escalator/medium.woff2"
+  },
+  "resources/fonts/Escalator/regular-italic.woff2": {
+    "file": "assets/regular-italic-219f469a.woff2",
+    "src": "resources/fonts/Escalator/regular-italic.woff2"
+  },
+  "resources/fonts/Escalator/regular.woff2": {
+    "file": "assets/regular-966096e0.woff2",
+    "src": "resources/fonts/Escalator/regular.woff2"
+  },
+  "resources/fonts/Escalator/semibold-italic.woff2": {
+    "file": "assets/semibold-italic-4f276a5d.woff2",
+    "src": "resources/fonts/Escalator/semibold-italic.woff2"
+  },
+  "resources/fonts/Escalator/semibold.woff2": {
+    "file": "assets/semibold-e5048561.woff2",
+    "src": "resources/fonts/Escalator/semibold.woff2"
+  },
+  "resources/fonts/Escalator/thin-italic.woff2": {
+    "file": "assets/thin-italic-0ca6b534.woff2",
+    "src": "resources/fonts/Escalator/thin-italic.woff2"
+  },
+  "resources/fonts/Escalator/thin.woff2": {
+    "file": "assets/thin-b531e8ff.woff2",
+    "src": "resources/fonts/Escalator/thin.woff2"
+  },
+  "resources/images/logo.png": {
+    "file": "assets/logo-efa3d5b6.png",
+    "src": "resources/images/logo.png"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-3f15614e.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/hairline-38cb26b0.woff2",
+      "assets/thin-b531e8ff.woff2",
+      "assets/extralight-3ef63776.woff2",
+      "assets/light-2fc8b8cb.woff2",
+      "assets/regular-966096e0.woff2",
+      "assets/medium-097943d6.woff2",
+      "assets/semibold-e5048561.woff2",
+      "assets/bold-e0680707.woff2",
+      "assets/black-8fca8e2b.woff2",
+      "assets/hairline-italic-72f971b5.woff2",
+      "assets/thin-italic-0ca6b534.woff2",
+      "assets/extralight-italic-eb460d24.woff2",
+      "assets/light-italic-a4f5a495.woff2",
+      "assets/regular-italic-219f469a.woff2",
+      "assets/medium-italic-d41f453d.woff2",
+      "assets/semibold-italic-4f276a5d.woff2",
+      "assets/bold-italic-f1e56b74.woff2",
+      "assets/black-italic-366cee53.woff2"
+    ],
+    "css": [
+      "assets/app-3f15614e.css",
+      "assets/app-4cb66aa9.css"
+    ],
+    "dynamicImports": [
+      "_html2canvas-0ae1a300.js",
+      "node_modules/dompurify/dist/purify.es.js",
+      "node_modules/canvg/lib/index.es.js"
+    ],
+    "file": "assets/app-69fb6204.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
