@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-3f15614e.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-4cb66aa9.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-69fb6204.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/html2canvas-0ae1a300.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/index.es-7e396bd2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +276,7 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="41056000" />
+      <workItem from="1689063901262" duration="41431000" />
     </task>
     <servers />
   </component>
