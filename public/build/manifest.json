@@ -1,6 +1,6 @@
 {
-  "_html2canvas-0ae1a300.js": {
-    "file": "assets/html2canvas-0ae1a300.js",
+  "_html2canvas-15f702e1.js": {
+    "file": "assets/html2canvas-15f702e1.js",
     "imports": [
       "resources/js/app.js"
     ],
@@ -8,9 +8,9 @@
   },
   "node_modules/canvg/lib/index.es.js": {
     "css": [
-      "assets/app-4cb66aa9.css"
+      "assets/app-855cdece.css"
     ],
-    "file": "assets/index.es-7e396bd2.js",
+    "file": "assets/index.es-7e3d9a2c.js",
     "imports": [
       "resources/js/app.js"
     ],
@@ -23,7 +23,7 @@
     "src": "node_modules/dompurify/dist/purify.es.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-4cb66aa9.css",
+    "file": "assets/app-855cdece.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -104,7 +104,7 @@
     "src": "resources/images/logo.png"
   },
   "resources/js/app.css": {
-    "file": "assets/app-3f15614e.css",
+    "file": "assets/app-ec69792c.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -129,15 +129,15 @@
       "assets/black-italic-366cee53.woff2"
     ],
     "css": [
-      "assets/app-3f15614e.css",
-      "assets/app-4cb66aa9.css"
+      "assets/app-ec69792c.css",
+      "assets/app-855cdece.css"
     ],
     "dynamicImports": [
-      "_html2canvas-0ae1a300.js",
+      "_html2canvas-15f702e1.js",
       "node_modules/dompurify/dist/purify.es.js",
       "node_modules/canvg/lib/index.es.js"
     ],
-    "file": "assets/app-69fb6204.js",
+    "file": "assets/app-1c513143.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
