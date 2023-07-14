@@ -4,7 +4,7 @@ import ResultsInfo from "@/Components/Data/ResultsInfo.vue";
 const props = defineProps({
     uuid: String,
     url: String,
-    created_at: String || null,
+    date: String || null,
 })
 
 import DisplayData from "@/Components/Data/DisplayData.vue";
@@ -15,7 +15,7 @@ import ShareLink from "@/Components/Data/ShareLink.vue";
 
 <template>
     <div>
-        <results-info :date="created_at" />
+        <results-info :date="date" v-if="uuid" />
         <div class="bg-white dark:bg-gray-800 dark:text-white shadow rounded overflow-hidden">
             <Suspense>
                 <share-link type="home" :uuid="uuid"/>

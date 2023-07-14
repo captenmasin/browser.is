@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Result;
-use Cookie;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 use Inertia\Inertia;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -17,16 +16,16 @@ class HomeController extends BaseController
             return redirect()->route('home');
         }
 
-        $routeUuid = $uuid ?? \Illuminate\Support\Facades\Cookie::get(config('site.cookie_name'));
+        $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
         $result = Result::where('uuid', $uuid)->first();
 
         return Inertia::render('Home', [
             'uuid' => $uuid,
-            'created_at' => $result->created_at ?? null,
+            'date' => $result->updated_at ?? null,
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
             'image'       => '',
-            'title'       => 'Home',
+            'title'       => 'All',
             'description' => ''
         ]);
     }

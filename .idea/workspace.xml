@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Data/ResultsInfo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/results.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +275,7 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="36682000" />
+      <workItem from="1689063901262" duration="36986000" />
     </task>
     <servers />
   </component>
