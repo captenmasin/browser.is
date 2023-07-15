@@ -7,6 +7,6 @@ return [
     'keep_results' => 2,
 
     'ads' => [
-        'text' => env('ads_text')
+        'text' => env('ADS_TEXT')
     ]
 ];

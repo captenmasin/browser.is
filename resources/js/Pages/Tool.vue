@@ -22,7 +22,7 @@ import PageContainer from "@/Components/Global/PageContainer.vue";
 
 <template>
     <page-container :is-results-page="isResultsPage" :content="content">
-        <div class="bg-white dark:bg-gray-800 dark:text-white shadow rounded overflow-hidden">
+        <div class="bg-white dark:bg-gray-800 dark:text-white rounded border-primary/10 border overflow-hidden">
             <Suspense>
                 <share-link :type="type" :uuid="uuid"/>
             </Suspense>

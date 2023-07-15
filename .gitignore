@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /public/build
+/public/ads.txt
 .env
 .env.backup
 .phpunit.result.cache

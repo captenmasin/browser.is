@@ -22,7 +22,7 @@ const isResultsPage = ref(usePage().props.is_results)
 <template>
     <page-container :is-results-page="isResultsPage" :content="content">
         <results-info :date="date" v-if="uuid"/>
-        <div class="bg-white dark:bg-gray-800 dark:text-white shadow rounded overflow-hidden">
+        <div class="bg-white dark:bg-gray-800 dark:text-white border-primary/10 border rounded overflow-hidden">
             <Suspense>
                 <share-link type="home" :uuid="uuid"/>
             </Suspense>
