@@ -6,7 +6,7 @@ const info = computed(() => usePage().props.info)
 </script>
 
 <template>
-    <footer class="mt-auto py-4 text-primary dark:text-white">
+    <footer class="mt-auto pb-4 pt-8 text-primary dark:text-white">
         <div class="container mx-auto text-sm flex items-center space-x-2 px-4">
             <div v-if="info.author.url">
                 A project by <a target="_blank" class="text-secondary dark:text-white hover:underline" :href="info.author.url">{{ info.author.name }}</a>
