@@ -43,13 +43,15 @@ onMounted(() => {
 
 <template>
     <div class="relative">
-        <label :for="id" class="text-left text-sm text-secondary/75 block absolute bottom-full pl-1 mb-1" v-if="label">{{ label }}</label>
-        <input :placeholder="placeholder" :type="inputType ? inputType : 'text'" ref="input" :value="modelValue"
-               :id="id" @focus="$event.target.select()"
-               :disabled="disabled" :readonly="readonly"
-               @input="$emit('update:modelValue', $event.target.value)"
-               :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-24'"
-               class="border border-secondary/20 focus:outline-0 focus:ring-secondary/20 focus:border-secondary transition-colors w-full focus:ring-0 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
+        <!--        <label :for="id" class="text-left text-sm text-secondary/75 block absolute bottom-full pl-1 mb-1" v-if="label">{{ label }}</label>-->
+        <label>
+            <input :placeholder="placeholder" :type="inputType ? inputType : 'text'" ref="input" :value="modelValue"
+                   :id="id" @focus="$event.target.select()"
+                   :disabled="disabled" :readonly="readonly"
+                   @input="$emit('update:modelValue', $event.target.value)"
+                   :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-24'"
+                   class="border border-secondary/20 focus:outline-0 focus:ring-secondary/20 focus:border-secondary transition-colors w-full focus:ring-0 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
+        </label>
         <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center" v-if="modelValue && clearable">
             <Popper :hover="true" placement="top" content="Clear" :arrow="true">
                 <button type="button" class="bg-secondary/5 mt-[3px] dark:bg-white/5 dark:hover:bg-white/10 hover:bg-secondary/10 rounded-full text-secondary dark:text-white p-[2px]" @click="clear">
