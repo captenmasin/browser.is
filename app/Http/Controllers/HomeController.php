@@ -44,7 +44,7 @@ HTML;
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
             'image' => url('/images/social/general.png'),
-            'title'       => $result ? 'All results' : 'All data',
+            'title'       => $result ? 'Results' : 'All info',
             'description' => ''
         ]);
     }

@@ -47,7 +47,7 @@ class ToolController extends Controller
 HTML;
 
         return $this->generate('browser', 'Browser', $uuid, $content, [
-            'title' => 'Browser',
+            'title' => 'Browser info',
             'image' => url('/images/social/browser.png')
         ]);
     }
