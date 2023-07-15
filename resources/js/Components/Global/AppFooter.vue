@@ -6,15 +6,15 @@ const info = computed(() => usePage().props.info)
 </script>
 
 <template>
-    <footer class="mt-auto py-4 dark:text-white">
+    <footer class="mt-auto py-4 text-primary dark:text-white">
         <div class="container mx-auto text-sm flex items-center space-x-2 px-4">
             <div v-if="info.author.url">
-                A project by <a target="_blank" class="text-primary dark:text-white hover:underline" :href="info.author.url">{{ info.author.name }}</a>
+                A project by <a target="_blank" class="text-secondary dark:text-white hover:underline" :href="info.author.url">{{ info.author.name }}</a>
             </div>
             <div v-if="info.author.url">
                 &bull;
             </div>
-            <a target="_blank" class="text-primary dark:text-white hover:underline" :href="info.support.url">{{ info.support.text }}</a>
+            <a target="_blank" class="text-secondary dark:text-white hover:underline" :href="info.support.url">{{ info.support.text }}</a>
             <div v-if="info.reporting.email">
                 &bull;
             </div>
