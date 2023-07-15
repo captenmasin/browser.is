@@ -20,9 +20,9 @@ router.on('finish', () => {
 </script>
 
 <template>
-    <nav class="bg-transparent border-gray-200 px-4 py-2.5 rounded font-body-settings z-10">
+    <nav class="bg-transparent border-gray-200 py-2.5 rounded font-body-settings z-10">
         <div v-if="isResultsPage">
-            <div class="container flex justify-center mx-auto pt-4">
+            <div class="container flex justify-center mx-auto pt-4 px-4">
                 <Link :href="route('home')" class="flex items-center">
                     <app-logo class="w-36 lg:w-64 flex dark:hidden"/>
                     <app-logo-white class="w-36 lg:w-56 hidden dark:flex"/>
@@ -30,7 +30,7 @@ router.on('finish', () => {
                 </Link>
             </div>
         </div>
-        <div class="container relative flex items-center justify-between mx-auto" v-if="!isResultsPage">
+        <div class="container relative flex items-center justify-between mx-auto px-4" v-if="!isResultsPage">
             <Link :href="route('home')" class="flex items-center">
                 <app-logo class="w-36 lg:w-48 mr-3 flex dark:hidden"/>
                 <app-logo-white class="w-36 lg:w-48 mr-3 hidden dark:flex"/>
@@ -53,7 +53,7 @@ router.on('finish', () => {
                         <Link :href="link.url"
                               class="py-2 flex px-4 md:px-2 lg:px-6 text-secondary md:ml-2 transition-all rounded md:bg-transparent dark:text-white dark:md:text-white"
                               :class="[
-                                  linkIsActive(link.url) ? 'md:text-primary md:dark:bg-secondary bg-secondary text-white' : 'md:text-secondary dark:hover:bg-primary/20 md:hover:text-primary',
+                                  linkIsActive(link.url) ? 'md:text-primary md:dark:bg-secondary bg-secondary text-white' : 'md:text-secondary dark:hover:bg-secondary/20 md:dark:hover:text-white md:hover:text-primary',
                               ]">
                             {{ link.name }}
                         </Link>

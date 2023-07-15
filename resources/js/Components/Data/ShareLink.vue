@@ -17,7 +17,7 @@ const props = defineProps({
     },
 })
 
-const data = ref({url: ''})
+const data = ref({url: 'Loading URL...'})
 const showShareModal = ref(false)
 
 function exportToPdf() {

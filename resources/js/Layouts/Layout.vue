@@ -11,9 +11,7 @@ import AppFooter from "@/Components/Global/AppFooter.vue";
             <nav-bar/>
             <div class="h-full flex flex-1 mt-4">
                 <div class="container mx-auto">
-                    <div class="max-w-4xl mx-auto px-4">
-                        <slot/>
-                    </div>
+                    <slot/>
                 </div>
             </div>
             <app-footer/>
