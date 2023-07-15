@@ -18,8 +18,6 @@ const props = defineProps({
     }
 })
 
-console.log(usePage().props.csrf_token)
-
 const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token);
 
 const data = await response.json().then(async data => {

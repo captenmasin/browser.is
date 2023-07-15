@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SendResultsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SendResultsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Results.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Results.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckToken.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Composables/usePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Composables/usePost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/meta/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/meta/head.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +283,7 @@
       <workItem from="1689063901262" duration="42029000" />
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
-      <workItem from="1689437063874" duration="7381000" />
+      <workItem from="1689437063874" duration="8885000" />
     </task>
     <servers />
   </component>

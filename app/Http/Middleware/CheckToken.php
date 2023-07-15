@@ -11,7 +11,7 @@ class CheckToken
     public function handle(Request $request, Closure $next): Response | array
     {
         $token = $request->get('_token');
-        if(!$token || ($request->get('_token') !== csrf_token())){
+        if(!$token || ($token !== csrf_token())){
             abort(419);
         }
 

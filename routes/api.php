@@ -10,7 +10,7 @@ use App\Http\Middleware\CheckToken;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 
-Route::name('api.')->middleware(CheckToken::class)->group(function () {
+Route::name('api.')->middleware([VerifyCsrfToken::class, 'web', CheckToken::class])->group(function () {
     Route::prefix('data')->group(function () {
         Route::get('device/{uuid?}', GetDeviceData::class)->name('device');
         Route::get('browser/{uuid?}', GetBrowserData::class)->name('browser');
