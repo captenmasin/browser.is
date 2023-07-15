@@ -16,6 +16,8 @@ class PublishResources extends Command
 
         symlink(resource_path('images'), public_path('images'));
 
+        file_put_contents(public_path('ads.txt'), config('site.ads.text'));
+
         $this->info('Images moved to public');
 
         return 0;
