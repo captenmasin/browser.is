@@ -4,6 +4,7 @@
 /storage/*.key
 /public/build
 /public/ads.txt
+/public/sitemap.xml
 .env
 .env.backup
 .phpunit.result.cache
