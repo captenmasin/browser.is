@@ -5,12 +5,12 @@ const props = defineProps({
     date: String
 })
 
-const formattedDate = useDateFormat(props.date, 'YYYY-MM-DD HH:mm:ss')
+const formattedDate = useDateFormat(props.date, 'YYYY-MM-DD HH:mm')
 const timeAgo = useTimeAgo(Date.parse(props.date))
 </script>
 
 <template>
-    <div class="text-primary pb-2">
-        Created: {{ formattedDate }} ({{ timeAgo }})
+    <div class="text-primary pb-2 px-4 font-semibold justify-end flex">
+        Results created: {{ formattedDate }} ({{ timeAgo }})
     </div>
 </template>

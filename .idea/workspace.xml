@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vendor/Expectation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ResultsInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ResultsInfo.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,32 +215,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "ToolWindowFile Transfer.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "2.x",
-    "javascript.nodejs.core.library.configured.version": "20.0.0",
-    "javascript.nodejs.core.library.typings.version": "20.0.0",
-    "last_opened_file_path": "/Users/masonday/Sites/browser.is/resources/views/vendor/mail/html/themes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/masonday/Sites/browser.is/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;ToolWindowFile Transfer.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2.x&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.0.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.0.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/masonday/Sites/browser.is/resources/views/vendor/mail/html/themes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/masonday/Sites/browser.is/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/vendor/mail/html/themes" />
@@ -259,9 +260,6 @@
       <option name="pestRunnerSettings">
         <PestRunner scope="ConfigurationFile" />
       </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings scope="ConfigurationFile" />
-      </option>
       <method v="2" />
     </configuration>
   </component>
@@ -276,7 +274,8 @@
       <workItem from="1688501105400" duration="1365000" />
       <workItem from="1688668574400" duration="2100000" />
       <workItem from="1688737419502" duration="597000" />
-      <workItem from="1689063901262" duration="41431000" />
+      <workItem from="1689063901262" duration="42029000" />
+      <workItem from="1689372550845" duration="797000" />
     </task>
     <servers />
   </component>

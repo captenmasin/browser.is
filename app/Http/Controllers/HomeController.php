@@ -25,7 +25,7 @@ class HomeController extends BaseController
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
             'image'       => '',
-            'title'       => 'All',
+            'title'       => $result ? 'All results' : 'All data',
             'description' => ''
         ]);
     }
