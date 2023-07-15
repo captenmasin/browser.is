@@ -24,12 +24,12 @@ const props = defineProps({
             </tr>
             </thead>
             <tbody>
-            <tr class="border-t border-gray-200 dark:border-gray-800 first:border-0" v-for="item in data">
+            <tr class="border-t border-gray-200 group dark:border-gray-800 first:border-0" v-for="item in data">
                 <template v-if="item.value">
-                    <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white text-secondary dark:text-white dark:bg-gray-700">
+                    <th scope="row" class="px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-secondary dark:text-white dark:bg-gray-700">
                         {{ item.label }}
                     </th>
-                    <td class="px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono text-primary">
+                    <td class="px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-primary">
                         <div v-if="isString(item.value)">
                             {{ item.value }}
                         </div>
