@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta' => [
+    'meta'      => [
         /*
          * The default configurations to be used by the meta generator.
          */
@@ -38,22 +38,27 @@ return [
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'website',
             'site_name'   => env('APP_NAME'),
+            'image'   => config('app.url') . '/images/social/general.png',
             'images'      => [
                 config('app.url') . '/images/social/general.png',
             ],
         ],
     ],
-    'twitter' => [
+    'twitter'   => [
         /*
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
             'card'        => 'summary_large_image',
-            'site'        => '@'.env('TWITTER_USERNAME'),
+            'site'        => '@' . env('TWITTER_USERNAME'),
             'description' => config('seotools.meta.defaults.description'),
+            'image0'      => config('app.url') . '/images/social/general.png',
+            'images'      => [
+                config('app.url') . '/images/social/general.png',
+            ]
         ],
     ],
-    'json-ld' => [
+    'json-ld'   => [
         /*
          * The default configurations to be used by the json-ld generator.
          */

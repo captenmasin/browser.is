@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Routing\Controller as BaseController;
 
-class ToolController extends BaseController
+class ToolController extends Controller
 {
     public function generate($type, $title = '', ?string $uuid = null, array $meta = []){
         if($uuid && !Result::where('uuid', $uuid)->exists()){
@@ -28,21 +28,24 @@ class ToolController extends BaseController
     public function browser(Request $request, ?string $uuid = null)
     {
         return $this->generate('browser', 'Browser', $uuid, [
-            'title' => 'Browser'
+            'title' => 'Browser',
+            'image' => url('/images/social/browser.png')
         ]);
     }
 
     public function device(Request $request, ?string $uuid = null)
     {
         return $this->generate('device', 'Device', $uuid, [
-            'title' => 'Device'
+            'title' => 'Device',
+            'image' => url('/images/social/device.png')
         ]);
     }
 
     public function location(Request $request, ?string $uuid = null)
     {
         return $this->generate('location', 'Location', $uuid, [
-            'title' => 'Location'
+            'title' => 'Location',
+            'image' => url('/images/social/location.png')
         ]);
     }
 }

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Cookie;
 use Inertia\Inertia;
 use App\Models\Result;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Cookie;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
     public function __invoke(Request $request, ?string $uuid = null)
     {
@@ -24,7 +24,7 @@ class HomeController extends BaseController
             'date' => $result->updated_at ?? null,
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
-            'image'       => '',
+            'image' => url('/images/social/general.png'),
             'title'       => $result ? 'All results' : 'All data',
             'description' => ''
         ]);

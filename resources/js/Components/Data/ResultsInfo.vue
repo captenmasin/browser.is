@@ -11,6 +11,6 @@ const timeAgo = useTimeAgo(Date.parse(props.date))
 
 <template>
     <div class="text-primary pb-2 px-4 font-semibold justify-end flex">
-        Results created: {{ formattedDate }} ({{ timeAgo }})
+        Results created <span class="text-secondary ml-4"> {{ formattedDate }} ({{ timeAgo }})</span>
     </div>
 </template>
