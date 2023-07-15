@@ -9,7 +9,7 @@ use App\Actions\SendResultsToEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::name('api.')->group(function () {
-    Route::prefix('data')->group(function () {
+        Route::prefix('data')->group(function () {
         Route::get('device/{uuid?}', GetDeviceData::class)->name('device');
         Route::get('browser/{uuid?}', GetBrowserData::class)->name('browser');
         Route::get('location/{uuid?}', GetLocationData::class)->name('location');

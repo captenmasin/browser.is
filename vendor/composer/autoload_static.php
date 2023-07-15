@@ -508,8 +508,8 @@ class ComposerStaticInitbe5ff92e24c3138522f1a2fafc2abf1f
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -826,8 +826,8 @@ class ComposerStaticInitbe5ff92e24c3138522f1a2fafc2abf1f
         'App\\Actions\\GetShareUrl' => __DIR__ . '/../..' . '/app/Actions/GetShareUrl.php',
         'App\\Actions\\SaveResults' => __DIR__ . '/../..' . '/app/Actions/SaveResults.php',
         'App\\Actions\\SendResultsToEmail' => __DIR__ . '/../..' . '/app/Actions/SendResultsToEmail.php',
-        'App\\Console\\Commands\\GenerateManifest' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateManifest.php',
         'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
+        'App\\Console\\Commands\\PublishResources' => __DIR__ . '/../..' . '/app/Console/Commands/PublishResources.php',
         'App\\Console\\Commands\\PurgeResults' => __DIR__ . '/../..' . '/app/Console/Commands/PurgeResults.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

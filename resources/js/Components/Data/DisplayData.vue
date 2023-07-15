@@ -1,6 +1,7 @@
 <script setup>
 import DataTable from "@/Components/Global/DataTable.vue";
 import {usePost} from "@/Composables/usePost";
+import {usePage} from "@inertiajs/vue3";
 
 const props = defineProps({
     tableClass: String,
@@ -17,7 +18,8 @@ const props = defineProps({
     }
 })
 
-const response = await fetch(props.endpoint);
+const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token,);
+
 const data = await response.json().then(async data => {
     if(!props.uuid) {
         if (typeof data.window_dimensions !== 'undefined' && data.window_dimensions.value === '') {
