@@ -21,15 +21,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
 
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
-
-    @include('partials.meta.icons')
-    @include('partials.meta.pwa')
-
     <script defer data-domain="{{ App\Services\Helpers::getDomain(config('app.url')) }}" src="https://plausible.io/js/script.tagged-events.js"></script>
 
     <script>

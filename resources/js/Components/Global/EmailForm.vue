@@ -24,6 +24,7 @@ function submitForm() {
             errors.value = response
         } else{
             sent.value = true
+            window.plausible('Sent via email')
         }
     })
 }

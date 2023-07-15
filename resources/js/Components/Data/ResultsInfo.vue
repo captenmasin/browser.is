@@ -10,7 +10,8 @@ const timeAgo = useTimeAgo(Date.parse(props.date))
 </script>
 
 <template>
-    <div class="text-primary pb-2 px-4 font-semibold justify-end flex">
-        Results created <span class="text-secondary ml-4"> {{ formattedDate }} ({{ timeAgo }})</span>
+    <div class="text-primary p-4 flex-col justify-center text-center font-semibold rounded-md border-primary/10 border bg-white dark:bg-primary dark:text-white mb-8">
+        <div>Results created</div>
+        <div class="text-secondary">{{ formattedDate }} ({{ timeAgo }})</div>
     </div>
 </template>

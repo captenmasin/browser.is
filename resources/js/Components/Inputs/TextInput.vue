@@ -30,6 +30,7 @@ const {text, copy, copied, isSupported} = useClipboard()
 
 function copyValue(value) {
     copy(value)
+    window.plausible('Copy URL')
 }
 
 onMounted(() => {

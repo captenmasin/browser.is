@@ -6,6 +6,7 @@ import AppLogo from '@/Components/Global/AppLogo.vue'
 import AppLogoWhite from '@/Components/Global/AppLogoWhite.vue'
 
 const navOpen = ref(false)
+const isResultsPage = ref(usePage().props.is_results)
 
 function linkIsActive(url) {
     let cleanUrl = url.split("?")[0];
@@ -14,12 +15,22 @@ function linkIsActive(url) {
 
 router.on('finish', () => {
     navOpen.value = false
+    isResultsPage.value = usePage().props.is_results;
 })
 </script>
 
 <template>
     <nav class="bg-transparent border-gray-200 px-4 py-2.5 rounded font-body-settings z-10">
-        <div class="container relative flex items-center justify-between mx-auto">
+        <div v-if="isResultsPage">
+            <div class="container flex justify-center mx-auto pt-4">
+                <Link :href="route('home')" class="flex items-center">
+                    <app-logo class="w-36 lg:w-64 flex dark:hidden"/>
+                    <app-logo-white class="w-36 lg:w-56 hidden dark:flex"/>
+                    <span class="sr-only">Go home</span>
+                </Link>
+            </div>
+        </div>
+        <div class="container relative flex items-center justify-between mx-auto" v-if="!isResultsPage">
             <Link :href="route('home')" class="flex items-center">
                 <app-logo class="w-36 lg:w-48 mr-3 flex dark:hidden"/>
                 <app-logo-white class="w-36 lg:w-48 mr-3 hidden dark:flex"/>

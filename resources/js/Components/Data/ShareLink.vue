@@ -21,6 +21,7 @@ const data = ref({url: ''})
 const showShareModal = ref(false)
 
 function exportToPdf() {
+    window.plausible('Export PDF')
     html2pdf(document.getElementById("results"), {
         margin: 1,
         filename: "results.pdf",
@@ -34,9 +35,9 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="w-full bg-gray-100 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
-        <div class="w-1/2">
-            <ul class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-2">
+    <div class="w-full flex-col md:flex-row bg-gray-100 space-y-4 md:space-y-0 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
+        <div class="w-full md:w-1/2">
+            <ul class="flex items-center justify-center md:justify-normal space-x-2">
                 <li>
                     <button @click="showShareModal = true" class="bg-secondary text-white rounded px-4 py-1 text-sm">
                         Send via Email
@@ -49,7 +50,7 @@ onMounted(async () => {
                 </li>
             </ul>
         </div>
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2">
             <text-input :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
         </div>
 
