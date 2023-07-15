@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-1c513143.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-855cdece.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-ec69792c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/html2canvas-15f702e1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/index.es-7e3d9a2c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +277,7 @@
       <workItem from="1689063901262" duration="42029000" />
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
-      <workItem from="1689437063874" duration="1345000" />
+      <workItem from="1689437063874" duration="1378000" />
     </task>
     <servers />
   </component>
