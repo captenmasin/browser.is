@@ -45,6 +45,7 @@ onMounted(() => {
     <div class="relative">
         <!--        <label :for="id" class="text-left text-sm text-secondary/75 block absolute bottom-full pl-1 mb-1" v-if="label">{{ label }}</label>-->
         <label>
+            <span class="sr-only">Label for input</span>
             <input :placeholder="placeholder" :type="inputType ? inputType : 'text'" ref="input" :value="modelValue"
                    :id="id" @focus="$event.target.select()"
                    :disabled="disabled" :readonly="readonly"
