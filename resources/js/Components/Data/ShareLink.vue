@@ -36,7 +36,7 @@ onMounted(async () => {
 <template>
     <div class="w-full bg-gray-100 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
         <div class="w-1/2">
-            <ul class="flex items-center space-x-2">
+            <ul class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-2">
                 <li>
                     <button @click="showShareModal = true" class="bg-secondary text-white rounded px-4 py-1 text-sm">
                         Send via Email
