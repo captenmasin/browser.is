@@ -2,6 +2,7 @@
 import Popper from "vue3-popper"
 import {onMounted, ref} from 'vue'
 import {useClipboard} from '@vueuse/core'
+import emitter from "@/Composables/useEmitter";
 
 const props = defineProps({
     modelValue: String,
@@ -13,6 +14,7 @@ const props = defineProps({
     small: {type: Boolean, default: false},
     placeholder: {type: String, default: ''},
     inputType: {type: String, default: 'text'},
+    inputId: {type: String || null, default: null},
     clearable: {type: Boolean, default: true}
 })
 const emit = defineEmits(['update:modelValue'])
@@ -33,8 +35,9 @@ function copyValue(value) {
     window.plausible('Copy URL')
 }
 
+
 onMounted(() => {
-    id.value = "input" + (Math.random() + 1).toString(36).substring(7);
+    id.value = props.inputId ? props.inputId : "input" + (Math.random() + 1).toString(36).substring(7);
     if (props.hasAutofocus) {
         input.value.focus()
     }

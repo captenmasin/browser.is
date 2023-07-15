@@ -1,8 +1,9 @@
 <script setup>
 import html2pdf from "html2pdf.js";
 
-import TextInput from "@/Components/Inputs/TextInput.vue";
 import {onMounted, ref} from "vue";
+import emitter from "@/Composables/useEmitter";
+import TextInput from "@/Components/Inputs/TextInput.vue";
 import AppModal from "@/Components/Global/AppModal.vue";
 import EmailForm from "@/Components/Global/EmailForm.vue";
 
@@ -28,9 +29,21 @@ function exportToPdf() {
     });
 }
 
+function openEmailModal() {
+    showShareModal.value = true
+    emitter.emit('open-modal')
+}
+
 onMounted(async () => {
     const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type}));
     data.value = await response.json()
+
+    emitter.on('open-modal', () => {
+        setTimeout(function(){
+            let input = document.getElementById('emailInput')
+            input.focus()
+        }, 500);
+    })
 })
 </script>
 
@@ -39,7 +52,7 @@ onMounted(async () => {
         <div class="w-full md:w-1/2">
             <ul class="flex items-center justify-center md:justify-normal space-x-2">
                 <li>
-                    <button @click="showShareModal = true" class="bg-secondary text-white rounded px-4 py-1 text-sm">
+                    <button @click="openEmailModal" class="bg-secondary text-white rounded px-4 py-1 text-sm">
                         Send via Email
                     </button>
                 </li>
