@@ -69,7 +69,8 @@ class GetDeviceData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            return $result->first()->data['device'] ?? [];
+            $data = $result->first()->data['device'] ?? [];
+            return json_decode($data, true);
         }
 
         return $this->handle($request->get('ip') ?? $request->ip());

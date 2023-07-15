@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/SaveResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/SaveResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_07_12_084201_create_results_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_07_12_084201_create_results_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +284,7 @@
       <workItem from="1689063901262" duration="42029000" />
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
-      <workItem from="1689437063874" duration="3724000" />
+      <workItem from="1689437063874" duration="5092000" />
     </task>
     <servers />
   </component>

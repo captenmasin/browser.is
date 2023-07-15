@@ -59,7 +59,8 @@ class GetBrowserData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            return $result->first()->data['browser'] ?? [];
+            $data = $result->first()->data['browser'] ?? [];
+            return json_decode($data, true);
         }
 
         return $this->handle();

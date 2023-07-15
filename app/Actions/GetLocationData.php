@@ -49,7 +49,8 @@ class GetLocationData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            return $result->first()->data['location'] ?? [];
+            $data = $result->first()->data['location'] ?? [];
+            return json_decode($data, true);
         }
 
         return $this->handle($request->get('ip') ?? $request->ip());

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->json('data');
+            $table->text('data');
             $table->timestamps();
         });
     }
