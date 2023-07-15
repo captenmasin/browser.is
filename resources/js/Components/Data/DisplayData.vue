@@ -18,7 +18,9 @@ const props = defineProps({
     }
 })
 
-const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token,);
+console.log(usePage().props.csrf_token)
+
+const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token);
 
 const data = await response.json().then(async data => {
     if(!props.uuid) {

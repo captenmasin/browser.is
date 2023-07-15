@@ -2,6 +2,7 @@
 import TextInput from "../Inputs/TextInput.vue";
 import {ref} from "vue";
 import {usePost} from "@/Composables/usePost";
+import {usePage} from "@inertiajs/vue3";
 
 const props = defineProps({
     uuid: String,
@@ -18,7 +19,8 @@ function submitForm() {
     usePost(route('api.notify'), {
         email: email.value,
         uuid: props.uuid,
-        type: props.type
+        type: props.type,
+        _token: usePage().props.csrf_token
     }).then(response => {
         if (typeof response === 'object') {
             errors.value = response
@@ -42,7 +44,7 @@ function submitForm() {
             </div>
             <div class="flex items-start w-full space-x-2 mt-4">
                 <div class="w-9/12 flex flex-col">
-                    <text-input input-type="email" input-id="emailInput" small v-model="email" placeholder="Email address..."/>
+                    <text-input input-id="emailInput" small v-model="email" placeholder="Email address..."/>
                 </div>
                 <div class="w-3/12">
                     <button type="submit" class="bg-secondary w-full text-white rounded-md px-4 py-2 border border-secondary text-sm">

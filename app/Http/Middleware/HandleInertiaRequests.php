@@ -14,6 +14,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'currentRoute' => $request->route()->getName(),
             'currentUrl'   => $request->url(),
+            'csrf_token' => csrf_token(),
             'is_results' => $request->route()->parameter('uuid') !== null,
             'info'         => config('info'),
             'tools' => [

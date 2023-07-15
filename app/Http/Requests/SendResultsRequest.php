@@ -16,7 +16,7 @@ class SendResultsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['email', 'required'],
+            'email.*' => ['required', 'email'],
             'uuid' => ['string', 'required'],
             'type' => ['string', 'required', 'in:home,device,location,browser']
         ];
@@ -24,5 +24,16 @@ class SendResultsRequest extends FormRequest
 
     protected function failedValidation(Validator|\Illuminate\Contracts\Validation\Validator $validator) {
         throw new HttpResponseException(response()->json($validator->errors(), 422));
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $emails = explode(',', rtrim($this->email, ','));
+        $i = 0;
+        foreach ($emails as $email){
+            $emails[$i] = trim($email, ' ');
+            $i++;
+        }
+        $this->merge(['email' => $emails]);
     }
 }

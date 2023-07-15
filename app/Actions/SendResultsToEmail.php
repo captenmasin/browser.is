@@ -15,7 +15,8 @@ class SendResultsToEmail
     public function handle(string $email = '', string $uuid = '', string $type = 'home'): int
     {
         $results = Result::where('uuid', $uuid)->first();
-        Mail::to($email)->send(new Results($results, $type));
+        $emails = explode(',', $email);
+        Mail::to($emails)->send(new Results($results, $type));
 
         return 200;
     }

@@ -1,5 +1,8 @@
+import {usePage} from "@inertiajs/vue3";
+
 export async function usePost(url = "", data = {}) {
 	// Default options are marked with *
+	data._token = usePage().props.csrf_token
 	const response = await fetch(url, {
 		method: "POST", // *GET, POST, PUT, DELETE, etc.
 		mode: "cors", // no-cors, *cors, same-origin

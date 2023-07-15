@@ -6,6 +6,7 @@ import emitter from "@/Composables/useEmitter";
 import TextInput from "@/Components/Inputs/TextInput.vue";
 import AppModal from "@/Components/Global/AppModal.vue";
 import EmailForm from "@/Components/Global/EmailForm.vue";
+import {usePage} from "@inertiajs/vue3";
 
 const props = defineProps({
     uuid: {
@@ -35,7 +36,7 @@ function openEmailModal() {
 }
 
 onMounted(async () => {
-    const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type}));
+    const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type, _token: usePage().props.csrf_token}));
     data.value = await response.json()
 
     emitter.on('open-modal', () => {
