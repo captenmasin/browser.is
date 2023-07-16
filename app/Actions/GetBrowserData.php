@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Enums\Tool;
 use Browser;
 use App\Models\Result;
 use App\Http\Requests\GetDataRequest;
@@ -59,7 +60,7 @@ class GetBrowserData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = $result->first()->data['browser'] ?? [];
+            $data = $result->first()->data[Tool::Browser] ?? [];
             return json_decode($data, true);
         }
 

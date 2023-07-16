@@ -15,7 +15,8 @@ class HandleInertiaRequests extends Middleware
         foreach (Tool::getInstances() as $key => $tool) {
             $tools[$tool->value] = [
                 'url'  => route($tool->value),
-                'name' => $key
+                'name' => $key,
+                'key' => $tool->value
             ];
         }
 

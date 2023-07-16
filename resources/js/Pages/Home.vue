@@ -28,41 +28,15 @@ const isResultsPage = ref(usePage().props.is_results)
             </Suspense>
 
             <div id="results" class="space-y-2 dark:space-y-0">
-                <div>
-                    <Suspense>
+                <div v-for="tool in usePage().props.tools">
+                    <Suspense v-if="tool.key !== 'home'">
                         <div>
-                            <table-title>Browser</table-title>
+                            <table-title>{{ tool.name }}</table-title>
                             <DisplayData type="browser" :show-table-header="false" :save-results="uuid === null" :uuid="uuid"
-                                         :endpoint="route('api.browser', {uuid: uuid})"/>
+                                         :endpoint="route('api.' + tool.key, {uuid: uuid})"/>
                         </div>
                         <template #fallback>
-                            <loading-block text="Loading browser data..."/>
-                        </template>
-                    </Suspense>
-                </div>
-
-                <div>
-                    <Suspense>
-                        <div>
-                            <table-title>Device</table-title>
-                            <DisplayData type="device" :show-table-header="false" :save-results="uuid === null" :uuid="uuid"
-                                         :endpoint="route('api.device', {uuid: uuid})"/>
-                        </div>
-                        <template #fallback>
-                            <loading-block text="Loading device data..."/>
-                        </template>
-                    </Suspense>
-                </div>
-
-                <div>
-                    <Suspense>
-                        <div>
-                            <table-title>Location</table-title>
-                            <DisplayData type="location" :show-table-header="false" :save-results="uuid === null" :uuid="uuid"
-                                         :endpoint="route('api.location', {uuid: uuid})"/>
-                        </div>
-                        <template #fallback>
-                            <loading-block text="Loading location data..."/>
+                            <loading-block :text="'Loading '+tool.key+' data...'"/>
                         </template>
                     </Suspense>
                 </div>

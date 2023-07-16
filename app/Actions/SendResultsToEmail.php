@@ -2,9 +2,11 @@
 
 namespace App\Actions;
 
+use App\Enums\Tool;
 use App\Http\Requests\SendResultsRequest;
 use App\Mail\Results;
 use App\Models\Result;
+use BenSampo\Enum\Exceptions\InvalidEnumMemberException;
 use Illuminate\Support\Facades\Mail;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -12,17 +14,20 @@ class SendResultsToEmail
 {
     use AsAction;
 
-    public function handle(string $email = '', string $uuid = '', string $type = 'home'): int
+    public function handle(Tool $type, string $email = '', string $uuid = ''): int
     {
         $results = Result::where('uuid', $uuid)->first();
         $emails = explode(',', $email);
-        Mail::to($emails)->queue(new Results($results, $type));
+        Mail::to($emails)->send(new Results($results, $type));
 
         return 200;
     }
 
+    /**
+     * @throws InvalidEnumMemberException
+     */
     public function asController(SendResultsRequest $request): int
     {
-        return $this->handle($request->get('email'), $request->get('uuid'), $request->get('type'));
+        return $this->handle(new Tool($request->get('type')), $request->get('email'), $request->get('uuid'));
     }
 }

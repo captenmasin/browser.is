@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Enums\Tool;
 use App\Models\Result;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -13,7 +14,7 @@ class Results extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public Result $results, public string $type = 'home')
+    public function __construct(public Result $results, public Tool $type)
     {}
 
     public function envelope(): Envelope
@@ -26,9 +27,9 @@ class Results extends Mailable
     public function content(): Content
     {
         $data = $this->results->data;
-        if($this->type !== 'home'){
+        if($this->type->value !== Tool::All){
             $data = [
-                $this->type => $data[$this->type]
+                $this->type->value => $data[$this->type->value]
             ];
         }
 

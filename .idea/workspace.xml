@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/browser.is.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/browser.is.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ToolController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ToolController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetShareUrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetShareUrl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Tool.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Tool.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SendResultsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SendResultsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreResultsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreResultsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/Results.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Results.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +292,7 @@
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
       <workItem from="1689437063874" duration="18897000" />
-      <workItem from="1689523985460" duration="3095000" />
+      <workItem from="1689523985460" duration="4351000" />
     </task>
     <servers />
   </component>

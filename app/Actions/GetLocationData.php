@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Enums\Tool;
 use App\Http\Requests\GetDataRequest;
 use App\Models\Result;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class GetLocationData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = $result->first()->data['location'] ?? [];
+            $data = $result->first()->data[Tool::Location] ?? [];
             return json_decode($data, true);
         }
 

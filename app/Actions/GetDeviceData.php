@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Enums\Tool;
 use App\Http\Requests\GetDataRequest;
 use App\Models\Result;
 use Illuminate\Http\Request;
@@ -69,7 +70,7 @@ class GetDeviceData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = $result->first()->data['device'] ?? [];
+            $data = $result->first()->data[Tool::Device] ?? [];
             return json_decode($data, true);
         }
 
