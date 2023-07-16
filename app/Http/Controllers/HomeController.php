@@ -21,20 +21,20 @@ class HomeController extends Controller
 
         $content = <<<HTML
 <p>
-                Describe what browser.is does and what it can be used for
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius interdum nibh, ac tempus enim accumsan sed. Curabitur leo mi, gravida et ante quis, blandit accumsan eros. Integer ut ligula pulvinar magna imperdiet sollicitudin. Ut fringilla urna tellus, ac aliquet elit dictum sed. Suspendisse suscipit libero odio, congue porta elit lacinia vel.
-            </p>
-            <h2>
-                Lorem ipsum
-            </h2>
-            <p>
-                Integer interdum eros leo, et maximus nisl ullamcorper ac. Nulla erat ante, bibendum ac vulputate et, facilisis at sem. Donec vitae suscipit tellus. Donec egestas ultrices velit ut consectetur. Nunc at porttitor sapien. Nam lobortis magna sit amet dignissim scelerisque. Quisque et nibh ut tortor euismod aliquam vel ut dui. Pellentesque condimentum sodales semper. Aenean sollicitudin varius leo ac rutrum.
-            </p>
-            <p>
-                Nulla posuere a orci eu ultrices. Phasellus condimentum eu dolor et condimentum. Maecenas tortor massa, maximus non mi eu, ultrices elementum mauris. Suspendisse lacinia tellus lacus, sit amet consequat turpis congue ut. Mauris vel tristique neque. Cras vehicula orci commodo purus convallis, vel aliquam leo mollis. Morbi nisl libero, sodales eu nisl eget, pulvinar pretium est.
-            </p>
+             Browser.is is a user-friendly and convenient tool designed to provide detailed information about your browser, device, and location. It offers a quick and accessible way to display and share relevant data, allowing users to gain insights into their browsing environment.
+</p>
+<p>
+With Browser.is, you can effortlessly retrieve essential information about your browser, such as its name, version, and supported technologies. It also offers insights into your device, including the operating system, screen resolution, and available memory. Additionally, Browser.is can provide data about your internet connection, including your IP address and network type.
+</p>
+<p>
+One of the notable features of Browser.is is its ability to determine your location based on your IP address. This information can be particularly useful for various applications, such as personalized content delivery or geographically targeted services.
+</p>
+<p>
+The tool is designed to be easy to use, requiring no installation or complex configurations. Simply accessing the Browser.is website will present you with a comprehensive overview of your browser, device, and location data in a user-friendly interface. You can also easily share this information with others by sharing the provided URL or exporting the data as a PDF.
+</p>
+<p>
+Whether you're a web developer, a tech enthusiast, or simply curious about your browsing environment, Browser.is offers a hassle-free solution to gather and share essential information about your browser, device, and location.
+</p>
 HTML;
 
         return Inertia::render('Home', [

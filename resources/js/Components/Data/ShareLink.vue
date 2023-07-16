@@ -26,7 +26,7 @@ function exportToPdf() {
     window.plausible('Export PDF')
     html2pdf(document.getElementById("results"), {
         margin: 1,
-        filename: "results.pdf",
+        filename: "browser-is-results.pdf",
     });
 }
 

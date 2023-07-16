@@ -6,7 +6,8 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
-    content: String
+    content: String,
+    contentTitle: String,
 })
 </script>
 
@@ -15,7 +16,7 @@ const props = defineProps({
         <div class="w-full md:w-8/12 mx-auto px-4">
             <slot />
         </div>
-        <basic-content v-if="!isResultsPage && content">
+        <basic-content v-if="!isResultsPage && content" :title="contentTitle">
             <div v-html="content" />
         </basic-content>
     </div>
