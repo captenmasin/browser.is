@@ -50,7 +50,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="w-full flex-col-reverse lg:flex-row bg-gray-100 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
+    <div class="w-full flex-col-reverse lg:flex-row bg-gray-100 dark:bg-gray-800 border-gray-900 dark:border-b px-4 sm:px-6 py-4 flex items-center">
         <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
             <ul class="flex items-center justify-center w-full lg:justify-normal space-x-2">
                 <li class="w-full lg:w-auto">
@@ -65,7 +65,7 @@ onMounted(async () => {
                 </li>
             </ul>
         </div>
-        <div class="w-full flex flex-col sm:flex-row items-center justify-end lg:w-1/2">
+        <div class="w-full flex flex-col items-start sm:flex-row sm:items-center justify-end lg:w-1/2">
             <div class="mr-4 font-heading mb-2 sm:mb-0">Share URL</div>
             <text-input class="w-full sm:w-9/12 lg:w-8/12" :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
         </div>
