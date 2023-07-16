@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Helpers;
+use Str;
 use Inertia\Inertia;
 use App\Models\Result;
+use App\Services\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
@@ -16,20 +17,25 @@ class ToolController extends Controller
             abort(404);
         }
 
+        $content = Helpers::getContent($type);
+        $description = preg_replace( "/\r|\n/", "", $content);
+
         return Inertia::render('Tool', [
             'type' => $type,
             'uuid' => $uuid,
             'title' => $title,
-            'content' => Helpers::getContent($type),
+            'content' => $content,
             'url' => route($type, ['uuid' => $uuid ?? Cookie::get(config('site.cookie_name'))])
-        ])->withMeta($meta);
+        ])->withMeta(array_merge($meta, [
+            'description' => Str::limit(strip_tags($description), 140)
+        ]));
     }
 
     public function browser(Request $request, ?string $uuid = null)
     {
         return $this->generate('browser', 'Browser', $uuid, [
             'title' => 'Browser info',
-            'image' => url('/images/social/browser.png')
+            'image' => url('/images/social/browser.png'),
         ]);
     }
 

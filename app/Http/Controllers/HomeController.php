@@ -22,6 +22,7 @@ class HomeController extends Controller
         $result = Result::where('uuid', $uuid)->first();
 
         $content = Helpers::getContent('home');
+        $description = preg_replace( "/\r|\n/", "", $content);
 
         return Inertia::render('Home', [
             'uuid' => $uuid,
@@ -31,7 +32,7 @@ class HomeController extends Controller
         ])->withMeta([
             'image' => url('/images/social/general.png'),
             'title'       => $result ? 'Results' : 'All info',
-            'description' => ''
+            'description' => Str::limit(strip_tags($description), 140)
         ]);
     }
 }
