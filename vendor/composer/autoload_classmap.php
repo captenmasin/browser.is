@@ -13,6 +13,7 @@ return array(
     'App\\Actions\\GetShareUrl' => $baseDir . '/app/Actions/GetShareUrl.php',
     'App\\Actions\\SaveResults' => $baseDir . '/app/Actions/SaveResults.php',
     'App\\Actions\\SendResultsToEmail' => $baseDir . '/app/Actions/SendResultsToEmail.php',
+    'App\\Console\\Commands\\Deploy' => $baseDir . '/app/Console/Commands/Deploy.php',
     'App\\Console\\Commands\\GenerateSitemap' => $baseDir . '/app/Console/Commands/GenerateSitemap.php',
     'App\\Console\\Commands\\PublishResources' => $baseDir . '/app/Console/Commands/PublishResources.php',
     'App\\Console\\Commands\\PurgeResults' => $baseDir . '/app/Console/Commands/PurgeResults.php',

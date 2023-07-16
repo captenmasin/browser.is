@@ -826,6 +826,7 @@ class ComposerStaticInitbe5ff92e24c3138522f1a2fafc2abf1f
         'App\\Actions\\GetShareUrl' => __DIR__ . '/../..' . '/app/Actions/GetShareUrl.php',
         'App\\Actions\\SaveResults' => __DIR__ . '/../..' . '/app/Actions/SaveResults.php',
         'App\\Actions\\SendResultsToEmail' => __DIR__ . '/../..' . '/app/Actions/SendResultsToEmail.php',
+        'App\\Console\\Commands\\Deploy' => __DIR__ . '/../..' . '/app/Console/Commands/Deploy.php',
         'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
         'App\\Console\\Commands\\PublishResources' => __DIR__ . '/../..' . '/app/Console/Commands/PublishResources.php',
         'App\\Console\\Commands\\PurgeResults' => __DIR__ . '/../..' . '/app/Console/Commands/PurgeResults.php',
