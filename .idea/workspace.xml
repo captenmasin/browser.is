@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/SendResultsToEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Results.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Results.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/EmailForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +282,7 @@
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
       <workItem from="1689437063874" duration="18897000" />
-      <workItem from="1689523985460" duration="415000" />
+      <workItem from="1689523985460" duration="1204000" />
     </task>
     <servers />
   </component>
