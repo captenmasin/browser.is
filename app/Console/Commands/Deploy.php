@@ -42,7 +42,7 @@ class Deploy extends Command
         $this->call(GenerateSitemap::class);
 
         $this->info('Regenerating key');
-        $this->call(KeyGenerateCommand::class);
+        $this->call(KeyGenerateCommand::class, ['--force' => true]);
 
         $this->info('Restarting horizon');
         $this->call(TerminateCommand::class);
