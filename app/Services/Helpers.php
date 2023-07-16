@@ -21,4 +21,13 @@ class Helpers
 
         return $string;
     }
+
+    public static function getContent(string $filename = ''): string|null
+    {
+        if(file_exists(resource_path('content/'.$filename.'.md'))) {
+            return Str::markdown(file_get_contents(resource_path('content/'.$filename.'.md')));
+        }
+
+        return null;
+    }
 }
