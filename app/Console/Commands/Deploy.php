@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Console\Migrations\MigrateCommand;
+use Illuminate\Foundation\Console\ConfigCacheCommand;
+use Illuminate\Foundation\Console\ConfigClearCommand;
 use Illuminate\Foundation\Console\KeyGenerateCommand;
 use Illuminate\Foundation\Console\RouteCacheCommand;
 use Illuminate\Foundation\Console\RouteClearCommand;
@@ -19,21 +21,31 @@ class Deploy extends Command
 
     public function handle()
     {
+        $this->info('Clearing cache');
         $this->call(RouteClearCommand::class);
         $this->call(ViewClearCommand::class);
+        $this->call(ConfigClearCommand::class);
 
+        $this->info('Database and storage');
         $this->call(MigrateCommand::class, ['--force' => true]);
         $this->call(StorageLinkCommand::class);
 
-        shell_exec('npm install');
-        dd(shell_exec('npm run build'));
+        $this->info('NPM Install and build');
+        shell_exec('npm install --no-audit --silent');
+        shell_exec('npm run build --no-audit --silent');
 
+        $this->info('Publishing resources');
         $this->call(PublishResources::class);
+
+        $this->info('Generating sitemap');
         $this->call(GenerateSitemap::class);
 
+        $this->info('Regenerating key');
         $this->call(KeyGenerateCommand::class);
 
+        $this->info('Caching');
         $this->call(RouteCacheCommand::class);
         $this->call(ViewCacheCommand::class);
+        $this->call(ConfigCacheCommand::class);
     }
 }
