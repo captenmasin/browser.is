@@ -189,13 +189,6 @@
       <path value="$PROJECT_DIR$/vendor/lorisleiva/lody" />
       <path value="$PROJECT_DIR$/vendor/lorisleiva/laravel-actions" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
-      <path value="$PROJECT_DIR$/vendor/spatie/once" />
-      <path value="$PROJECT_DIR$/vendor/rap2hpoutre/fast-excel" />
-      <path value="$PROJECT_DIR$/vendor/brick/money" />
-      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
-      <path value="$PROJECT_DIR$/vendor/laravel/nova" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
-      <path value="$PROJECT_DIR$/vendor/openspout/openspout" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
