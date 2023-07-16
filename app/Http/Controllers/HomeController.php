@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Helpers;
 use Inertia\Inertia;
 use App\Models\Result;
+use App\Services\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
-use Str;
 
 class HomeController extends Controller
 {
