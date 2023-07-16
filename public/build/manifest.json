@@ -201,7 +201,7 @@
     "src": "node_modules/dompurify/dist/purify.es.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-d38ec152.css",
+    "file": "assets/app-fbcc046f.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -298,7 +298,7 @@
     "src": "resources/images/social/location.png"
   },
   "resources/js/app.css": {
-    "file": "assets/app-3188f2a4.css",
+    "file": "assets/app-79487e59.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -323,18 +323,18 @@
       "assets/black-italic-366cee53.woff2"
     ],
     "css": [
-      "assets/app-3188f2a4.css",
-      "assets/app-d38ec152.css",
+      "assets/app-79487e59.css",
+      "assets/app-fbcc046f.css",
       "assets/vue3-toastify-755185d7.css"
     ],
-    "file": "assets/app-6889e6c7.js",
+    "file": "assets/app-4b04c471.js",
     "imports": [
+      "_@vue-11c8391d.js",
       "_@inertiajs-503a4e9d.js",
       "_html2pdf.js-4a7b5c81.js",
+      "_mitt-f7ef348c.js",
       "_vue3-popper-63df540e.js",
       "_@vueuse-c59dbd98.js",
-      "_@vue-11c8391d.js",
-      "_mitt-f7ef348c.js",
       "_nprogress-d43c1473.js",
       "_axios-3c7106ac.js",
       "_deepmerge-42ef48be.js",

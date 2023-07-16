@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Migrations\MigrateCommand;
 use Illuminate\Foundation\Console\KeyGenerateCommand;
 use Illuminate\Foundation\Console\RouteCacheCommand;
 use Illuminate\Foundation\Console\RouteClearCommand;
+use Illuminate\Foundation\Console\StorageLinkCommand;
 use Illuminate\Foundation\Console\ViewCacheCommand;
 use Illuminate\Foundation\Console\ViewClearCommand;
 
@@ -21,8 +22,8 @@ class Deploy extends Command
         $this->call(RouteClearCommand::class);
         $this->call(ViewClearCommand::class);
 
-        $this->call('migrate --force');
-        $this->call('storage:link');
+        $this->call(MigrateCommand::class, ['--force' => true]);
+        $this->call(StorageLinkCommand::class);
 
         shell_exec('npm install');
         shell_exec('npm run build');
