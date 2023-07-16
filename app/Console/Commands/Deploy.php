@@ -26,7 +26,7 @@ class Deploy extends Command
         $this->call(StorageLinkCommand::class);
 
         shell_exec('npm install');
-        shell_exec('npm run build');
+        dd(shell_exec('npm run build'));
 
         $this->call(PublishResources::class);
         $this->call(GenerateSitemap::class);
