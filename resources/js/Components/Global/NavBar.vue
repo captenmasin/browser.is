@@ -6,7 +6,7 @@ import AppLogo from '@/Components/Global/AppLogo.vue'
 import AppLogoWhite from '@/Components/Global/AppLogoWhite.vue'
 
 const navOpen = ref(false)
-const isResultsPage = ref(usePage().props.is_results)
+const isResultsPage = ref(usePage().props.is_results && usePage().component !== 'Errors/404')
 
 function linkIsActive(url) {
     let cleanUrl = url.split("?")[0];
@@ -15,7 +15,7 @@ function linkIsActive(url) {
 
 router.on('finish', () => {
     navOpen.value = false
-    isResultsPage.value = usePage().props.is_results;
+    isResultsPage.value = usePage().props.is_results && usePage().component !== 'Errors/404';
 })
 </script>
 

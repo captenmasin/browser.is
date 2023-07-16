@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function __invoke(Request $request, ?string $uuid = null)
     {
         if($uuid && !Result::where('uuid', $uuid)->exists()){
-            return redirect()->route('home');
+            abort(404);
         }
 
         $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
