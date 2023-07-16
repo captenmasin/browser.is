@@ -12,6 +12,7 @@ class HandleInertiaRequests extends Middleware
 
     public function share(Request $request): array
     {
+        $tools = [];
         foreach (Tool::getInstances() as $key => $tool) {
             $tools[$tool->value] = [
                 'url'  => route($tool->value),
@@ -26,7 +27,10 @@ class HandleInertiaRequests extends Middleware
             'csrf_token'   => csrf_token(),
             'is_results'   => $request->route()?->parameter('uuid') !== null ?? null,
             'info'         => config('info'),
-            'tools'        => $tools
+            'tools'        => $tools,
+            'enums' => [
+                'Tool' => Tool::asArray()
+            ]
         ]);
     }
 }

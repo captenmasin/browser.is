@@ -16,5 +16,4 @@ final class Tool extends Enum
     const Location = 'location';
     const Browser = 'browser';
     const Device = 'device';
-    const Test = 'test';
 }

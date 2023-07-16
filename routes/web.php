@@ -9,4 +9,4 @@ Route::get(Tool::Device . '/{uuid?}', [ToolController::class, Tool::Device])->na
 Route::get(Tool::Browser . '/{uuid?}', [ToolController::class, Tool::Browser])->name(Tool::Browser);
 Route::get(Tool::Location . '/{uuid?}', [ToolController::class, Tool::Location])->name(Tool::Location);
 
-Route::get('/{uuid?}', HomeController::class)->name('home');
+Route::get('{uuid?}', HomeController::class)->name('home');
