@@ -58,7 +58,7 @@ onMounted(() => {
                    :disabled="disabled" :readonly="readonly"
                    @input="$emit('update:modelValue', $event.target.value)"
                    :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-20'"
-                   class="border border-secondary/20 focus:outline-0 focus:ring-secondary/20 focus:border-secondary transition-colors w-full focus:ring-0 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
+                   class="border border-secondary/20 focus:outline-0 focus:ring-secondary focus:border-secondary transition-colors w-full focus:ring-1 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
         </label>
         <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center" v-if="modelValue && clearable">
             <Popper :hover="true" placement="top" content="Clear" :arrow="true">

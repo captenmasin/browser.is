@@ -12,6 +12,7 @@ use Illuminate\Foundation\Console\RouteClearCommand;
 use Illuminate\Foundation\Console\StorageLinkCommand;
 use Illuminate\Foundation\Console\ViewCacheCommand;
 use Illuminate\Foundation\Console\ViewClearCommand;
+use Laravel\Horizon\Console\TerminateCommand;
 
 class Deploy extends Command
 {
@@ -42,6 +43,9 @@ class Deploy extends Command
 
         $this->info('Regenerating key');
         $this->call(KeyGenerateCommand::class);
+
+        $this->info('Restarting horizon');
+        $this->call(TerminateCommand::class);
 
         $this->info('Caching');
         $this->call(RouteCacheCommand::class);

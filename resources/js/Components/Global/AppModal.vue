@@ -24,8 +24,8 @@ onMounted(() => {
         <Transition name="slide-up">
             <div class="absolute top-36 mx-auto w-full max-w-xl px-4" v-show="show" tabindex="-1" @keydown.esc="$emit('close')">
                 <div class="bg-white dark:bg-gray-800 dark:text-white text-black rounded-md">
-                    <div class="p-4 justify-between flex items-center">
-                        <div class="font-heading">
+                    <div class="p-4 px-6 justify-between flex items-center">
+                        <div class="font-heading text-2xl">
                             <slot name="title"/>
                         </div>
                         <button @click="$emit('close')" class="text-xl">
@@ -34,7 +34,7 @@ onMounted(() => {
                             </svg>
                         </button>
                     </div>
-                    <div class="flex flex-col p-4 pt-0">
+                    <div class="flex flex-col p-6 pt-0">
                         <slot name="default"/>
                     </div>
                     <div class="flex items-center p-4 justify-end">

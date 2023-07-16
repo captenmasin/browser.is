@@ -27,6 +27,10 @@ function submitForm() {
         } else{
             sent.value = true
             window.plausible('Sent via email')
+
+            setTimeout(function () {
+                sent.value = false
+            }, 5000);
         }
     })
 }
@@ -34,7 +38,7 @@ function submitForm() {
 
 <template>
     <form class="w-full" @submit.prevent="submitForm">
-        <div class="text-center mt-2 text-secondary mx-auto text-sm" v-if="sent">
+        <div class="text-center mt-4 text-secondary mx-auto" v-if="sent">
             Results sent
         </div>
 

@@ -14,9 +14,7 @@ class Results extends Mailable
     use Queueable, SerializesModels;
 
     public function __construct(public Result $results, public string $type = 'home')
-    {
-
-    }
+    {}
 
     public function envelope(): Envelope
     {

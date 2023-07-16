@@ -16,7 +16,7 @@ class SendResultsToEmail
     {
         $results = Result::where('uuid', $uuid)->first();
         $emails = explode(',', $email);
-        Mail::to($emails)->send(new Results($results, $type));
+        Mail::to($emails)->queue(new Results($results, $type));
 
         return 200;
     }
