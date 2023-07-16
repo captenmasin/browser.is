@@ -13,7 +13,7 @@ use BenSampo\Enum\Enum;
 final class Tool extends Enum
 {
     const All = 'home';
-    const Location = 'location';
-    const Browser = 'browser';
     const Device = 'device';
+    const Browser = 'browser';
+    const Location = 'location';
 }
