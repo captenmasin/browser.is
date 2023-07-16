@@ -16,7 +16,7 @@ class Handler extends ExceptionHandler
     {
         $response = parent::render($request, $e);
 
-        if ($response->status() === 404) {
+        if (in_array($response->status(), [404, 403])) {
             return Inertia::render('Errors/404')->withMeta([
                 'title' => 'Error 404'
             ]);
