@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RegisterTrackingId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RegisterTrackingId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Inputs/TextInput.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,6 +218,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.laravel-idea.search-composer-json": "true",
@@ -278,7 +283,7 @@
       <workItem from="1689063901262" duration="42029000" />
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
-      <workItem from="1689437063874" duration="9377000" />
+      <workItem from="1689437063874" duration="11004000" />
     </task>
     <servers />
   </component>

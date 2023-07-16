@@ -38,9 +38,11 @@ function openEmailModal() {
 onMounted(async () => {
     const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type, _token: usePage().props.csrf_token}));
     data.value = await response.json()
+    data.value.url = data.value.url.replaceAll("https://", "").replaceAll("http://", "")
+    data.value.url = 'browser.is/NiqWM5cGsJ'
 
     emitter.on('open-modal', () => {
-        setTimeout(function(){
+        setTimeout(function () {
             let input = document.getElementById('emailInput')
             input.focus()
         }, 500);
@@ -49,23 +51,24 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="w-full flex-col md:flex-row bg-gray-100 space-y-4 md:space-y-0 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
-        <div class="w-full md:w-1/2">
-            <ul class="flex items-center justify-center md:justify-normal space-x-2">
-                <li>
-                    <button @click="openEmailModal" class="bg-secondary text-white rounded px-4 py-1 text-sm">
+    <div class="w-full flex-col-reverse lg:flex-row bg-gray-100 dark:bg-gray-800 border-gray-900 dark:border-b px-6 py-4 flex items-center">
+        <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
+            <ul class="flex items-center justify-center w-full lg:justify-normal space-x-2">
+                <li class="w-full lg:w-auto">
+                    <button @click="openEmailModal" class="bg-secondary w-full lg:w-auto text-white rounded px-4 py-2 text-sm">
                         Send via Email
                     </button>
                 </li>
-                <li>
-                    <button @click="exportToPdf" class="bg-secondary text-white rounded px-4 py-1 text-sm">
+                <li class="w-full lg:w-auto">
+                    <button @click="exportToPdf" class="bg-secondary w-full lg:w-auto text-white rounded px-4 py-2 text-sm">
                         Export as PDF
                     </button>
                 </li>
             </ul>
         </div>
-        <div class="w-full md:w-1/2">
-            <text-input :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
+        <div class="w-full flex flex-col sm:flex-row items-center justify-end lg:w-1/2">
+            <div class="mr-4 font-heading mb-2 sm:mb-0">Share URL</div>
+            <text-input class="w-full sm:w-9/12 lg:w-8/12" :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
         </div>
 
         <app-modal :show="showShareModal" @close="showShareModal = false">

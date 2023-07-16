@@ -11,6 +11,7 @@ const props = defineProps({
     copyable: {type: Boolean, default: false},
     readonly: {type: Boolean, default: false},
     hasAutofocus: {type: Boolean, default: true},
+    appendHttpsOnCopy: {type: Boolean, default: true},
     small: {type: Boolean, default: false},
     placeholder: {type: String, default: ''},
     inputType: {type: String, default: 'text'},
@@ -31,6 +32,9 @@ function clear() {
 const {text, copy, copied, isSupported} = useClipboard()
 
 function copyValue(value) {
+    if(props.appendHttpsOnCopy){
+        value = 'https://' + value
+    }
     copy(value)
     window.plausible('Copy URL')
 }
@@ -53,7 +57,7 @@ onMounted(() => {
                    :id="id" @focus="$event.target.select()"
                    :disabled="disabled" :readonly="readonly"
                    @input="$emit('update:modelValue', $event.target.value)"
-                   :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-24'"
+                   :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-20'"
                    class="border border-secondary/20 focus:outline-0 focus:ring-secondary/20 focus:border-secondary transition-colors w-full focus:ring-0 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
         </label>
         <div class="absolute top-0 right-0 h-full aspect-square flex flex-col items-center justify-center" v-if="modelValue && clearable">

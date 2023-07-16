@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Result;
+use App\Services\Helpers;
 use Closure;
 use Cookie;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class RegisterTrackingId
             return $next($request);
         }
 
-        $cookieUuid = Str::orderedUuid();
+        $cookieUuid = Helpers::generateId();
         $cookie = Cookie::make(config('site.cookie_name'), $cookieUuid, 5);
         Result::create([
             'uuid' => $cookieUuid,
