@@ -25,7 +25,8 @@ class Helpers
     public static function getContent(string $filename = ''): string|null
     {
         if(file_exists(resource_path('content/'.$filename.'.md'))) {
-            return Str::markdown(file_get_contents(resource_path('content/'.$filename.'.md')));
+            $content = Str::markdown(file_get_contents(resource_path('content/'.$filename.'.md')));
+            return Str::replace("<a ", "<a target='_blank' ", $content);
         }
 
         return null;

@@ -13,17 +13,15 @@ class ToolController extends Controller
 {
     public function generate($type, $title = '', ?string $uuid = null, array $meta = []){
         if($uuid && !Result::where('uuid', $uuid)->exists()){
-            return redirect()->route($type);
+            abort(404);
         }
-
-        $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
 
         return Inertia::render('Tool', [
             'type' => $type,
             'uuid' => $uuid,
             'title' => $title,
             'content' => Helpers::getContent($type),
-            'url' => route($type, ['uuid' => $routeUuid])
+            'url' => route($type, ['uuid' => $uuid ?? Cookie::get(config('site.cookie_name'))])
         ])->withMeta($meta);
     }
 
@@ -38,7 +36,7 @@ class ToolController extends Controller
     public function device(Request $request, ?string $uuid = null)
     {
         return $this->generate('device', 'Device', $uuid, [
-            'title' => 'Device',
+            'title' => 'Device info',
             'image' => url('/images/social/device.png')
         ]);
     }
@@ -46,7 +44,7 @@ class ToolController extends Controller
     public function location(Request $request, ?string $uuid = null)
     {
         return $this->generate('location', 'Location', $uuid, [
-            'title' => 'Location',
+            'title' => 'Location info',
             'image' => url('/images/social/location.png')
         ]);
     }
