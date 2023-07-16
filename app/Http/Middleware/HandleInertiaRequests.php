@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\Tool;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -11,30 +12,20 @@ class HandleInertiaRequests extends Middleware
 
     public function share(Request $request): array
     {
+        foreach (Tool::getInstances() as $key => $tool) {
+            $tools[$tool->value] = [
+                'url'  => route($tool->value),
+                'name' => $key
+            ];
+        }
+
         return array_merge(parent::share($request), [
             'currentRoute' => $request->route()?->getName() ?? null,
             'currentUrl'   => $request->url(),
             'csrf_token'   => csrf_token(),
             'is_results'   => $request->route()?->parameter('uuid') !== null ?? null,
             'info'         => config('info'),
-            'tools'        => [
-                'all'      => [
-                    'url'  => route('home'),
-                    'name' => 'All'
-                ],
-                'device'   => [
-                    'url'  => route('device'),
-                    'name' => 'Device'
-                ],
-                'browser'  => [
-                    'url'  => route('browser'),
-                    'name' => 'Browser'
-                ],
-                'location' => [
-                    'url'  => route('location'),
-                    'name' => 'Location'
-                ]
-            ]
+            'tools'        => $tools
         ]);
     }
 }

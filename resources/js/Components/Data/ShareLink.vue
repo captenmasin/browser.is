@@ -39,7 +39,6 @@ onMounted(async () => {
     const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type, _token: usePage().props.csrf_token}));
     data.value = await response.json()
     data.value.url = data.value.url.replaceAll("https://", "").replaceAll("http://", "")
-    data.value.url = 'browser.is/NiqWM5cGsJ'
 
     emitter.on('open-modal', () => {
         setTimeout(function () {

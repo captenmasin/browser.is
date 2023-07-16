@@ -189,6 +189,8 @@
       <path value="$PROJECT_DIR$/vendor/lorisleiva/lody" />
       <path value="$PROJECT_DIR$/vendor/lorisleiva/laravel-actions" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

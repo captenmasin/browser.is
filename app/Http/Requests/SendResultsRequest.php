@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\Tool;
+use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Validator;
@@ -18,7 +20,7 @@ class SendResultsRequest extends FormRequest
         return [
             'email.*' => ['required', 'email'],
             'uuid' => ['string', 'required'],
-            'type' => ['string', 'required', 'in:home,device,location,browser']
+            'type' => ['string', 'required', new EnumValue(Tool::class)]
         ];
     }
 

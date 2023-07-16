@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Str;
+use App\Enums\Tool;
 use Inertia\Inertia;
 use App\Models\Result;
 use App\Services\Helpers;
@@ -12,43 +12,39 @@ use Illuminate\Support\Facades\Cookie;
 
 class ToolController extends Controller
 {
-    public function generate($type, $title = '', ?string $uuid = null, array $meta = []){
-        if($uuid && !Result::where('uuid', $uuid)->exists()){
+    public function tool(Tool $type, ?string $uuid = null)
+    {
+        if ($uuid && !Result::where('uuid', $uuid)->exists()) {
             abort(404);
         }
 
+        $url = route($type->value, ['uuid' => $uuid ?? Cookie::get(config('site.cookie_name'))]);
+
         return Inertia::render('Tool', [
-            'type' => $type,
-            'uuid' => $uuid,
-            'title' => $title,
-            'content' => Helpers::getContent($type),
-            'url' => route($type, ['uuid' => $uuid ?? Cookie::get(config('site.cookie_name'))])
-        ])->withMeta(array_merge($meta, [
-            'description' => Helpers::getDescription($type)
-        ]));
+            'url'     => $url,
+            'type'    => $type->value,
+            'uuid'    => $uuid,
+            'title'   => $type->key,
+            'content' => Helpers::getContent($type->value)
+        ])->withMeta([
+            'title'       => $type->key . ' info',
+            'description' => Helpers::getDescription($type->value),
+            'image'       => url('/images/social/' . $type->value . '.png')
+        ]);
     }
 
     public function browser(Request $request, ?string $uuid = null)
     {
-        return $this->generate('browser', 'Browser', $uuid, [
-            'title' => 'Browser info',
-            'image' => url('/images/social/browser.png'),
-        ]);
+        return $this->tool(new Tool(Tool::Browser), $uuid);
     }
 
     public function device(Request $request, ?string $uuid = null)
     {
-        return $this->generate('device', 'Device', $uuid, [
-            'title' => 'Device info',
-            'image' => url('/images/social/device.png')
-        ]);
+        return $this->tool(new Tool(Tool::Device), $uuid);
     }
 
     public function location(Request $request, ?string $uuid = null)
     {
-        return $this->generate('location', 'Location', $uuid, [
-            'title' => 'Location info',
-            'image' => url('/images/social/location.png')
-        ]);
+        return $this->tool(new Tool(Tool::Location), $uuid);
     }
 }

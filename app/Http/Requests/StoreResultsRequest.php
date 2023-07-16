@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\Tool;
+use BenSampo\Enum\Rules\EnumValue;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Validator;
@@ -17,7 +19,7 @@ class StoreResultsRequest extends FormRequest
     {
         return [
             'data' => ['json'],
-            'type' => ['in:browser,device,location']
+            'type' => [new EnumValue(Tool::class)]
         ];
     }
 

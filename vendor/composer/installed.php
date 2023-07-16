@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => '2.x-dev',
         'version' => '2.9999999.9999999.9999999-dev',
-        'reference' => 'aa12623a33566240034462762db806dfbe7e513e',
+        'reference' => 'cc658f2e3e6e68ae8b9ebf93204bfbdb9b2f1fc3',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -37,6 +37,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'bensampo/laravel-enum' => array(
+            'pretty_version' => 'v6.4.1',
+            'version' => '6.4.1.0',
+            'reference' => '0e48455d59c7ad043be01ef6aef9db3da15e59b2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bensampo/laravel-enum',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
             'version' => '0.11.0.0',
@@ -62,7 +71,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/./class-map-generator',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'composer/pcre' => array(
             'pretty_version' => '3.1.0',
@@ -71,7 +80,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/./pcre',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -511,6 +520,15 @@
                 0 => '*',
             ),
         ),
+        'laminas/laminas-code' => array(
+            'pretty_version' => '4.11.0',
+            'version' => '4.11.0.0',
+            'reference' => '169123b3ede20a9193480c53de2a8194f8c073ec',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-code',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'larabug/larabug' => array(
             'pretty_version' => '3.0',
             'version' => '3.0.0.0',
@@ -550,7 +568,7 @@
         'laravel/laravel' => array(
             'pretty_version' => '2.x-dev',
             'version' => '2.9999999.9999999.9999999-dev',
-            'reference' => 'aa12623a33566240034462762db806dfbe7e513e',
+            'reference' => 'cc658f2e3e6e68ae8b9ebf93204bfbdb9b2f1fc3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -228,6 +228,98 @@
             "install-path": "../barryvdh/reflection-docblock"
         },
         {
+            "name": "bensampo/laravel-enum",
+            "version": "v6.4.1",
+            "version_normalized": "6.4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BenSampo/laravel-enum.git",
+                "reference": "0e48455d59c7ad043be01ef6aef9db3da15e59b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BenSampo/laravel-enum/zipball/0e48455d59c7ad043be01ef6aef9db3da15e59b2",
+                "reference": "0e48455d59c7ad043be01ef6aef9db3da15e59b2",
+                "shasum": ""
+            },
+            "require": {
+                "composer/class-map-generator": "^1",
+                "illuminate/contracts": "^9 || ^10",
+                "illuminate/support": "^9 || ^10",
+                "laminas/laminas-code": "^3.4 || ^4",
+                "nikic/php-parser": "^4.13",
+                "php": "^8"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.4",
+                "ergebnis/composer-normalize": "^2.28.3",
+                "mll-lab/php-cs-fixer-config": "^5.4",
+                "mockery/mockery": "^1.5",
+                "nunomaduro/larastan": "^2.1.12",
+                "orchestra/testbench": "^7.6.1 || ^8",
+                "phpstan/phpstan": "^1.8.2",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.1.1",
+                "phpunit/phpunit": "^9.5.21"
+            },
+            "time": "2023-07-10T18:42:50+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BenSampo\\Enum\\EnumServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BenSampo\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Sampson",
+                    "homepage": "https://sampo.co.uk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Benedikt Franke",
+                    "homepage": "https://franke.tech",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple, extensible and powerful enumeration implementation for Laravel.",
+            "homepage": "https://github.com/bensampo/laravel-enum",
+            "keywords": [
+                "bensampo",
+                "enum",
+                "laravel",
+                "package",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/BenSampo/laravel-enum/issues",
+                "source": "https://github.com/BenSampo/laravel-enum/tree/v6.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/bensampo",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../bensampo/laravel-enum"
+        },
+        {
             "name": "brick/math",
             "version": "0.11.0",
             "version_normalized": "0.11.0.0",
@@ -2473,6 +2565,72 @@
                 "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.115"
             },
             "install-path": "../jaybizzle/crawler-detect"
+        },
+        {
+            "name": "laminas/laminas-code",
+            "version": "4.11.0",
+            "version_normalized": "4.11.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-code.git",
+                "reference": "169123b3ede20a9193480c53de2a8194f8c073ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/169123b3ede20a9193480c53de2a8194f8c073ec",
+                "reference": "169123b3ede20a9193480c53de2a8194f8c073ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.1.0 || ~8.2.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0.0",
+                "ext-phar": "*",
+                "laminas/laminas-coding-standard": "^2.3.0",
+                "laminas/laminas-stdlib": "^3.6.1",
+                "phpunit/phpunit": "^10.0.9",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.7.1"
+            },
+            "suggest": {
+                "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
+                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
+            },
+            "time": "2023-05-14T12:05:38+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Code\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Extensions to the PHP Reflection API, static code scanning, and code generation",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "code",
+                "laminas",
+                "laminasframework"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-code/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-code/issues",
+                "rss": "https://github.com/laminas/laminas-code/releases.atom",
+                "source": "https://github.com/laminas/laminas-code"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "install-path": "../laminas/laminas-code"
         },
         {
             "name": "larabug/larabug",
@@ -12339,8 +12497,6 @@
     "dev-package-names": [
         "barryvdh/laravel-ide-helper",
         "barryvdh/reflection-docblock",
-        "composer/class-map-generator",
-        "composer/pcre",
         "doctrine/cache",
         "doctrine/dbal",
         "doctrine/deprecations",
