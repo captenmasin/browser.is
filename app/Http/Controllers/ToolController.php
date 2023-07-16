@@ -17,17 +17,14 @@ class ToolController extends Controller
             abort(404);
         }
 
-        $content = Helpers::getContent($type);
-        $description = preg_replace( "/\r|\n/", "", $content);
-
         return Inertia::render('Tool', [
             'type' => $type,
             'uuid' => $uuid,
             'title' => $title,
-            'content' => $content,
+            'content' => Helpers::getContent($type),
             'url' => route($type, ['uuid' => $uuid ?? Cookie::get(config('site.cookie_name'))])
         ])->withMeta(array_merge($meta, [
-            'description' => Str::limit(strip_tags($description), 140)
+            'description' => Helpers::getDescription($type)
         ]));
     }
 

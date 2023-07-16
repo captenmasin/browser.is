@@ -21,18 +21,15 @@ class HomeController extends Controller
         $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
         $result = Result::where('uuid', $uuid)->first();
 
-        $content = Helpers::getContent('home');
-        $description = preg_replace( "/\r|\n/", "", $content);
-
         return Inertia::render('Home', [
             'uuid' => $uuid,
             'date' => $result->updated_at ?? null,
-            'content' => $content,
+            'content' => Helpers::getContent('home'),
             'url' => route('home', ['uuid' => $routeUuid])
         ])->withMeta([
             'image' => url('/images/social/general.png'),
             'title'       => $result ? 'Results' : 'All info',
-            'description' => Str::limit(strip_tags($description), 140)
+            'description' => Helpers::getDescription('home')
         ]);
     }
 }
