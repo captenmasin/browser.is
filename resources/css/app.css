@@ -23,7 +23,7 @@ body{
     border-radius: 50px !important;
     min-height: 52px !important;
 
-    box-shadow: 0 1px 10px 0 rgba(var(--colors-primary-rgb),.1), 0 2px 15px 0 rgba(var(--colors-primary-rgb),.05) !important;
+    box-shadow: 0 1px 10px 0 rgba(var(--colors-secondary-rgb),.1), 0 2px 15px 0 rgba(var(--colors-secondary-rgb),.05) !important;
 }
 .Toastify__close-button{
     align-self: center !important;;
@@ -37,7 +37,7 @@ body{
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--error{
-    background: var(--colors-primary) !important;
+    background: var(--colors-secondary) !important;
 }
 
 :root {

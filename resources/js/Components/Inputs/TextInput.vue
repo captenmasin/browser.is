@@ -2,7 +2,6 @@
 import Popper from "vue3-popper"
 import {onMounted, ref} from 'vue'
 import {useClipboard} from '@vueuse/core'
-import emitter from "@/Composables/useEmitter";
 
 const props = defineProps({
     modelValue: String,

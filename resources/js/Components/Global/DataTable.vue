@@ -1,5 +1,6 @@
 <script setup>
-import {isBoolean, isObject, isString} from "@vueuse/core";
+import {toast} from 'vue3-toastify';
+import {isBoolean, isObject, isString, useClipboard} from "@vueuse/core";
 
 const props = defineProps({
     data: Object,
@@ -8,6 +9,30 @@ const props = defineProps({
         default: true
     },
 })
+
+const {text, copy, copied, isSupported} = useClipboard()
+
+function copyValue(value) {
+    copy(value)
+
+    toast.error('Copied value', {
+        autoClose: 1000,
+        position: "bottom-center",
+        hideProgressBar: true,
+        theme: "colored",
+        transition: "slide"
+    });
+}
+
+function convertObject(object, sep = ' / ') {
+    let string = ''
+    for (const property in object) {
+        string += (object[property] + sep)
+    }
+    string = string.slice(0, -sep.length);
+
+    return string
+}
 </script>
 
 <template>
@@ -30,17 +55,17 @@ const props = defineProps({
                         {{ item.label }}
                     </th>
                     <td class="px-4 sm:px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-primary">
-                        <div v-if="isString(item.value)">
+                        <!--                        <Popper :hover="true" placement="top" content="Click to copy" :arrow="true">-->
+                        <span v-if="isString(item.value)" @click="copyValue(item.label + ': ' + item.value)" class="cursor-pointer hover:border-b border-primary border-dotted">
                             {{ item.value }}
-                        </div>
-                        <div class="space-x-2" v-else-if="isObject(item.value)">
-                            <span v-for="(singleValue, singleLabel, index) in item.value">
-                                {{ singleValue }}<span class="ml-2" v-if="(index + 1) !== Object.keys(item.value).length">/</span>
-                            </span>
-                        </div>
-                        <div class="space-x-2" v-else-if="isBoolean(item.value)">
+                        </span>
+                        <span v-else-if="isObject(item.value)" @click="copyValue(item.label + ': ' + convertObject(item.value))" class="cursor-pointer hover:border-b border-primary border-dotted">
+                            {{ convertObject(item.value) }}
+                        </span>
+                        <span v-else-if="isBoolean(item.value)" @click="item.value ? copyValue(item.label + ': ' + 'Yes') : copyValue(item.label + ': ' + 'No')" class="cursor-pointer hover:border-b border-primary border-dotted">
                             {{ item.value ? 'Yes' : 'No' }}
-                        </div>
+                        </span>
+                        <!--                        </Popper>-->
                     </td>
                 </template>
             </tr>
