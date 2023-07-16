@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Errors/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Errors/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/BaseAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/BaseAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/BasicEnum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/EnumToArray.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/IsCacheable.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +287,7 @@
       <workItem from="1689372550845" duration="3364000" />
       <workItem from="1689427960764" duration="4004000" />
       <workItem from="1689437063874" duration="18897000" />
-      <workItem from="1689523985460" duration="6157000" />
+      <workItem from="1689523985460" duration="6795000" />
     </task>
     <servers />
   </component>
