@@ -14,15 +14,20 @@ class SaveResults
 
     public function handle($resultType = '', $data = [])
     {
+        $uuid = Cookie::get(config('site.cookie_name'));
         $model = Result::where(['uuid' => Cookie::get(config('site.cookie_name'))]);
         if ($model->exists()) {
+            $currentData = $model->first()->data;
+            $currentData[$resultType] = $data;
             $model->update([
-                'data->' . $resultType => json_decode(json_encode($data), true)
+                'data' => $currentData
             ]);
         } else {
             Result::create([
                 'uuid' => Cookie::get(config('site.cookie_name')),
-                'data' => json_decode(json_encode([$resultType => $data]), true)
+                'data' => [
+                    $resultType => $data
+                ]
             ]);
         }
 
