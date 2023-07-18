@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 <template>
     <article>
-        <h2 class="text-2xl font-heading text-secondary" v-html="title"></h2>
+        <h2 class="text-2xl font-bold font-heading text-secondary" v-html="title"></h2>
         <div class="prose text-black">
             <slot/>
         </div>

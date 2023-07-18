@@ -46,7 +46,7 @@ const isResultsPage = ref(usePage().props.is_results)
             </div>
         </div>
         <div class="bg-white p-8 mt-4 dark:bg-gray-800 dark:text-white border-primary/10 border rounded overflow-hidden">
-            <h2 class="text-4xl font-heading">Frequently Asked Questions</h2>
+            <h2 class="text-4xl font-heading font-bold">Frequently Asked Questions</h2>
             <div class="flex">
                 <div class="flex-col space-y-4 mt-8 w-1/2">
                     <single-faq title="Title">

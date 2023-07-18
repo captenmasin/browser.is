@@ -25,7 +25,7 @@ onMounted(() => {
             <div class="absolute top-36 mx-auto w-full max-w-xl px-4" v-show="show" tabindex="-1" @keydown.esc="$emit('close')">
                 <div class="bg-white dark:bg-gray-800 dark:text-white text-black rounded-md">
                     <div class="p-4 px-6 justify-between flex items-center">
-                        <div class="font-heading text-2xl">
+                        <div class="font-heading font-bold text-2xl">
                             <slot name="title"/>
                         </div>
                         <button @click="$emit('close')" class="text-xl">

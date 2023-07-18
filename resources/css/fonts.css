@@ -168,7 +168,7 @@
 
 .font-heading,
 .font-heading-thin {
-    font-weight: 800;
+    /*font-weight: 800;*/
     /*font-feature-settings: 'tnum' off, 'ss12' on, 'ss11' on, 'kern' on, 'case' on;*/
     font-feature-settings: "tnum" off, "ss11" on, "kern" on, "case" on;
 }

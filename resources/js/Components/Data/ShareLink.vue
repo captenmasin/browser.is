@@ -66,7 +66,7 @@ onMounted(async () => {
             </ul>
         </div>
         <div class="w-full flex flex-col items-start sm:flex-row sm:items-center justify-end lg:w-1/2">
-            <div class="mr-4 font-heading mb-2 sm:mb-0">Share URL</div>
+            <div class="mr-4 font-heading font-bold mb-2 sm:mb-0">Share URL</div>
             <text-input class="w-full sm:w-9/12 lg:w-8/12" :has-autofocus="false" :model-value="data.url" :copyable="true" :clearable="false" :readonly="true"/>
         </div>
 
