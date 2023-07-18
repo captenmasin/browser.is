@@ -12,7 +12,6 @@
         </title>
     @endif
 
-    {{--    <title>{!! \Artesaos\SEOTools\Facades\SEOMeta::getTitle() !!}</title>--}}
     <meta name="description" content="{!! \Artesaos\SEOTools\Facades\SEOMeta::getDescription() !!}"/>
     {!! OpenGraph::generate() !!}
     {!! Twitter::generate() !!}
