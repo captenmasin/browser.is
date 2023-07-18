@@ -1,6 +1,10 @@
 <script setup>
 import BasicContent from "./BasicContent.vue";
 
+defineOptions({
+    inheritAttrs: false,
+})
+
 const props = defineProps({
     isResultsPage: {
         type: Boolean,

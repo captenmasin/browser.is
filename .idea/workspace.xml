@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppAccordion.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Global/SingleFaq.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/PageContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/PageContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +288,8 @@
       <workItem from="1689427960764" duration="4004000" />
       <workItem from="1689437063874" duration="18897000" />
       <workItem from="1689523985460" duration="10262000" />
-      <workItem from="1689608376994" duration="653000" />
+      <workItem from="1689608376994" duration="877000" />
+      <workItem from="1689665548407" duration="1145000" />
     </task>
     <servers />
   </component>

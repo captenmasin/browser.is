@@ -9,6 +9,8 @@ import DisplayData from "@/Components/Data/DisplayData.vue";
 import LoadingBlock from "@/Components/Global/LoadingBlock.vue";
 import PageContainer from "@/Components/Global/PageContainer.vue";
 import {useEnum} from "@/Composables/useEnum";
+import AppAccordion from "@/Components/Global/AppAccordion.vue";
+import SingleFaq from "@/Components/Global/SingleFaq.vue";
 
 const props = defineProps({
     uuid: String,
@@ -40,6 +42,29 @@ const isResultsPage = ref(usePage().props.is_results)
                             <loading-block :text="'Loading ' + tool.key + ' data...'"/>
                         </template>
                     </Suspense>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white p-8 mt-4 dark:bg-gray-800 dark:text-white border-primary/10 border rounded overflow-hidden">
+            <h2 class="text-4xl font-heading">FAQ</h2>
+            <div class="flex">
+                <div class="flex-col space-y-4 mt-8 w-1/2">
+                    <single-faq title="Title">
+                        Content here
+                    </single-faq>
+                    <single-faq title="Title">
+                        Content here
+                    </single-faq>
+                </div>
+                <div class="flex w-1/2">
+                    <div class="flex-col space-y-4 mt-8 w-1/2">
+                        <single-faq title="Title">
+                            Content here
+                        </single-faq>
+                        <single-faq title="Title">
+                            Content here
+                        </single-faq>
+                    </div>
                 </div>
             </div>
         </div>
