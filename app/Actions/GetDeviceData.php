@@ -70,7 +70,7 @@ class GetDeviceData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = decrypt($result->first()->data[Tool::Device]) ?? [];
+            $data = !empty($result->first()->data[Tool::Device]) ? decrypt($result->first()->data[Tool::Device]) : '{}';
             return json_decode($data, true);
         }
 

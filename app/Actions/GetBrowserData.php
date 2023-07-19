@@ -60,7 +60,7 @@ class GetBrowserData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = decrypt($result->first()->data[Tool::Browser]) ?? [];
+            $data = !empty($result->first()->data[Tool::Browser]) ? decrypt($result->first()->data[Tool::Browser]) : '{}';
             return json_decode($data, true);
         }
 
