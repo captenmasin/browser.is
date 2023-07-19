@@ -20,7 +20,7 @@ class Deploy extends Command
 
     protected $description = 'Command description';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info('Clearing cache');
         $this->call(RouteClearCommand::class);

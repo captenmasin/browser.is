@@ -21,9 +21,12 @@ const props = defineProps({
 const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token);
 
 const data = await response.json().then(async data => {
-    if(!props.uuid) {
+    if (!props.uuid) {
         if (typeof data.window_dimensions !== 'undefined' && data.window_dimensions.value === '') {
-            data.window_dimensions.value = window.innerWidth + 'x' + window.innerHeight
+            data.window_dimensions.value = window.innerWidth + ' x ' + window.innerHeight + 'px'
+        }
+        if (typeof data.screen_dimensions !== 'undefined' && data.screen_dimensions.value === '') {
+            data.screen_dimensions.value = screen.width + ' x ' + screen.height + 'px'
         }
         if (typeof data.time !== 'undefined' && data.time.value === '') {
             data.time.value = new Date().toString()
@@ -37,7 +40,7 @@ const data = await response.json().then(async data => {
         }
     }
 
-    if(props.saveResults) {
+    if (props.saveResults) {
         await usePost(route('api.store'), {
             type: props.type,
             data: JSON.stringify(data)

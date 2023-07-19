@@ -35,6 +35,16 @@ class GetLocationData
                 'description' => '',
                 'value'        => $data->city,
             ],
+            'state' => [
+                'label'       => 'State',
+                'description' => '',
+                'value'        => $data->state . ' ('.$data->state_name.')',
+            ],
+            'timezone' => [
+                'label'       => 'Timezone',
+                'description' => '',
+                'value'        => $data->timezone,
+            ],
             'coords' => [
                 'label'       => 'Coordinates',
                 'description' => '',

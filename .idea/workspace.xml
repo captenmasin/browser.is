@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/browser.is.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/browser.is.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/ShareLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/AppModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/SingleFaq.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/SingleFaq.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/TableTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/TableTitle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Errors/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Errors/404.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/content/device.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/content/device.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +211,7 @@
       <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/bensampo/laravel-enum" />
+      <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="ProjectId" id="2S7cYD9233Htkf6lrarYuUVZL0X" />
@@ -269,6 +270,9 @@
       <option name="pestRunnerSettings">
         <PestRunner scope="ConfigurationFile" />
       </option>
+      <option name="runnerSettings">
+        <PhpTestRunnerSettings scope="ConfigurationFile" />
+      </option>
       <method v="2" />
     </configuration>
   </component>
@@ -292,7 +296,8 @@
       <workItem from="1689665548407" duration="2347000" />
       <workItem from="1689672251031" duration="1537000" />
       <workItem from="1689681067358" duration="1186000" />
-      <workItem from="1689699828556" duration="924000" />
+      <workItem from="1689699828556" duration="3227000" />
+      <workItem from="1689795821094" duration="2404000" />
     </task>
     <servers />
   </component>

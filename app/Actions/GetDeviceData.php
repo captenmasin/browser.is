@@ -42,15 +42,15 @@ class GetDeviceData
                 'description' => '',
                 'value'        => $browser::getUserAgentString(),
             ],
+            'screen_dimensions' => [
+                'label'       => 'Screen dimensions',
+                'description' => '',
+                'value'       => '',
+            ],
             'os' => [
                 'label'       => 'Operating System',
                 'description' => '',
-                'value'        => $browser::platformFamily(),
-            ],
-            'os_version' => [
-                'label'       => 'Operating System Version',
-                'description' => '',
-                'value'        => $browser::platformVersion(),
+                'value'        => $browser::platformFamily() . ' ('.$browser::platformVersion() .')',
             ],
             'device_name' => [
                 'label'       => 'Device Name',
@@ -61,7 +61,7 @@ class GetDeviceData
                 'label'       => 'Device model',
                 'description' => '',
                 'value'        => $browser::deviceModel(),
-            ],
+            ]
         ];
 
     }
