@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422039fd-3ff0-4336-a86e-94f98f1411a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/browser.is.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/browser.is.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetBrowserData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetDeviceData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Deploy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/content/device.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/content/device.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Data/DisplayData.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/SaveResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/SaveResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/PurgeResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/Results.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Results.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +296,7 @@
       <workItem from="1689672251031" duration="1537000" />
       <workItem from="1689681067358" duration="1186000" />
       <workItem from="1689699828556" duration="3227000" />
-      <workItem from="1689795821094" duration="2404000" />
+      <workItem from="1689795821094" duration="3748000" />
     </task>
     <servers />
   </component>

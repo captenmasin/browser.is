@@ -50,7 +50,7 @@ class GetDeviceData
             'os' => [
                 'label'       => 'Operating System',
                 'description' => '',
-                'value'        => $browser::platformFamily() . ' ('.$browser::platformVersion() .')',
+                'value'        => $browser::platformFamily() . ' ('.$browser::platformVersion().')',
             ],
             'device_name' => [
                 'label'       => 'Device Name',
@@ -70,7 +70,7 @@ class GetDeviceData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = $result->first()->data[Tool::Device] ?? [];
+            $data = decrypt($result->first()->data[Tool::Device]) ?? [];
             return json_decode($data, true);
         }
 

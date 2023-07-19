@@ -26,7 +26,7 @@ class Results extends Mailable
 
     public function content(): Content
     {
-        $data = $this->results->data;
+        $data = decrypt($this->results->data);
         if($this->type->value !== Tool::All){
             $data = [
                 $this->type->value => $data[$this->type->value]

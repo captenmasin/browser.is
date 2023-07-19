@@ -15,10 +15,11 @@ class SaveResults
     public function handle($resultType = '', $data = [])
     {
         $uuid = Cookie::get(config('site.cookie_name'));
-        $model = Result::where(['uuid' => Cookie::get(config('site.cookie_name'))]);
+        $model = Result::where(['uuid' => $uuid]);
         if ($model->exists()) {
             $currentData = $model->first()->data;
-            $currentData[$resultType] = $data;
+            $currentData[$resultType] = encrypt($data);
+
             $model->update([
                 'data' => $currentData
             ]);
@@ -26,7 +27,7 @@ class SaveResults
             Result::create([
                 'uuid' => Cookie::get(config('site.cookie_name')),
                 'data' => [
-                    $resultType => $data
+                    $resultType => encrypt($data)
                 ]
             ]);
         }

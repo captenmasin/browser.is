@@ -16,8 +16,9 @@ class PurgeResults extends Command
 
         $count = 0;
         foreach ($results as $result){
+            $data = decrypt($result->data);
             if(
-                (empty($result->data) || $result->updated_at <= now()->subHour()->toDateTimeString())
+                (empty($data) || $result->updated_at <= now()->subHour()->toDateTimeString())
                 || $result->updated_at <= now()->subDays(config('site.keep_results'))->setTime(0, 0, 0)->toDateTimeString()){
                 $result->delete();
                 $count++;

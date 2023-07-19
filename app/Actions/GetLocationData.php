@@ -60,7 +60,7 @@ class GetLocationData
     {
         $result = Result::where('uuid', $uuid);
         if($uuid && $result->exists()){
-            $data = $result->first()->data[Tool::Location] ?? [];
+            $data = decrypt($result->first()->data[Tool::Location]) ?? [];
             return json_decode($data, true);
         }
 
