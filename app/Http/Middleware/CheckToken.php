@@ -8,10 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckToken
 {
-    public function handle(Request $request, Closure $next): Response | array
+    public function handle(Request $request, Closure $next): Response|array
     {
         $token = $request->get('_token');
-        if(!$token || ($token !== csrf_token())){
+        if (! $token || ($token !== csrf_token())) {
             abort(419);
         }
 

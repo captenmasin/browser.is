@@ -3,16 +3,16 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Database\Console\Migrations\MigrateCommand;
+use Laravel\Horizon\Console\TerminateCommand;
+use Illuminate\Foundation\Console\ViewCacheCommand;
+use Illuminate\Foundation\Console\ViewClearCommand;
+use Illuminate\Foundation\Console\RouteCacheCommand;
+use Illuminate\Foundation\Console\RouteClearCommand;
 use Illuminate\Foundation\Console\ConfigCacheCommand;
 use Illuminate\Foundation\Console\ConfigClearCommand;
 use Illuminate\Foundation\Console\KeyGenerateCommand;
-use Illuminate\Foundation\Console\RouteCacheCommand;
-use Illuminate\Foundation\Console\RouteClearCommand;
 use Illuminate\Foundation\Console\StorageLinkCommand;
-use Illuminate\Foundation\Console\ViewCacheCommand;
-use Illuminate\Foundation\Console\ViewClearCommand;
-use Laravel\Horizon\Console\TerminateCommand;
+use Illuminate\Database\Console\Migrations\MigrateCommand;
 
 class Deploy extends Command
 {

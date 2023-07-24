@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Result;
-use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use Illuminate\Console\Command;
 
 class PurgeResults extends Command
 {
@@ -15,16 +15,16 @@ class PurgeResults extends Command
         $results = Result::all();
 
         $count = 0;
-        foreach ($results as $result){
+        foreach ($results as $result) {
             $data = decrypt($result->data);
-            if(
+            if (
                 (empty($data) || $result->updated_at <= now()->subHour()->toDateTimeString())
-                || $result->updated_at <= now()->subDays(config('site.keep_results'))->setTime(0, 0, 0)->toDateTimeString()){
+                || $result->updated_at <= now()->subDays(config('site.keep_results'))->setTime(0, 0, 0)->toDateTimeString()) {
                 $result->delete();
                 $count++;
             }
         }
 
-        $this->info('Deleted ' . $count . ' ' . Str::plural('result', $count));
+        $this->info('Deleted '.$count.' '.Str::plural('result', $count));
     }
 }

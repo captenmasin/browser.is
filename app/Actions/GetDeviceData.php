@@ -3,9 +3,8 @@
 namespace App\Actions;
 
 use App\Enums\Tool;
-use App\Http\Requests\GetDataRequest;
 use App\Models\Result;
-use Illuminate\Http\Request;
+use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
 use hisorange\BrowserDetect\Parser as Browser;
@@ -28,44 +27,45 @@ class GetDeviceData
 
         return [
             'ip_address' => [
-                'label'       => 'IP Address',
+                'label' => 'IP Address',
                 'description' => '',
-                'value'        => $ip
+                'value' => $ip,
             ],
             'device' => [
-                'label'       => 'Device',
+                'label' => 'Device',
                 'description' => '',
-                'value'        => $device
+                'value' => $device,
             ],
             'screen_dimensions' => [
-                'label'       => 'Screen dimensions',
+                'label' => 'Screen dimensions',
                 'description' => '',
-                'value'       => '',
+                'value' => '',
             ],
             'os' => [
-                'label'       => 'Operating System',
+                'label' => 'Operating System',
                 'description' => '',
-                'value'        => $browser::platformFamily() . ' ('.$browser::platformVersion().')',
+                'value' => $browser::platformFamily().' ('.$browser::platformVersion().')',
             ],
             'device_name' => [
-                'label'       => 'Device Name',
+                'label' => 'Device Name',
                 'description' => '',
-                'value'        => $browser::deviceFamily(),
+                'value' => $browser::deviceFamily(),
             ],
             'device_model' => [
-                'label'       => 'Device model',
+                'label' => 'Device model',
                 'description' => '',
-                'value'        => $browser::deviceModel(),
-            ]
+                'value' => $browser::deviceModel(),
+            ],
         ];
 
     }
 
-    public function asController(GetDataRequest $request, ?string $uuid = null): array
+    public function asController(GetDataRequest $request, string $uuid = null): array
     {
         $result = Result::where('uuid', $uuid);
-        if($uuid && $result->exists()){
-            $data = !empty($result->first()->data[Tool::Device]) ? decrypt($result->first()->data[Tool::Device]) : '{}';
+        if ($uuid && $result->exists()) {
+            $data = ! empty($result->first()->data[Tool::Device]) ? decrypt($result->first()->data[Tool::Device]) : '{}';
+
             return json_decode($data, true);
         }
 

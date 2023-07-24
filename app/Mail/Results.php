@@ -7,15 +7,16 @@ use App\Models\Result;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
 
 class Results extends Mailable
 {
     use Queueable, SerializesModels;
 
     public function __construct(public Result $results, public Tool $type)
-    {}
+    {
+    }
 
     public function envelope(): Envelope
     {
@@ -27,13 +28,13 @@ class Results extends Mailable
     public function content(): Content
     {
         $data = decrypt($this->results->data);
-        if($this->type->value !== Tool::All){
+        if ($this->type->value !== Tool::All) {
             $data = [
-                $this->type->value => $data[$this->type->value]
+                $this->type->value => $data[$this->type->value],
             ];
         }
 
-        foreach ($data as $key => $datum){
+        foreach ($data as $key => $datum) {
             $data[$key] = json_decode($datum, true);
         }
 
@@ -41,7 +42,7 @@ class Results extends Mailable
             markdown: 'emails.results',
             with: [
                 'data' => $data,
-                'url' => route('home', ['uuid' => $this->results->uuid])
+                'url' => route('home', ['uuid' => $this->results->uuid]),
             ]
         );
     }

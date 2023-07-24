@@ -15,7 +15,7 @@ class GetDataRequest extends FormRequest
     {
         return [
             'ip' => ['nullable', 'ip'],
-            'uuid' => ['uuid', 'nullable']
+            'uuid' => ['uuid', 'nullable'],
         ];
     }
 }

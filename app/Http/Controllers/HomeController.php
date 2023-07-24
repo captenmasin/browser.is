@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
-    public function __invoke(Request $request, ?string $uuid = null)
+    public function __invoke(Request $request, string $uuid = null)
     {
-        if($uuid && !Result::where('uuid', $uuid)->exists()){
+        if ($uuid && ! Result::where('uuid', $uuid)->exists()) {
             abort(404);
         }
 
@@ -24,11 +24,11 @@ class HomeController extends Controller
             'uuid' => $uuid,
             'date' => $result->updated_at ?? null,
             'content' => Helpers::getContent('home'),
-            'url' => route('home', ['uuid' => $routeUuid])
+            'url' => route('home', ['uuid' => $routeUuid]),
         ])->withMeta([
             'image' => url('/images/social/general.png'),
-            'title'       => $result ? 'Results' : 'All info',
-            'description' => Helpers::getDescription('home')
+            'title' => $result ? 'Results' : 'All info',
+            'description' => Helpers::getDescription('home'),
         ]);
     }
 }

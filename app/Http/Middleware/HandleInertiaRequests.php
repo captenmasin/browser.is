@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Enums\Tool;
-use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Illuminate\Http\Request;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -15,22 +15,22 @@ class HandleInertiaRequests extends Middleware
         $tools = [];
         foreach (Tool::getInstances() as $key => $tool) {
             $tools[$tool->value] = [
-                'url'  => route($tool->value),
+                'url' => route($tool->value),
                 'name' => $key,
-                'key' => $tool->value
+                'key' => $tool->value,
             ];
         }
 
         return array_merge(parent::share($request), [
             'currentRoute' => $request->route()?->getName() ?? null,
-            'currentUrl'   => $request->url(),
-            'csrf_token'   => csrf_token(),
-            'is_results'   => $request->route()?->parameter('uuid') !== null ?? null,
-            'info'         => config('info'),
-            'tools'        => $tools,
+            'currentUrl' => $request->url(),
+            'csrf_token' => csrf_token(),
+            'is_results' => $request->route()?->parameter('uuid') !== null ?? null,
+            'info' => config('info'),
+            'tools' => $tools,
             'enums' => [
-                'Tool' => Tool::asArray()
-            ]
+                'Tool' => Tool::asArray(),
+            ],
         ]);
     }
 }

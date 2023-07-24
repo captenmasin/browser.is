@@ -2,12 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use Cookie;
+use Closure;
 use App\Models\Result;
 use App\Services\Helpers;
-use Closure;
-use Cookie;
 use Illuminate\Http\Request;
-use Str;
 use Symfony\Component\HttpFoundation\Response;
 
 class RegisterTrackingId
@@ -22,7 +21,7 @@ class RegisterTrackingId
         $cookie = Cookie::make(config('site.cookie_name'), $cookieUuid, 5);
         Result::create([
             'uuid' => $cookieUuid,
-            'data' => []
+            'data' => [],
         ]);
 
         return $next($request)->withCookie($cookie);

@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use App\Enums\Tool;
 use Browser;
+use App\Enums\Tool;
 use App\Models\Result;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -20,34 +20,34 @@ class GetBrowserData
 
         $data = [
             'window_dimensions' => [
-                'label'       => 'Window dimensions',
+                'label' => 'Window dimensions',
                 'description' => '',
-                'value'       => '',
+                'value' => '',
             ],
-            'name'              => [
-                'label'       => 'Name',
+            'name' => [
+                'label' => 'Name',
                 'description' => '',
-                'value'       => $data::browserFamily() . ' (' . $data::browserVersion() . ')',
+                'value' => $data::browserFamily().' ('.$data::browserVersion().')',
             ],
-            'engine'            => [
-                'label'       => 'Engine',
+            'engine' => [
+                'label' => 'Engine',
                 'description' => '',
-                'value'       => $data::browserEngine(),
+                'value' => $data::browserEngine(),
             ],
-            'user_agent'        => [
-                'label'       => 'User agent',
+            'user_agent' => [
+                'label' => 'User agent',
                 'description' => '',
-                'value'       => $data::userAgent(),
+                'value' => $data::userAgent(),
             ],
-            'incognito_mode'    => [
-                'label'       => 'Incognito mode',
+            'incognito_mode' => [
+                'label' => 'Incognito mode',
                 'description' => '',
-                'value'       => ''
+                'value' => '',
             ],
-            'time'              => [
-                'label'       => 'Local time',
+            'time' => [
+                'label' => 'Local time',
                 'description' => '',
-                'value'       => ''
+                'value' => '',
             ],
         ];
 
@@ -56,11 +56,12 @@ class GetBrowserData
         return $data;
     }
 
-    public function asController(GetDataRequest $request, ?string $uuid = null): array
+    public function asController(GetDataRequest $request, string $uuid = null): array
     {
         $result = Result::where('uuid', $uuid);
         if ($uuid && $result->exists()) {
-            $data = !empty($result->first()->data[Tool::Browser]) ? decrypt($result->first()->data[Tool::Browser]) : '{}';
+            $data = ! empty($result->first()->data[Tool::Browser]) ? decrypt($result->first()->data[Tool::Browser]) : '{}';
+
             return json_decode($data, true);
         }
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Enums;
 
@@ -13,7 +15,10 @@ use BenSampo\Enum\Enum;
 final class Tool extends Enum
 {
     const All = 'home';
+
     const Device = 'device';
+
     const Browser = 'browser';
+
     const Location = 'location';
 }

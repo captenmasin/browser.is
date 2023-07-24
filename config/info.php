@@ -7,9 +7,9 @@ return [
     ],
     'support' => [
         'url' => env('SUPPORT_URL'),
-        'text' => env('SUPPORT_TEXT', 'Support my work')
+        'text' => env('SUPPORT_TEXT', 'Support my work'),
     ],
     'reporting' => [
-        'email' => env('REPORTING_EMAIL')
-    ]
+        'email' => env('REPORTING_EMAIL'),
+    ],
 ];

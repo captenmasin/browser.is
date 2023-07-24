@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'cookie_name'  => 'results_id',
+    'cookie_name' => 'results_id',
 
     // Days
     'keep_results' => 2,
 
     'ads' => [
-        'text' => env('ADS_TEXT')
+        'text' => env('ADS_TEXT'),
     ],
 
     'google' => [
-        'maps' => env('GOOGLE_MAPS_API')
-    ]
+        'maps' => env('GOOGLE_MAPS_API'),
+    ],
 ];

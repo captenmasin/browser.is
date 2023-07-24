@@ -2,13 +2,9 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Inertia\Inertia;
-use Response;
 use Throwable;
+use Inertia\Inertia;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -18,13 +14,12 @@ class Handler extends ExceptionHandler
 
         if (in_array($response->status(), [404, 403])) {
             return Inertia::render('Errors/404')->withMeta([
-                'title' => 'Error 404'
+                'title' => 'Error 404',
             ]);
         }
 
         return $response;
     }
-
 
     protected $levels = [
         //

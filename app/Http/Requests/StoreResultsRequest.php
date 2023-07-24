@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 
 use App\Enums\Tool;
 use BenSampo\Enum\Rules\EnumValue;
+use Illuminate\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Validation\Validator;
 
 class StoreResultsRequest extends FormRequest
 {
@@ -19,11 +19,12 @@ class StoreResultsRequest extends FormRequest
     {
         return [
             'data' => ['json'],
-            'type' => [new EnumValue(Tool::class)]
+            'type' => [new EnumValue(Tool::class)],
         ];
     }
 
-    protected function failedValidation(Validator|\Illuminate\Contracts\Validation\Validator $validator) {
+    protected function failedValidation(Validator|\Illuminate\Contracts\Validation\Validator $validator)
+    {
         throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
 }

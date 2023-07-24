@@ -2,11 +2,10 @@
 
 namespace App\Actions;
 
-use App\Http\Requests\StoreResultsRequest;
-use App\Models\Result;
 use Cookie;
-use Illuminate\Http\Request;
+use App\Models\Result;
 use Lorisleiva\Actions\Concerns\AsAction;
+use App\Http\Requests\StoreResultsRequest;
 
 class SaveResults
 {
@@ -21,14 +20,14 @@ class SaveResults
             $currentData[$resultType] = encrypt($data);
 
             $model->update([
-                'data' => $currentData
+                'data' => $currentData,
             ]);
         } else {
             Result::create([
                 'uuid' => Cookie::get(config('site.cookie_name')),
                 'data' => [
-                    $resultType => encrypt($data)
-                ]
+                    $resultType => encrypt($data),
+                ],
             ]);
         }
 

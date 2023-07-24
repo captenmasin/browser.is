@@ -2,19 +2,14 @@
 
 namespace App\Providers;
 
-use App\Enums\JobStatus;
-use App\Mail\BrokenLinksResult;
-use App\Models\TrackableJob;
-use Artesaos\SEOTools\Facades\SEOTools;
-use Illuminate\Queue\Events\JobProcessed;
-use Illuminate\Queue\Events\JobProcessing;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Queue;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\ServiceProvider;
 use Inertia\Response;
-use Laravel\Horizon\Events\JobFailed;
+use App\Enums\JobStatus;
+use App\Models\TrackableJob;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Queue;
+use Artesaos\SEOTools\Facades\SEOTools;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Queue\Events\JobProcessed;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(config('app.debug') !== true) {
+        if (config('app.debug') !== true) {
             URL::forceScheme('https');
         }
 
@@ -57,7 +52,6 @@ class AppServiceProvider extends ServiceProvider
 
             return $this->with('meta', $meta);
         });
-
 
         Queue::after(function (JobProcessed $event) {
             $payload = $event->job->payload();
