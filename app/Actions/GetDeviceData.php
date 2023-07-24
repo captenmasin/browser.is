@@ -37,11 +37,6 @@ class GetDeviceData
                 'description' => '',
                 'value'        => $device
             ],
-            'user_agent' => [
-                'label'       => 'User agent',
-                'description' => '',
-                'value'        => $browser::getUserAgentString(),
-            ],
             'screen_dimensions' => [
                 'label'       => 'Screen dimensions',
                 'description' => '',

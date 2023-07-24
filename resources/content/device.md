@@ -1,9 +1,9 @@
-The device page is a powerful and user-friendly tool designed to provide you with comprehensive information about your browser, device, and location. Whether you are facing technical difficulties with websites or applications or seeking support from developers or IT professionals, this feature simplifies the process of collecting and sharing crucial details.
+The device section displays information about the device you are visiting from, including your screen dimensions and operating system. 
 
-Key features:
+These details can be incredibly useful for checking and sharing your browser details to help in debugging or troubleshooting any device-specific issues.
 
- - Operating System: Whether you are using Windows, macOS, Linux, iOS, Android, or any other OS, this information is essential for troubleshooting compatibility issues and ensuring optimal performance.
- - User Agent: Your user agent includes details about its name, version, and rendering engine. This data is invaluable for developers to understand the specific environment in which their website or app is being accessed, enabling them to address browser-specific bugs.
- - Device Type: Determine your device type, such as desktop computer, laptop, tablet, or smartphone. This knowledge is crucial to optimize webpages for different screen sizes and interactions, ensuring seamless responsiveness across various devices.
-
-To share the information with developers or IT support, simply utilize the friendly UI to generate a shareable link or export the details as a PDF. This streamlines the communication process, allowing you to collaborate effectively and efficiently in resolving any challenges you may encounter.
+## Key information
+ - **Device:** Identifying if you are on a desktop, a tablet, a smartphone, or any other smart device can be invaluable for figuring out how an issue may be occurring.
+ - **Operating System:** Not all [Operating Systems](https://en.wikipedia.org/wiki/Operating_system) behave the same way and sometimes this can cause specific issues which can usually be resolved by app or website developers.
+ - **IP Address:** Sometimes a site or app you're using may block or limit access based on your [IP Address](https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address), knowing and sharing this can help with searching and determining if this is the case.
+ - **Screen Dimensions:** Most websites and apps are built [responsively](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/) meaning different features and content may look or act different at different screen sizes. Knowing your devices screen size can help in debugging any responsive issues.  

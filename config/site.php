@@ -9,4 +9,8 @@ return [
     'ads' => [
         'text' => env('ADS_TEXT')
     ],
+
+    'google' => [
+        'maps' => env('GOOGLE_MAPS_API')
+    ]
 ];

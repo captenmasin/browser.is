@@ -930,6 +930,15 @@ class Browsershot
         throw new ProcessFailedException($process);
     }
 
+    protected function escapeshellarg(string $arg)
+    {
+        if ($this->isWindows()) {
+            return '"' . str_replace('"', '\\"', $arg) . '"';
+        }
+
+        return escapeshellarg($arg);
+    }
+
     protected function getFullCommand(array $command)
     {
         $nodeBinary = $this->nodeBinary ?: 'node';
@@ -940,13 +949,11 @@ class Browsershot
 
         if ($this->isWindows()) {
             $fullCommand =
-                $nodeBinary.' '
-                .escapeshellarg($binPath).' '
-                .'"'
-                .$optionsCommand
-                .'"';
+                $this->escapeshellarg($nodeBinary).' '
+                .$this->escapeshellarg($binPath).' '
+                .$optionsCommand;
 
-            return escapeshellcmd($fullCommand);
+            return $fullCommand;
         }
 
         $setIncludePathCommand = "PATH={$this->includePath}";
@@ -957,7 +964,7 @@ class Browsershot
             $setIncludePathCommand.' '
             .$setNodePathCommand.' '
             .$nodeBinary.' '
-            .escapeshellarg($binPath).' '
+            .$this->escapeshellarg($binPath).' '
             .$optionsCommand;
     }
 
@@ -980,11 +987,7 @@ class Browsershot
             $command = "-f {$temporaryOptionsFile}";
         }
 
-        if ($this->isWindows()) {
-            return str_replace('"', '\"', $command);
-        }
-
-        return escapeshellarg($command);
+        return $this->escapeshellarg($command);
     }
 
     protected function arraySet(array &$array, string $key, $value): array

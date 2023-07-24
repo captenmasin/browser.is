@@ -51,7 +51,9 @@ class GetLocationData
                 'value'        => [
                     'lat' => $data->lat,
                     'lon' => $data->lon
-                ]
+                ],
+                'image' => 'https://maps.googleapis.com/maps/api/staticmap?size=768x350&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'.$data->lat.','.$data->lon.'&key=' . config('site.google.maps'),
+                'image_url' => 'https://www.google.com/maps/search/' . $data->lat . ',' . $data->lon
             ],
         ];
     }

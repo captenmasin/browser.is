@@ -21,7 +21,7 @@ import PageContainer from "@/Components/Global/PageContainer.vue";
 </script>
 
 <template>
-    <page-container :is-results-page="isResultsPage" :content="content" content-title="Information">
+    <page-container :is-results-page="isResultsPage" :content="content" content-title="About">
         <div class="bg-white dark:bg-gray-800 dark:text-white rounded border-primary/10 border overflow-hidden">
             <Suspense>
                 <share-link :type="type" :uuid="uuid"/>

@@ -7,3 +7,4 @@ One of the notable features of Browser.is is its ability to determine your locat
 The tool is designed to be easy to use, requiring no installation or complex configurations. Simply accessing the Browser.is website will present you with a comprehensive overview of your browser, device, and location data in a user-friendly interface. You can also easily share this information with others by sharing the provided URL or exporting the data as a PDF.
 
 Whether you're a web developer, a tech enthusiast, or simply curious about your browsing environment, Browser.is offers a hassle-free solution to gather and share essential information about your browser, device, and location.
+

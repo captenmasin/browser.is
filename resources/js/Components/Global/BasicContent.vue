@@ -9,7 +9,7 @@ const props = defineProps({
         <h1 class="text-4xl mb-4 text-secondary font-heading font-bold dark:text-white" v-if="title">
             {{ title }}
         </h1>
-        <div class="prose max-w-none prose-headings:text-secondary dark:prose-headings:text-white dark:text-white">
+        <div class="prose max-w-none prose-headings:text-secondary prose-headings:font-heading dark:prose-headings:text-white dark:text-white">
             <slot />
         </div>
     </article>

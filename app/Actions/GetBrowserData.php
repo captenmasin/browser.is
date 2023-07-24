@@ -27,17 +27,17 @@ class GetBrowserData
             'name'              => [
                 'label'       => 'Name',
                 'description' => '',
-                'value'       => $data::browserFamily(),
-            ],
-            'version'           => [
-                'label'       => 'Version',
-                'description' => '',
-                'value'       => $data::browserVersion(),
+                'value'       => $data::browserFamily() . ' (' . $data::browserVersion() . ')',
             ],
             'engine'            => [
                 'label'       => 'Engine',
                 'description' => '',
                 'value'       => $data::browserEngine(),
+            ],
+            'user_agent'        => [
+                'label'       => 'User agent',
+                'description' => '',
+                'value'       => $data::userAgent(),
             ],
             'incognito_mode'    => [
                 'label'       => 'Incognito mode',
@@ -59,7 +59,7 @@ class GetBrowserData
     public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
         $result = Result::where('uuid', $uuid);
-        if($uuid && $result->exists()){
+        if ($uuid && $result->exists()) {
             $data = !empty($result->first()->data[Tool::Browser]) ? decrypt($result->first()->data[Tool::Browser]) : '{}';
             return json_decode($data, true);
         }

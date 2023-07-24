@@ -51,7 +51,7 @@ function convertObject(object, sep = ' / ') {
             <tbody>
             <tr class="border-t border-gray-200 group dark:border-gray-800 first:border-0" v-for="item in data">
                 <template v-if="item.value">
-                    <th scope="row" class="px-4 sm:px-6 w-1/3 py-4 font-medium whitespace-nowrap bg-white group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-secondary dark:text-white dark:bg-gray-700">
+                    <th scope="row" class="px-4 sm:px-6 w-1/3 py-4 align-top font-medium whitespace-nowrap bg-white group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-secondary dark:text-white dark:bg-gray-700">
                         {{ item.label }}
                     </th>
                     <td class="px-4 sm:px-6 py-4 w-2/3 bg-white dark:bg-gray-700 dark:text-white font-mono group-hover:bg-primary/5 dark:group-hover:bg-secondary/10 text-primary">
@@ -65,6 +65,12 @@ function convertObject(object, sep = ' / ') {
                         <span v-else-if="isBoolean(item.value)" @click="item.value ? copyValue(item.label + ': ' + 'Yes') : copyValue(item.label + ': ' + 'No')" class="cursor-pointer hover:border-b border-primary border-dotted">
                             {{ item.value ? 'Yes' : 'No' }}
                         </span>
+
+                        <div v-if="item.image" class="overflow-hidden mt-4 rounded border border-secondary/20">
+                            <a :href="item.image_url" target="_blank">
+                            <img :src="item.image" class="w-full" alt="Map image for coordinates" />
+                            </a>
+                        </div>
                         <!--                        </Popper>-->
                     </td>
                 </template>
