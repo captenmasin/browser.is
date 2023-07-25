@@ -7,6 +7,8 @@ use App\Models\Result;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
+use Storage;
+use Str;
 
 class GetLocationData
 {
@@ -16,6 +18,14 @@ class GetLocationData
     public function handle(string $ip = ''): array
     {
         $data = geoip()->getLocation($ip);
+
+        $mapImage = 'https://maps.googleapis.com/maps/api/staticmap?size=768x350&scale=2&zoom=14&style=feature:poi|visibility:off&format=png&maptype=roadmap&markers=size:mid%7Ccolor:red%scale:2%7C'.$data->lat.','.$data->lon.'&key='.config('site.google.maps');
+
+        if(!Storage::exists('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png')){
+            Storage::put('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png', file_get_contents($mapImage));
+        }
+
+        $image = Storage::url('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png');
 
         return [
             'country_code' => [
@@ -50,7 +60,7 @@ class GetLocationData
                     'lat' => $data->lat,
                     'lon' => $data->lon,
                 ],
-                'image' => 'https://maps.googleapis.com/maps/api/staticmap?size=768x350&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'.$data->lat.','.$data->lon.'&key='.config('site.google.maps'),
+                'image' => $image,
                 'image_url' => 'https://www.google.com/maps/search/'.$data->lat.','.$data->lon,
             ],
         ];

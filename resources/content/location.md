@@ -4,5 +4,5 @@ This data is collected via your IP address and thus may not be 100% accurate as 
 
 ## Key information
  - **Country:** Sometimes websites and apps may display different content or features depending on your physical location. Sharing this can help debug or troubleshoot any issues around location checking.
- - **Timezone:** 
+ - **Timezone:** This can be helpful for similar reason to above, some websites and apps may display or schedule different information or tasks at specific times based on specific times. 
  - **Coordinates:** 
