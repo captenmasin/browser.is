@@ -68,7 +68,7 @@ function convertObject(object, sep = ' / ') {
 
                         <div v-if="item.image" class="overflow-hidden mt-4 rounded border border-secondary/20">
                             <a :href="item.image_url" target="_blank">
-                                <img :src="item.image" class="w-full max-w-3xl" alt="Map image for coordinates"/>
+                                <img :src="item.image" class="w-full max-w-3xl" alt="Map image for coordinates" width="610" height="333"/>
                             </a>
                         </div>
                         <!--                        </Popper>-->
