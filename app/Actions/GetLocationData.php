@@ -2,13 +2,13 @@
 
 namespace App\Actions;
 
+use Str;
+use Storage;
 use App\Enums\Tool;
 use App\Models\Result;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
-use Storage;
-use Str;
 
 class GetLocationData
 {
@@ -21,11 +21,11 @@ class GetLocationData
 
         $mapImage = 'https://maps.googleapis.com/maps/api/staticmap?size=768x350&scale=2&zoom=14&style=feature:poi|visibility:off&format=png&maptype=roadmap&markers=size:mid%7Ccolor:red%scale:2%7C'.$data->lat.','.$data->lon.'&key='.config('site.google.maps');
 
-        if(!Storage::exists('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png')){
-            Storage::put('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png', file_get_contents($mapImage));
+        if (! Storage::exists('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png')) {
+            Storage::put('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png', file_get_contents($mapImage));
         }
 
-        $image = Storage::url('public/map/' . Str::slug($data->lat.'x'.$data->lon) . '.png');
+        $image = Storage::url('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png');
 
         return [
             'country_code' => [

@@ -44,8 +44,8 @@ class Deploy extends Command
         $this->info('Regenerating key');
         $this->call(KeyGenerateCommand::class, ['--force' => true]);
 
-        $this->info('Restarting horizon');
-        $this->call(TerminateCommand::class);
+//        $this->info('Restarting horizon');
+//        $this->call(TerminateCommand::class);
 
         $this->info('Caching');
         $this->call(RouteCacheCommand::class);
