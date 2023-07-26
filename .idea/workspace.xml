@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5493529f-3b0c-448c-99e8-517a173b38f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/GetLocationData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/GetLocationData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/content/home.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/content/home.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/content/location.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/content/location.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/DataTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Global/SingleFaq.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Global/SingleFaq.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +250,7 @@
       <workItem from="1689889726385" duration="16000" />
       <workItem from="1689956260523" duration="11000" />
       <workItem from="1690051587035" duration="10000" />
-      <workItem from="1690233239703" duration="3225000" />
+      <workItem from="1690233239703" duration="4951000" />
     </task>
     <servers />
   </component>

@@ -48,21 +48,23 @@ const isResultsPage = ref(usePage().props.is_results)
         <div class="bg-white p-8 mt-4 dark:bg-gray-800 dark:text-white border-primary/10 border rounded overflow-hidden">
             <h2 class="text-4xl font-heading font-bold">Frequently Asked Questions</h2>
             <div class="flex">
-                <div class="flex-col space-y-4 mt-8 w-1/2">
-                    <single-faq title="Title">
-                        Content here
-                    </single-faq>
-                    <single-faq title="Title">
-                        Content here
-                    </single-faq>
+                <div class="flex w-1/2">
+                    <div class="flex-col space-y-4 mt-8">
+                        <single-faq title="What is an IP address">
+                            An IP address is a unique numerical label assigned to each device on a computer network using the Internet Protocol (IP) for communication. It serves to identify and locate devices, enabling data to be routed accurately across the internet.
+                        </single-faq>
+                        <single-faq title="How is my location detected">
+                            Your location is detected from your IP address through a process called geolocation. Geolocation databases maintain records of IP address ranges associated with specific geographic locations. Browser.is can query these databases to find the approximate physical location associated with your IP address.
+                        </single-faq>
+                    </div>
                 </div>
                 <div class="flex w-1/2">
-                    <div class="flex-col space-y-4 mt-8 w-1/2">
-                        <single-faq title="Title">
-                            Content here
+                    <div class="flex-col space-y-4 mt-8">
+                        <single-faq title="What is a browser engine">
+                            A browser engine, or rendering engine, is a crucial part of web browsers that interprets and displays web content by processing HTML, CSS, JavaScript, and other assets to create the webpage. It's responsible for rendering the page on the screen, ensuring proper layout and interactivity. Different browsers use distinct rendering engines.
                         </single-faq>
-                        <single-faq title="Title">
-                            Content here
+                        <single-faq title="How is my data stored">
+                            All information is securely encrypted before being stored in a safe database, only ever being decrypted when sharing your unique link.
                         </single-faq>
                     </div>
                 </div>
