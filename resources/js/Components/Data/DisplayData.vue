@@ -1,7 +1,9 @@
 <script setup>
-import DataTable from "@/Components/Global/DataTable.vue";
-import {usePost} from "@/Composables/usePost";
 import {usePage} from "@inertiajs/vue3";
+import {usePost} from "@/Composables/usePost";
+import DataTable from "@/Components/Global/DataTable.vue";
+import {ref} from "vue";
+
 
 const props = defineProps({
     tableClass: String,
@@ -17,6 +19,8 @@ const props = defineProps({
         default: true
     }
 })
+
+const realCoords = ref(null)
 
 const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token);
 
@@ -53,6 +57,7 @@ const data = await response.json().then(async data => {
 
 <template>
     <div>
+        {{ realCoords }}
         <data-table :class="tableClass" :show-header="showTableHeader" :data="data" v-if="Object.keys(data).length"/>
         <div v-else class="text-center px-4 py-12 text-sm">
             No data
