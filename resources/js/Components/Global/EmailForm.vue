@@ -26,7 +26,7 @@ function submitForm() {
             errors.value = response
         } else{
             sent.value = true
-            window.plausible('Sent via email')
+            pirsch('Sent via email')
 
             setTimeout(function () {
                 sent.value = false

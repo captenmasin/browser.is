@@ -35,7 +35,7 @@ function copyValue(value) {
         value = 'https://' + value
     }
     copy(value)
-    window.plausible('Copy URL')
+    pirsch('Copy URL')
 }
 
 

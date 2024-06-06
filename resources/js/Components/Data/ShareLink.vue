@@ -23,7 +23,7 @@ const data = ref({url: 'Loading URL...'})
 const showShareModal = ref(false)
 
 function exportToPdf() {
-    window.plausible('Export PDF')
+    pirsch('Export PDF')
     html2pdf(document.getElementById("results"), {
         margin: 1,
         filename: "browser-is-results.pdf",
