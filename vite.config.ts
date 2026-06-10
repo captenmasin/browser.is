@@ -27,7 +27,7 @@ export default defineConfig({
 		}),
 		inertia({
 			ssr: {
-				entry: 'resources/js/ssr.ts',
+				entry: 'resources/js/app.ts',
 				host: '127.0.0.1',
 			},
 		}),
