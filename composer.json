@@ -21,6 +21,7 @@
     "inertiajs/inertia-laravel": "^3.1",
     "laravel/framework": "^13.0",
     "laravel/tinker": "^3.0",
+    "league/flysystem-aws-s3-v3": "^3.34",
     "lorisleiva/laravel-actions": "^2.10",
     "spatie/crawler": "^9.3",
     "spatie/dns": "^2.5",
