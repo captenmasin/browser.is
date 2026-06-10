@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Process;
 use Illuminate\Foundation\Console\ViewCacheCommand;
 use Illuminate\Foundation\Console\ViewClearCommand;
 use Illuminate\Foundation\Console\RouteCacheCommand;
@@ -31,8 +32,8 @@ class Deploy extends Command
         $this->call(StorageLinkCommand::class);
 
         $this->info('PNPM install and build');
-        shell_exec('pnpm install --frozen-lockfile --silent');
-        shell_exec('pnpm run build --silent');
+        Process::run('pnpm install --frozen-lockfile --silent')->throw();
+        Process::run('pnpm run build --silent')->throw();
 
         $this->info('Publishing resources');
         $this->call(PublishResources::class);

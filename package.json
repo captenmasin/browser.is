@@ -52,5 +52,14 @@
         "vue3-popper": "^1.5.0",
         "vue3-spinner": "^0.0.16",
         "vue3-toastify": "^0.1.11"
+    },
+    "pnpm": {
+        "overrides": {
+            "@napi-rs/wasm-runtime": "1.1.4",
+            "dompurify": "3.4.8",
+            "semver@^7.5.4": "7.8.3",
+            "semver@^7.6.0": "7.8.3",
+            "semver@^7.7.1": "7.8.3"
+        }
     }
 }
