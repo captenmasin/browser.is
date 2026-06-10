@@ -18,6 +18,7 @@ class SendResultsRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'email' => ['required', 'array', 'min:1'],
             'email.*' => ['required', 'email'],
             'uuid' => ['string', 'required'],
             'type' => ['string', 'required', new EnumValue(Tool::class)],
@@ -31,12 +32,17 @@ class SendResultsRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        $emails = explode(',', rtrim($this->email, ','));
-        $i = 0;
-        foreach ($emails as $email) {
-            $emails[$i] = trim($email, ' ');
-            $i++;
+        if (is_array($this->email)) {
+            $emails = $this->email;
+        } else {
+            $emails = explode(',', rtrim((string) $this->email, ','));
         }
+
+        $emails = array_filter(
+            array_map('trim', $emails),
+            fn (string $email): bool => $email !== ''
+        );
+
         $this->merge(['email' => $emails]);
     }
 }

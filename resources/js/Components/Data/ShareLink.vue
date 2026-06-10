@@ -1,12 +1,11 @@
-<script setup>
-import html2pdf from "html2pdf.js";
-
+<script setup lang="ts">
 import {onMounted, ref} from "vue";
 import emitter from "@/Composables/useEmitter";
 import TextInput from "@/Components/Inputs/TextInput.vue";
 import AppModal from "@/Components/Global/AppModal.vue";
 import EmailForm from "@/Components/Global/EmailForm.vue";
 import {usePage} from "@inertiajs/vue3";
+import {withQuery} from "@/Composables/useUrl";
 
 const props = defineProps({
     uuid: {
@@ -19,15 +18,82 @@ const props = defineProps({
     },
 })
 
-const data = ref({url: 'Loading URL...'})
+type ShareData = {
+    url: string
+    uuid?: string
+}
+
+const data = ref<ShareData>({url: 'Loading URL...'})
 const showShareModal = ref(false)
 
-function exportToPdf() {
-    pirsch('Export PDF')
-    html2pdf(document.getElementById("results"), {
-        margin: 1,
-        filename: "browser-is-results.pdf",
-    });
+function trackEvent(name: string) {
+    if (typeof window.pirsch === 'function') {
+        window.pirsch(name)
+    }
+}
+
+function preparePdfClone(clonedDocument: Document) {
+    const cloneRoot = clonedDocument.body ?? clonedDocument.documentElement
+
+    if (!cloneRoot) {
+        return
+    }
+
+    const elements = [
+        clonedDocument.documentElement,
+        cloneRoot,
+        ...Array.from(cloneRoot.querySelectorAll<HTMLElement | SVGElement>("*")),
+    ]
+
+    elements.forEach((element) => {
+        element.style.setProperty("color", "#111827", "important")
+        element.style.setProperty("background-color", "#ffffff", "important")
+        element.style.setProperty("background-image", "none", "important")
+        element.style.setProperty("border-color", "#e5e7eb", "important")
+        element.style.setProperty("border-top-color", "#e5e7eb", "important")
+        element.style.setProperty("border-right-color", "#e5e7eb", "important")
+        element.style.setProperty("border-bottom-color", "#e5e7eb", "important")
+        element.style.setProperty("border-left-color", "#e5e7eb", "important")
+        element.style.setProperty("outline-color", "#e5e7eb", "important")
+        element.style.setProperty("text-decoration-color", "#111827", "important")
+        element.style.setProperty("caret-color", "#111827", "important")
+        element.style.setProperty("accent-color", "#4e4feb", "important")
+        element.style.setProperty("column-rule-color", "#e5e7eb", "important")
+        element.style.setProperty("fill", "#111827", "important")
+        element.style.setProperty("stroke", "#111827", "important")
+        element.style.setProperty("flood-color", "#111827", "important")
+        element.style.setProperty("lighting-color", "#ffffff", "important")
+        element.style.setProperty("stop-color", "#111827", "important")
+        element.style.setProperty("box-shadow", "none", "important")
+        element.style.setProperty("text-shadow", "none", "important")
+    })
+}
+
+async function exportToPdf() {
+    const results = document.getElementById("results")
+
+    if (!results) {
+        return
+    }
+
+    trackEvent('Export PDF')
+
+    try {
+        const {default: html2pdf} = await import("html2pdf.js")
+        await html2pdf().set({
+            margin: 1,
+            filename: "browser-is-results.pdf",
+            image: {type: 'jpeg', quality: 0.98},
+            html2canvas: {
+                scale: 2,
+                useCORS: true,
+                onclone: preparePdfClone,
+            },
+            jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'},
+        }).from(results).save()
+    } catch (error) {
+        console.error("PDF export failed", error)
+    }
 }
 
 function openEmailModal() {
@@ -36,7 +102,9 @@ function openEmailModal() {
 }
 
 onMounted(async () => {
-    const response = await fetch(route('api.url', {uuid: props.uuid, type: props.type, _token: usePage().props.csrf_token}));
+    const response = await fetch(withQuery(route('api.url', {uuid: props.uuid, type: props.type}), {
+        _token: usePage<AppPageProps>().props.csrf_token,
+    }));
     data.value = await response.json()
     data.value.url = data.value.url.replaceAll("https://", "").replaceAll("http://", "")
 

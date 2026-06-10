@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import LoadingBar from "@/Components/Global/LoadingBar.vue";
 
 const props = defineProps({

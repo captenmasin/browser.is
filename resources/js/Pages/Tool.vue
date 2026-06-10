@@ -1,7 +1,15 @@
-<script setup>
+<script setup lang="ts">
+import DisplayData from "@/Components/Data/DisplayData.vue";
+import LoadingBlock from "@/Components/Global/LoadingBlock.vue";
+import TableTitle from "@/Components/Global/TableTitle.vue";
+import ShareLink from "@/Components/Data/ShareLink.vue";
+import {usePage} from "@inertiajs/vue3";
+import BasicContent from "@/Components/Global/BasicContent.vue";
+import PageContainer from "@/Components/Global/PageContainer.vue";
 import {ref} from "vue";
 
-const isResultsPage = ref(usePage().props.is_results)
+const route = window.route
+const isResultsPage = ref(usePage<AppPageProps>().props.is_results)
 
 const props = defineProps({
     uuid: String,
@@ -10,14 +18,6 @@ const props = defineProps({
     title: String,
     url: String,
 })
-
-import DisplayData from "@/Components/Data/DisplayData.vue";
-import LoadingBlock from "@/Components/Global/LoadingBlock.vue";
-import TableTitle from "@/Components/Global/TableTitle.vue";
-import ShareLink from "@/Components/Data/ShareLink.vue";
-import {usePage} from "@inertiajs/vue3";
-import BasicContent from "@/Components/Global/BasicContent.vue";
-import PageContainer from "@/Components/Global/PageContainer.vue";
 </script>
 
 <template>

@@ -1,5 +1,5 @@
-<script setup>
-import {ref} from "vue";
+<script setup lang="ts">
+import {computed, ref} from "vue";
 import {usePage} from "@inertiajs/vue3";
 
 import ShareLink from "@/Components/Data/ShareLink.vue";
@@ -19,7 +19,9 @@ const props = defineProps({
     content: String || null,
 })
 
-const isResultsPage = ref(usePage().props.is_results)
+const route = window.route
+const tools = computed(() => usePage<AppPageProps>().props.tools)
+const isResultsPage = ref(usePage<AppPageProps>().props.is_results)
 </script>
 
 <template>
@@ -31,7 +33,7 @@ const isResultsPage = ref(usePage().props.is_results)
             </Suspense>
 
             <div id="results" class="space-y-2 dark:space-y-0">
-                <div v-for="tool in usePage().props.tools">
+                <div v-for="tool in tools">
                     <Suspense v-if="tool.name !== 'All'">
                         <div>
                             <table-title>{{ tool.name }}</table-title>

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import TextInput from "../Inputs/TextInput.vue";
 import {ref} from "vue";
 import {usePost} from "@/Composables/usePost";
@@ -11,7 +11,13 @@ const props = defineProps({
 
 const email = ref('')
 const sent = ref(false)
-const errors = ref([])
+const errors = ref<Record<string, string[]> | null>(null)
+
+function trackEvent(name) {
+    if (typeof window.pirsch === 'function') {
+        window.pirsch(name)
+    }
+}
 
 function submitForm() {
     errors.value = null
@@ -20,13 +26,13 @@ function submitForm() {
         email: email.value,
         uuid: props.uuid,
         type: props.type,
-        _token: usePage().props.csrf_token
+        _token: usePage<AppPageProps>().props.csrf_token
     }).then(response => {
         if (typeof response === 'object') {
-            errors.value = response
+            errors.value = response as Record<string, string[]>
         } else{
             sent.value = true
-            pirsch('Sent via email')
+            trackEvent('Sent via email')
 
             setTimeout(function () {
                 sent.value = false

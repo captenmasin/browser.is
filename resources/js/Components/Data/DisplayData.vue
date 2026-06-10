@@ -1,6 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import {usePage} from "@inertiajs/vue3";
 import {usePost} from "@/Composables/usePost";
+import {withQuery} from "@/Composables/useUrl";
 import DataTable from "@/Components/Global/DataTable.vue";
 import {ref} from "vue";
 
@@ -22,7 +23,9 @@ const props = defineProps({
 
 const realCoords = ref(null)
 
-const response = await fetch(props.endpoint + '?_token=' + usePage().props.csrf_token);
+const response = await fetch(withQuery(props.endpoint, {
+    _token: usePage<AppPageProps>().props.csrf_token,
+}));
 
 const data = await response.json().then(async data => {
     if (!props.uuid) {
@@ -36,12 +39,6 @@ const data = await response.json().then(async data => {
             data.time.value = new Date().toString()
         }
 
-        if (typeof data.incognito_mode !== 'undefined' && data.incognito_mode.value === '') {
-            if ('storage' in navigator && 'estimate' in navigator.storage) {
-                const {usage, quota} = await navigator.storage.estimate();
-                data.incognito_mode.value = usage === 0;
-            }
-        }
     }
 
     if (props.saveResults) {

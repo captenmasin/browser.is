@@ -1,9 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../views/**/*.blade.php";
+@source "../js/**/*.vue";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-primary: #000000;
+    --color-secondary: #4E4FEB;
+    --color-tertiary: #EEEEEE;
+
+    --font-heading: Escalator, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --radius-default: 0.75rem;
+    --radius-4xl: 2rem;
+
+    --text-10xl: 6rem;
+}
+
+:root {
+    --color-secondary-rgb: 78, 79, 235;
+}
 
 body{
-    /*background-image: linear-gradient(rgba(var(--colors-secondary-rgb), .05) .1em, transparent .1em), linear-gradient(90deg, rgba(var(--colors-secondary-rgb), .05) .1em, transparent .1em);*/
+    /*background-image: linear-gradient(rgba(var(--color-secondary-rgb), .05) .1em, transparent .1em), linear-gradient(90deg, rgba(var(--color-secondary-rgb), .05) .1em, transparent .1em);*/
     background-size: 3em 3em;
 }
 
@@ -12,18 +35,18 @@ body{
 }
 
 #nprogress .bar {
-    background: var(--colors-primary) !important;
+    background: var(--color-primary) !important;
 }
 
 #nprogress .peg {
-    box-shadow: 0 0 10px var(--colors-primary), 0 0 5px var(--colors-primary);
+    box-shadow: 0 0 10px var(--color-primary), 0 0 5px var(--color-primary);
 }
 
 .Toastify__toast{
     border-radius: 50px !important;
     min-height: 52px !important;
 
-    box-shadow: 0 1px 10px 0 rgba(var(--colors-secondary-rgb),.1), 0 2px 15px 0 rgba(var(--colors-secondary-rgb),.05) !important;
+    box-shadow: 0 1px 10px 0 rgba(var(--color-secondary-rgb),.1), 0 2px 15px 0 rgba(var(--color-secondary-rgb),.05) !important;
 }
 .Toastify__close-button{
     align-self: center !important;;
@@ -37,22 +60,22 @@ body{
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--error{
-    background: var(--colors-secondary) !important;
+    background: var(--color-secondary) !important;
 }
 
 :root {
-    --popper-theme-background-color: var(--colors-secondary);
-    --popper-theme-background-color-hover: var(--colors-secondary);
+    --popper-theme-background-color: var(--color-secondary);
+    --popper-theme-background-color-hover: var(--color-secondary);
     --popper-theme-text-color: #ffffff;
     --popper-theme-border-width: 0px;
     --popper-theme-border-style: solid;
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 6px 20px;
-    --popper-theme-box-shadow: 0 6px 30px -6px rgba(var(--colors-secondary-rgb), 0.25);
+    --popper-theme-box-shadow: 0 6px 30px -6px rgba(var(--color-secondary-rgb), 0.25);
 }
 
 .dark{
-    --popper-theme-background-color: var(--colors-primary);
-    --popper-theme-background-color-hover: var(--colors-primary);
+    --popper-theme-background-color: var(--color-primary);
+    --popper-theme-background-color-hover: var(--color-primary);
     --popper-theme-padding: 8px 16px;
 }

@@ -30,9 +30,9 @@ class Deploy extends Command
         $this->call(MigrateCommand::class, ['--force' => true]);
         $this->call(StorageLinkCommand::class);
 
-        $this->info('NPM Install and build');
-        shell_exec('npm install --no-audit --silent');
-        shell_exec('npm run build --no-audit --silent');
+        $this->info('PNPM install and build');
+        shell_exec('pnpm install --frozen-lockfile --silent');
+        shell_exec('pnpm run build --silent');
 
         $this->info('Publishing resources');
         $this->call(PublishResources::class);

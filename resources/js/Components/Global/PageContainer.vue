@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import BasicContent from "./BasicContent.vue";
 
 defineOptions({

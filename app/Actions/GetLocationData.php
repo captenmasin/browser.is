@@ -6,6 +6,7 @@ use Str;
 use Storage;
 use App\Enums\Tool;
 use App\Models\Result;
+use Illuminate\Support\Facades\Http;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
@@ -19,13 +20,8 @@ class GetLocationData
     {
         $data = geoip()->getLocation($ip);
 
-        $mapImage = 'https://maps.googleapis.com/maps/api/staticmap?size=768x350&scale=2&zoom=14&style=feature:poi|visibility:off&format=png&maptype=roadmap&markers=size:mid%7Ccolor:red%scale:2%7C'.$data->lat.','.$data->lon.'&key='.config('site.google.maps');
-
-        if (! Storage::exists('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png')) {
-            Storage::put('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png', file_get_contents($mapImage));
-        }
-
-        $image = Storage::url('public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png');
+        $mapPath = 'public/map/'.Str::slug($data->lat.'x'.$data->lon).'.png';
+        $image = $this->getMapImage($data->lat, $data->lon, $mapPath);
 
         return [
             'country_code' => [
@@ -64,6 +60,38 @@ class GetLocationData
                 'image_url' => 'https://www.google.com/maps/search/'.$data->lat.','.$data->lon,
             ],
         ];
+    }
+
+    public function getMapImage(float|string|null $lat, float|string|null $lon, string $mapPath): ?string
+    {
+        if (Storage::exists($mapPath)) {
+            return Storage::url($mapPath);
+        }
+
+        $apiKey = config('site.google.maps');
+
+        if (! $apiKey || $lat === null || $lon === null) {
+            return null;
+        }
+
+        $response = Http::timeout(5)->get('https://maps.googleapis.com/maps/api/staticmap', [
+            'size' => '768x350',
+            'scale' => 2,
+            'zoom' => 14,
+            'style' => 'feature:poi|visibility:off',
+            'format' => 'png',
+            'maptype' => 'roadmap',
+            'markers' => 'size:mid|color:red|scale:2|'.$lat.','.$lon,
+            'key' => $apiKey,
+        ]);
+
+        if (! $response->successful()) {
+            return null;
+        }
+
+        Storage::put($mapPath, $response->body());
+
+        return Storage::url($mapPath);
     }
 
     public function asController(GetDataRequest $request, string $uuid = null): array

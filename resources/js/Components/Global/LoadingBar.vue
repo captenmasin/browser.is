@@ -8,7 +8,7 @@
     width: 100%;
     height: 5px;
     border-radius: 50px;
-    background: rgba(var(--colors-secondary-rgb), 0.1);
+    background: rgba(var(--color-secondary-rgb), 0.1);
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -19,7 +19,7 @@
     height: 5px;
     width: 64px;
     border-radius: 50px;
-    background: var(--colors-secondary);
+    background: var(--color-secondary);
     position: absolute;
     top: 0;
     left: 0;

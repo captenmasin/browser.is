@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Popper from "vue3-popper"
 import {onMounted, ref} from 'vue'
 import {useClipboard} from '@vueuse/core'
@@ -35,7 +35,9 @@ function copyValue(value) {
         value = 'https://' + value
     }
     copy(value)
-    pirsch('Copy URL')
+    if (typeof window.pirsch === 'function') {
+        window.pirsch('Copy URL')
+    }
 }
 
 
@@ -53,9 +55,9 @@ onMounted(() => {
         <label>
             <span class="sr-only">Label for input</span>
             <input :placeholder="placeholder" :type="inputType ? inputType : 'text'" ref="input" :value="modelValue"
-                   :id="id" @focus="$event.target.select()"
+                   :id="id" @focus="($event.target as HTMLInputElement).select()"
                    :disabled="disabled" :readonly="readonly"
-                   @input="$emit('update:modelValue', $event.target.value)"
+                   @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
                    :class="small ? 'pl-2 py-2 pr-20' : 'pl-4 py-3 pr-20'"
                    class="border border-secondary/20 focus:outline-0 focus:ring-secondary focus:border-secondary transition-colors w-full focus:ring-1 rounded-md text-sm dark:bg-gray-900 dark:text-white"/>
         </label>

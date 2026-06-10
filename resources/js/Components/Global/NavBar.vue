@@ -1,21 +1,23 @@
-<script setup>
-import {ref} from 'vue'
+<script setup lang="ts">
+import {computed, ref} from 'vue'
 import {usePage, Link, router} from '@inertiajs/vue3'
 
 import AppLogo from '@/Components/Global/AppLogo.vue'
 import AppLogoWhite from '@/Components/Global/AppLogoWhite.vue'
 
 const navOpen = ref(false)
-const isResultsPage = ref(usePage().props.is_results && usePage().component !== 'Errors/404')
+const route = window.route
+const tools = computed(() => usePage<AppPageProps>().props.tools)
+const isResultsPage = ref(usePage<AppPageProps>().props.is_results && usePage().component !== 'Errors/404')
 
-function linkIsActive(url) {
+function linkIsActive(url: string) {
     let cleanUrl = url.split("?")[0];
-    return usePage().props.currentUrl === cleanUrl
+    return usePage<AppPageProps>().props.currentUrl === cleanUrl
 }
 
 router.on('finish', () => {
     navOpen.value = false
-    isResultsPage.value = usePage().props.is_results && usePage().component !== 'Errors/404';
+    isResultsPage.value = usePage<AppPageProps>().props.is_results && usePage().component !== 'Errors/404';
 })
 </script>
 
@@ -49,7 +51,7 @@ router.on('finish', () => {
             </button>
             <div :class="!navOpen ? 'opacity-0 pointer-events-none scale-0' : 'opacity-100 scale-100 pointer-events-auto'" class="md:opacity-100 md:scale-100 md:pointer-events-auto w-full md:block transition-all origin-top-right md:w-auto absolute top-full right-0 md:static z-20" id="navbar-default">
                 <ul class="flex flex-col px-4 md:px-0 shadow-sm md:shadow-none py-4 mt-4 border border-gray-100 space-y-4 md:space-y-0 rounded-lg bg-white md:flex-row md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-900 md:dark:bg-transparent dark:border-secondary">
-                    <li v-for="link in usePage().props.tools">
+                    <li v-for="link in tools">
                         <Link :href="link.url"
                               class="py-2 flex px-4 md:px-2 lg:px-6 text-secondary md:ml-2 transition-all rounded md:bg-transparent dark:text-white dark:md:text-white"
                               :class="[

@@ -14,10 +14,9 @@ class SendResultsToEmail
 {
     use AsAction;
 
-    public function handle(Tool $type, string $email = '', string $uuid = ''): int
+    public function handle(Tool $type, array $emails = [], string $uuid = ''): int
     {
         $results = Result::where('uuid', $uuid)->first();
-        $emails = explode(',', $email);
         Mail::to($emails)->send(new Results($results, $type));
 
         return 200;
@@ -28,6 +27,8 @@ class SendResultsToEmail
      */
     public function asController(SendResultsRequest $request): int
     {
-        return $this->handle(new Tool($request->get('type')), $request->get('email'), $request->get('uuid'));
+        $validated = $request->validated();
+
+        return $this->handle(new Tool($validated['type']), $validated['email'], $validated['uuid']);
     }
 }

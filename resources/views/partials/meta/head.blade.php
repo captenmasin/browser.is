@@ -22,13 +22,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
 
-    <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="{{ config('analytics.id') }}"></script>
-
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="captenmasin" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script defer src="https://api.pirsch.io/pa.js"
+        id="pianjs"
+        data-code="YMqxdtvovh4Gpg48ars33teZjVSSlzL9"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9293785362154547" crossorigin="anonymous"></script>
 
     @routes
     <script>
-		Ziggy.url = '{{ config('app.url') }}'
+		Ziggy.url = window.location.origin
     </script>
 </head>

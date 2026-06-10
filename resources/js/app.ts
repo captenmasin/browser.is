@@ -13,13 +13,17 @@ import {createInertiaApp} from '@inertiajs/vue3'
 
 const emitter = mitt();
 
+type PageModule = {
+    default: Record<string, unknown>
+}
+
 createInertiaApp({
     title: title => `${title} - ${import.meta.env.VITE_APP_NAME}`,
     resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', {eager: true})
-        let page = pages[`./Pages/${name}.vue`]
+        const pages = import.meta.glob<PageModule>('./Pages/**/*.vue', {eager: true})
+        const page = pages[`./Pages/${name}.vue`]
         page.default.layout = page.default.layout || Layout
-        return page
+        return page as any
     },
     setup({el, App, props, plugin}) {
         const app = createApp({
@@ -31,9 +35,9 @@ createInertiaApp({
 
         app.mount(el)
     },
-}).then(r => '')
+}).then(() => '')
 
-let timeout = null
+let timeout: ReturnType<typeof setTimeout> | null = null
 
 router.on('start', () => {
     timeout = setTimeout(() => NProgress.start(), 1)
@@ -46,7 +50,9 @@ router.on('progress', (event) => {
 })
 
 router.on('finish', (event) => {
-    clearTimeout(timeout)
+    if (timeout) {
+        clearTimeout(timeout)
+    }
     if (!NProgress.isStarted()) {
         // Do nothing
     } else if (event.detail.visit.completed) {

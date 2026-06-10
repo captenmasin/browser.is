@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {useDateFormat, useTimeAgo} from "@vueuse/core";
 
 const props = defineProps({

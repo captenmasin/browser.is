@@ -14,9 +14,7 @@ class Results extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public Result $results, public Tool $type)
-    {
-    }
+    public function __construct(public Result $results, public Tool $type) {}
 
     public function envelope(): Envelope
     {
@@ -27,15 +25,22 @@ class Results extends Mailable
 
     public function content(): Content
     {
-        $data = decrypt($this->results->data);
+        $data = $this->results->data ?? [];
         if ($this->type->value !== Tool::All) {
             $data = [
-                $this->type->value => $data[$this->type->value],
+                $this->type->value => $data[$this->type->value] ?? null,
             ];
         }
 
         foreach ($data as $key => $datum) {
-            $data[$key] = json_decode($datum, true);
+            if (empty($datum)) {
+                $data[$key] = [];
+
+                continue;
+            }
+
+            $datum = decrypt($datum);
+            $data[$key] = is_string($datum) ? json_decode($datum, true) : $datum;
         }
 
         return new Content(

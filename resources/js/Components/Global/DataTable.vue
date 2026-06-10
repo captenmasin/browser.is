@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {toast} from 'vue3-toastify';
 import {isBoolean, isObject, isString, useClipboard} from "@vueuse/core";
 

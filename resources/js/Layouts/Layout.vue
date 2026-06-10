@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import NavBar from "@/Components/Global/NavBar.vue";
 import MetaHead from "@/Components/Global/MetaHead.vue";
 import AppFooter from "@/Components/Global/AppFooter.vue";

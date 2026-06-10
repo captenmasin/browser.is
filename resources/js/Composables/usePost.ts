@@ -1,9 +1,14 @@
 import {usePage} from "@inertiajs/vue3";
+import {sameOriginUrl} from "@/Composables/useUrl";
 
-export async function usePost(url = "", data = {}) {
+type PostData = Record<string, unknown> & {
+	_token?: string
+}
+
+export async function usePost(url = "", data: PostData = {}) {
 	// Default options are marked with *
-	data._token = usePage().props.csrf_token
-	const response = await fetch(url, {
+	data._token = usePage<AppPageProps>().props.csrf_token
+	const response = await fetch(sameOriginUrl(url), {
 		method: "POST", // *GET, POST, PUT, DELETE, etc.
 		mode: "cors", // no-cors, *cors, same-origin
 		cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

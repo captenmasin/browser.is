@@ -39,11 +39,6 @@ class GetBrowserData
                 'description' => '',
                 'value' => $data::userAgent(),
             ],
-            'incognito_mode' => [
-                'label' => 'Incognito mode',
-                'description' => '',
-                'value' => '',
-            ],
             'time' => [
                 'label' => 'Local time',
                 'description' => '',

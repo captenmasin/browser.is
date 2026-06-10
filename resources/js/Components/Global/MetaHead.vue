@@ -1,12 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { Head, router, usePage } from '@inertiajs/vue3'
 
-const meta = ref(usePage().props.meta)
+const meta = ref<AppMeta>(usePage<AppPageProps>().props.meta)
 const key = ref(new Date().toDateString())
 
 router.on('success', (event) => {
-  meta.value = usePage().props.meta
+  meta.value = usePage<AppPageProps>().props.meta
   key.value = event.timeStamp + event.detail.page.component
 })
 </script>

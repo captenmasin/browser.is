@@ -124,7 +124,9 @@ return [
     |
     */
 
-    'cache_tags' => ['torann-geoip-location'],
+    'cache_tags' => env('GEOIP_CACHE_TAGS')
+        ? array_filter(array_map('trim', explode(',', env('GEOIP_CACHE_TAGS'))))
+        : [],
 
     /*
     |--------------------------------------------------------------------------
