@@ -2,6 +2,77 @@
 
 All notable changes to `dns` will be documented in this file
 
+## 2.7.1 - 2025-11-26
+
+### What's Changed
+
+* Update issue template by @AlexVanderbist in https://github.com/spatie/dns/pull/116
+* Added Symfony 8 support to all symfony/* packages. by @thecaliskan in https://github.com/spatie/dns/pull/119
+
+### New Contributors
+
+* @AlexVanderbist made their first contribution in https://github.com/spatie/dns/pull/116
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.7.0...2.7.1
+
+## 2.7.0 - 2025-04-17
+
+### What's Changed
+
+* Let users set a custom timeout or number of retries for the Dig handler by @Kovah in https://github.com/spatie/dns/pull/115
+
+### New Contributors
+
+* @Kovah made their first contribution in https://github.com/spatie/dns/pull/115
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.6.0...2.7.0
+
+## 2.6.0 - 2024-03-24
+
+### What's Changed
+
+* Fix: TXT parsing by @SRWieZ in https://github.com/spatie/dns/pull/109
+
+### New Contributors
+
+* @SRWieZ made their first contribution in https://github.com/spatie/dns/pull/109
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.5.6...2.6.0
+
+## 2.5.6 - 2024-01-19
+
+### What's Changed
+
+* Fix README.md by @lyrixx in https://github.com/spatie/dns/pull/107
+* fix(dig): tell dig to not convert idn to locale string by @joelwurtz in https://github.com/spatie/dns/pull/106
+
+### New Contributors
+
+* @lyrixx made their first contribution in https://github.com/spatie/dns/pull/107
+* @joelwurtz made their first contribution in https://github.com/spatie/dns/pull/106
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.5.5...2.5.6
+
+## 2.5.5 - 2023-12-26
+
+### What's Changed
+
+* Allow Symfony 7.x by @thecaliskan in https://github.com/spatie/dns/pull/104
+
+### New Contributors
+
+* @thecaliskan made their first contribution in https://github.com/spatie/dns/pull/104
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.5.4...2.5.5
+
+## 2.5.4 - 2023-05-27
+
+### What's Changed
+
+- Improve security by @freekmurze in https://github.com/spatie/dns/pull/103
+
+**Full Changelog**: https://github.com/spatie/dns/compare/2.5.3...2.5.4
+
 ## 2.5.3 - 2023-01-11
 
 ### What's Changed

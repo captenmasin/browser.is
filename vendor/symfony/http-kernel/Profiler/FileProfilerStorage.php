@@ -33,16 +33,19 @@ class FileProfilerStorage implements ProfilerStorageInterface
     public function __construct(string $dsn)
     {
         if (!str_starts_with($dsn, 'file:')) {
-            throw new \RuntimeException(sprintf('Please check your configuration. You are trying to use FileStorage with an invalid dsn "%s". The expected format is "file:/path/to/the/storage/folder".', $dsn));
+            throw new \RuntimeException(\sprintf('Please check your configuration. You are trying to use FileStorage with an invalid dsn "%s". The expected format is "file:/path/to/the/storage/folder".', $dsn));
         }
         $this->folder = substr($dsn, 5);
 
-        if (!is_dir($this->folder) && false === @mkdir($this->folder, 0777, true) && !is_dir($this->folder)) {
-            throw new \RuntimeException(sprintf('Unable to create the storage directory (%s).', $this->folder));
+        if (!is_dir($this->folder) && false === @mkdir($this->folder, 0o777, true) && !is_dir($this->folder)) {
+            throw new \RuntimeException(\sprintf('Unable to create the storage directory (%s).', $this->folder));
         }
     }
 
-    public function find(?string $ip, ?string $url, ?int $limit, ?string $method, int $start = null, int $end = null, string $statusCode = null): array
+    /**
+     * @param-immediately-invoked-callable $filter
+     */
+    public function find(?string $ip, ?string $url, ?int $limit, ?string $method, ?int $start = null, ?int $end = null, ?string $statusCode = null, ?\Closure $filter = null): array
     {
         $file = $this->getIndexFilename();
 
@@ -55,23 +58,34 @@ class FileProfilerStorage implements ProfilerStorageInterface
 
         $result = [];
         while (\count($result) < $limit && $line = $this->readLineFromFile($file)) {
-            $values = str_getcsv($line);
-            [$csvToken, $csvIp, $csvMethod, $csvUrl, $csvTime, $csvParent, $csvStatusCode] = $values;
+            $values = str_getcsv($line, ',', '"', '\\');
+
+            if (7 > \count($values)) {
+                // skip invalid lines
+                continue;
+            }
+
+            [$csvToken, $csvIp, $csvMethod, $csvUrl, $csvTime, $csvParent, $csvStatusCode, $csvVirtualType, $csvHasErrors] = $values + [7 => null, 8 => null];
             $csvTime = (int) $csvTime;
 
-            if ($ip && !str_contains($csvIp, $ip) || $url && !str_contains($csvUrl, $url) || $method && !str_contains($csvMethod, $method) || $statusCode && !str_contains($csvStatusCode, $statusCode)) {
+            $urlFilter = false;
+            if ($url) {
+                $urlFilter = str_starts_with($url, '!') ? str_contains($csvUrl, substr($url, 1)) : !str_contains($csvUrl, $url);
+            }
+
+            if ($ip && !str_contains($csvIp, $ip) || $urlFilter || $method && !str_contains($csvMethod, $method) || $statusCode && !str_contains($csvStatusCode, $statusCode)) {
                 continue;
             }
 
-            if (!empty($start) && $csvTime < $start) {
+            if ($start && $csvTime < $start) {
                 continue;
             }
 
-            if (!empty($end) && $csvTime > $end) {
+            if ($end && $csvTime > $end) {
                 continue;
             }
 
-            $result[$csvToken] = [
+            $profile = [
                 'token' => $csvToken,
                 'ip' => $csvIp,
                 'method' => $csvMethod,
@@ -79,7 +93,15 @@ class FileProfilerStorage implements ProfilerStorageInterface
                 'time' => $csvTime,
                 'parent' => $csvParent,
                 'status_code' => $csvStatusCode,
+                'virtual_type' => $csvVirtualType ?: 'request',
+                'has_errors' => (bool) $csvHasErrors,
             ];
+
+            if ($filter && !$filter($profile)) {
+                continue;
+            }
+
+            $result[$csvToken] = $profile;
         }
 
         fclose($file);
@@ -87,10 +109,7 @@ class FileProfilerStorage implements ProfilerStorageInterface
         return array_values($result);
     }
 
-    /**
-     * @return void
-     */
-    public function purge()
+    public function purge(): void
     {
         $flags = \FilesystemIterator::SKIP_DOTS;
         $iterator = new \RecursiveDirectoryIterator($this->folder, $flags);
@@ -121,8 +140,8 @@ class FileProfilerStorage implements ProfilerStorageInterface
         if (!$profileIndexed) {
             // Create directory
             $dir = \dirname($file);
-            if (!is_dir($dir) && false === @mkdir($dir, 0777, true) && !is_dir($dir)) {
-                throw new \RuntimeException(sprintf('Unable to create the storage directory (%s).', $dir));
+            if (!is_dir($dir) && false === @mkdir($dir, 0o777, true) && !is_dir($dir)) {
+                throw new \RuntimeException(\sprintf('Unable to create the storage directory (%s).', $dir));
             }
         }
 
@@ -130,7 +149,7 @@ class FileProfilerStorage implements ProfilerStorageInterface
         // when there are errors in sub-requests, the parent and/or children tokens
         // may equal the profile token, resulting in infinite loops
         $parentToken = $profile->getParentToken() !== $profileToken ? $profile->getParentToken() : null;
-        $childrenToken = array_filter(array_map(fn (Profile $p) => $profileToken !== $p->getToken() ? $p->getToken() : null, $profile->getChildren()));
+        $childrenToken = array_filter(array_map(static fn (Profile $p) => $profileToken !== $p->getToken() ? $p->getToken() : null, $profile->getChildren()));
 
         // Store profile
         $data = [
@@ -143,6 +162,8 @@ class FileProfilerStorage implements ProfilerStorageInterface
             'url' => $profile->getUrl(),
             'time' => $profile->getTime(),
             'status_code' => $profile->getStatusCode(),
+            'virtual_type' => $profile->getVirtualType() ?? 'request',
+            'has_errors' => $profile->hasErrors(),
         ];
 
         $data = serialize($data);
@@ -169,10 +190,12 @@ class FileProfilerStorage implements ProfilerStorageInterface
                 $profile->getTime() ?: time(),
                 $profile->getParentToken(),
                 $profile->getStatusCode(),
-            ]);
+                $profile->getVirtualType() ?? 'request',
+                $profile->hasErrors() ? '1' : '0',
+            ], ',', '"', '\\');
             fclose($file);
 
-            if (1 === mt_rand(1, 10)) {
+            if (1 === random_int(1, 10)) {
                 $this->removeExpiredProfiles();
             }
         }
@@ -245,10 +268,7 @@ class FileProfilerStorage implements ProfilerStorageInterface
         return '' === $line ? null : $line;
     }
 
-    /**
-     * @return Profile
-     */
-    protected function createProfileFromData(string $token, array $data, Profile $parent = null)
+    protected function createProfileFromData(string $token, array $data, ?Profile $parent = null): Profile
     {
         $profile = new Profile($token);
         $profile->setIp($data['ip']);
@@ -256,6 +276,8 @@ class FileProfilerStorage implements ProfilerStorageInterface
         $profile->setUrl($data['url']);
         $profile->setTime($data['time']);
         $profile->setStatusCode($data['status_code']);
+        $profile->setVirtualType($data['virtual_type'] ?: 'request');
+        $profile->setHasErrors($data['has_errors'] ?? false);
         $profile->setCollectors($data['data']);
 
         if (!$parent && $data['parent']) {
@@ -275,7 +297,7 @@ class FileProfilerStorage implements ProfilerStorageInterface
         return $profile;
     }
 
-    private function doRead($token, Profile $profile = null): ?Profile
+    private function doRead($token, ?Profile $profile = null): ?Profile
     {
         if (!$token || !file_exists($file = $this->getFilename($token))) {
             return null;
@@ -309,7 +331,15 @@ class FileProfilerStorage implements ProfilerStorageInterface
         }
 
         while ($line = fgets($handle)) {
-            [$csvToken, , , , $csvTime] = str_getcsv($line);
+            $values = str_getcsv($line, ',', '"', '\\');
+
+            if (7 > \count($values)) {
+                // skip invalid lines
+                $offset += \strlen($line);
+                continue;
+            }
+
+            [$csvToken, , , , $csvTime] = $values;
 
             if ($csvTime >= $minimalProfileTimestamp) {
                 break;

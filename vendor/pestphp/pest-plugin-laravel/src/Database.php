@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\TestCase;
  *
  * @return TestCase
  */
-function assertDatabaseHas(string $table, array $data, string $connection = null)
+function assertDatabaseHas($table, array $data = [], ?string $connection = null)
 {
     return test()->assertDatabaseHas(...func_get_args());
 }
@@ -23,9 +23,19 @@ function assertDatabaseHas(string $table, array $data, string $connection = null
  *
  * @return TestCase
  */
-function assertDatabaseMissing(string $table, array $data, string $connection = null)
+function assertDatabaseMissing($table, array $data = [], ?string $connection = null)
 {
     return test()->assertDatabaseMissing(...func_get_args());
+}
+
+/**
+ * Assert that the given table has no entries.
+ *
+ * @return TestCase
+ */
+function assertDatabaseEmpty($table, ?string $connection = null)
+{
+    return test()->assertDatabaseEmpty(...func_get_args());
 }
 
 /**
@@ -35,7 +45,7 @@ function assertDatabaseMissing(string $table, array $data, string $connection = 
  */
 function assertModelExists(Model $model)
 {
-    return test()->assertModelExists($model);
+    return test()->assertModelExists(...func_get_args());
 }
 
 /**
@@ -45,7 +55,7 @@ function assertModelExists(Model $model)
  */
 function assertModelMissing(Model $model)
 {
-    return test()->assertModelMissing($model);
+    return test()->assertModelMissing(...func_get_args());
 }
 
 /**
@@ -53,31 +63,18 @@ function assertModelMissing(Model $model)
  *
  * @return TestCase
  */
-function assertDatabaseCount(string $table, int $count, string $connection = null)
+function assertDatabaseCount($table, int $count, ?string $connection = null)
 {
     return test()->assertDatabaseCount(...func_get_args());
 }
 
 /**
- * Assert the given record has been deleted.
- *
- * @param Model|string $table
- *
- * @return TestCase
- */
-function assertDeleted($table, array $data = [], string $connection = null)
-{
-    return test()->assertDeleted(...func_get_args());
-}
-
-/**
  * Assert the given record has been "soft deleted".
  *
- * @param Model|string $table
- *
+ * @param  Model|string  $table
  * @return TestCase
  */
-function assertSoftDeleted($table, array $data = [], string $connection = null, string $deletedAtColumn = 'deleted_at')
+function assertSoftDeleted($table, array $data = [], ?string $connection = null, string $deletedAtColumn = 'deleted_at')
 {
     return test()->assertSoftDeleted(...func_get_args());
 }
@@ -85,11 +82,10 @@ function assertSoftDeleted($table, array $data = [], string $connection = null, 
 /**
  * Assert the given record has not been "soft deleted".
  *
- * @param Model|string $table
- *
+ * @param  Model|string  $table
  * @return TestCase
  */
-function assertNotSoftDeleted($table, array $data = [], string $connection = null, string $deletedAtColumn = 'deleted_at')
+function assertNotSoftDeleted($table, array $data = [], ?string $connection = null, string $deletedAtColumn = 'deleted_at')
 {
     return test()->assertNotSoftDeleted(...func_get_args());
 }
@@ -97,7 +93,7 @@ function assertNotSoftDeleted($table, array $data = [], string $connection = nul
 /**
  * Determine if the argument is a soft deletable model.
  *
- * @param mixed $model
+ * @param  mixed  $model
  */
 function isSoftDeletableModel($model): bool
 {
@@ -107,7 +103,7 @@ function isSoftDeletableModel($model): bool
 /**
  * Get the database connection.
  */
-function getConnection(string $connection = null): Connection
+function getConnection(?string $connection = null): Connection
 {
     return test()->getConnection(...func_get_args());
 }
@@ -115,11 +111,29 @@ function getConnection(string $connection = null): Connection
 /**
  * Seed a given database connection.
  *
- * @param array|string $class
+ * @return TestCase
+ */
+function seed(array|string $class = 'Database\\Seeders\\DatabaseSeeder')
+{
+    return test()->seed(...func_get_args());
+}
+
+/**
+ * Specify the number of database queries that should occur throughout the test.
  *
  * @return TestCase
  */
-function seed($class = 'Database\\Seeders\\DatabaseSeeder')
+function expectsDatabaseQueryCount(int $excepted, ?string $connection = null)
 {
-    return test()->seed(...func_get_args());
+    return test()->expectsDatabaseQueryCount(...func_get_args());
+}
+
+/**
+ * Cast a JSON string to a database compatible type.
+ *
+ * @return TestCase
+ */
+function castAsJson(array|object|string $value)
+{
+    return test()->castAsJson($value);
 }

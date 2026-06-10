@@ -175,6 +175,8 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
         DriverCommand::SET_TIMEOUT => ['method' => 'POST', 'url' => '/session/:sessionId/timeouts'],
         DriverCommand::SET_WINDOW_SIZE => ['method' => 'POST', 'url' => '/session/:sessionId/window/rect'],
         DriverCommand::SET_WINDOW_POSITION => ['method' => 'POST', 'url' => '/session/:sessionId/window/rect'],
+        // Selenium extension of W3C protocol
+        DriverCommand::UPLOAD_FILE => ['method' => 'POST', 'url' => '/session/:sessionId/se/file'],
     ];
     /**
      * @var string
@@ -353,7 +355,7 @@ class HttpCommandExecutor implements WebDriverCommandExecutor
             $sessionId = $results['sessionId'];
         }
 
-        // @see https://w3c.github.io/webdriver/webdriver-spec.html#handling-errors
+        // @see https://w3c.github.io/webdriver/#errors
         if (isset($value['error'])) {
             // W3C's WebDriver
             WebDriverException::throwException($value['error'], $message, $results);

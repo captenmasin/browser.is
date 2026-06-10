@@ -97,6 +97,20 @@ use Spatie\Dns\Dns;
     ->getRecords('spatie.be');
 ```
 
+## Specify retries and timeouts for Dig
+
+Dig can be configured to retry a DNS query after a certain timeout. Use `setRetries()` or `setTimeout()` to configure
+those settings. The timeout is specified in seconds.
+
+```php
+use Spatie\Dns\Dns;
+
+(new Dns)
+    ->setRetries(4) // try 4 times
+    ->setTimeout(5) // wait 5 seconds for a reply from the nameserver
+    ->getRecords('spatie.be');
+```
+
 ## Guessing a record
 
 When you have a string that contains a dns record, you can convert it to a `Record`
@@ -114,15 +128,15 @@ A `Handler` is responsible for fetching DNS records of a certain type.
 
 By default, these handlers that ship with the package are used:
 
-- `Spatie\Dns\Handler\Dig`
-- `Spatie\Dns\Handler\DnsGetRecord`
+- `Spatie\Dns\Handlers\Dig`
+- `Spatie\Dns\Handlers\DnsGetRecord`
 
-You can create custom handlers. A valid handler is any class that extends from `Spatie\Dns\Handler\Handler`.
+You can create custom handlers. A valid handler is any class that extends from `Spatie\Dns\Handlers\Handler`.
 
 A custom handler class can be used by passing it to `useHandlers` on `Spatie\Dns\Dns`.
 
 ```php
-$results = $this->dns
+$results = (new Dns)
     ->useHandlers([new YourCustomHandler()])
     ->getRecords('spatie.be');
 ```
@@ -147,7 +161,7 @@ Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTI
 
 ### Security
 
-If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be) instead of using the issue tracker.
+If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be).
 
 ## Postcardware
 

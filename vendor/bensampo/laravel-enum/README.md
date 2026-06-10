@@ -5,6 +5,13 @@
 <a href="LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT Software License"></a>
 </p>
 
+## Using this library is no longer recommended
+
+Using this library is no longer recommended, especially for new projects.
+PHP 8.1 supports enums natively.
+
+See https://github.com/BenSampo/laravel-enum/issues/332.
+
 ## About Laravel Enum
 
 Simple, extensible and powerful enumeration implementation for Laravel.
@@ -26,19 +33,23 @@ Created by [Ben Sampson](https://sampo.co.uk)
 
 - [Guide](#guide)
 - [Installation](#installation)
+- [Migrate to Native PHP Enums](#migrate-to-native-PHP-enums)
 - [Enum Library](enum-library.md)
 - [Basic Usage](#basic-usage)
-  - [Enum definition](#enum-definition)
+  - [Enum Definition](#enum-definition)
   - [Instantiation](#instantiation)
   - [Instance Properties](#instance-properties)
+  - [Instance Casting](#instance-casting)
   - [Instance Equality](#instance-equality)
-  - [Type Hinting](#instance-equality)
+  - [Type Hinting](#type-hinting)
 - [Flagged/Bitwise Enum](#flaggedbitwise-enum)
 - [Attribute Casting](#attribute-casting)
 - [Migrations](#migrations)
 - [Validation](#validation)
 - [Localization](#localization)
-- [Customizing descriptions](#customizing-descriptions)
+- [Customizing Descriptions](#customizing-descriptions)
+  - [Customizing Class Description](#customizing-class-description)
+  - [Customizing Value Descriptions](#customizing-value-descriptions)
 - [Extending the Enum Base Class](#extending-the-enum-base-class)
 - [Laravel Nova Integration](#laravel-nova-integration)
 - [PHPStan Integration](#phpstan-integration)
@@ -54,7 +65,7 @@ You are reading the documentation for `6.x`.
 - If you're using **Laravel 7** please see the [docs for `2.x`](https://github.com/BenSampo/laravel-enum/blob/v2.2.0/README.md).
 - If you're using **Laravel 6** or below, please see the [docs for `1.x`](https://github.com/BenSampo/laravel-enum/blob/v1.38.0/README.md).
 
-Please see the [upgrade guide](./UPGRADE.md) for information on how to upgrade to the latest version.
+Please see the [upgrade guide](UPGRADE.md) for information on how to upgrade to the latest version.
 
 ## Guide
 
@@ -62,16 +73,40 @@ I wrote a blog post about using laravel-enum: https://sampo.co.uk/blog/using-enu
 
 ## Installation
 
-### Requirements
+Requires PHP 8, and Laravel 9 through 13.
 
-- Laravel `9` or higher
-- PHP `8.0` or higher
-
-Via Composer
-
-```bash
+```sh
 composer require bensampo/laravel-enum
 ```
+
+## Migrate to Native PHP Enums
+
+PHP 8.1 supports enums natively.
+You can migrate your usages of `BenSampo\Enum\Enum` to native PHP enums using the following steps.
+
+Make sure you meet the following requirements:
+- PHP 8.1 or higher
+- Laravel 10 or higher
+- Rector 0.17 or higher, your `rector.php` includes all relevant files
+- Latest version of this library
+
+Depending on the size of your project, you may choose to migrate all enums at once,
+or migrate just a couple or one enum at a time.
+- Convert all enums at once: `php artisan enum:to-native`
+- Pass the fully qualified class name of an enum to limit the conversion: `php artisan enum:to-native "App\Enums\UserType"`
+
+  This is necessary if any enums are used during the bootstrap phase of Laravel,
+  the conversion of their usages interferes with Larastan and prevents a second run of Rector from working.
+
+Review and validate the code changes for missed edge cases:
+- See [Unimplemented](tests/Rector/Unimplemented)
+- `Enum::coerce()`: If only values were passed, you can replace it with `tryFrom()`.
+   If keys or instances could also be passed, you might need additional logic to cover this.
+- `Enum::$description` and `Enum::getDescription()`: Implement an alternative.
+- try/catch-blocks that handle `BenSampo\Enum\Exceptions\InvalidEnumKeyException` or `BenSampo\Enum\Exceptions\InvalidEnumMemberException`.
+  Either catch the `ValueError` thrown by native enums, or switch to using `tryFrom()` and handle `null`.
+
+Once all enums are converted, you can remove your dependency on this library.
 
 ## Enum Library
 
@@ -144,15 +179,15 @@ $enumInstance = UserType::coerce($someValue);
 If you want your IDE to autocomplete the static instantiation helpers, you can
 generate PHPDoc annotations through an artisan command.
 
-By default all Enums in `app/Enums` will be annotated (you can change the folder by passing a path to `--folder`)
+By default, all Enums in `app/Enums` will be annotated (you can change the folder by passing a path to `--folder`).
 
-```bash
+```sh
 php artisan enum:annotate
 ```
 
-You can annotate a single class by specifying the class name
+You can annotate a single class by specifying the class name.
 
-```bash
+```sh
 php artisan enum:annotate "App\Enums\UserType"
 ```
 
@@ -164,7 +199,7 @@ Once you have an enum instance, you can access the `key`, `value` and `descripti
 $userType = UserType::fromValue(UserType::SuperAdministrator);
 
 $userType->key; // SuperAdministrator
-$userType->value; // 0
+$userType->value; // 3
 $userType->description; // Super Administrator
 ```
 
@@ -178,15 +213,16 @@ This also means they can be echoed in blade views, for example.
 ```php
 $userType = UserType::fromValue(UserType::SuperAdministrator);
 
-(string) $userType // '0'
+(string) $userType // '3'
 ```
 
 ### Instance Equality
 
-You can check the equality of an instance against any value by passing it to the `is` method. For convenience, there is also an `isNot` method which is the exact reverse of the `is` method.
+You can check the equality of an instance against any value by passing it to the `is` method.
+For convenience, there is also an `isNot` method which is the exact reverse of the `is` method.
 
 ```php
-$admin = UserType::fromValue(UserType::Administrator);
+$admin = UserType::Administrator();
 
 $admin->is(UserType::Administrator);   // true
 $admin->is($admin);                    // true
@@ -197,10 +233,12 @@ $admin->is(UserType::Moderator());     // false
 $admin->is('random-value');            // false
 ```
 
-You can also check to see if the instance's value matches against an array of possible values using the `in` method, and use `notIn` to check if instance value is not in an array of values. Iterables can also be checked against.
+You can also check to see if the instance's value matches against an array of possible values using the `in` method,
+and use `notIn` to check if instance value is not in an array of values.
+Iterables can also be checked against.
 
 ```php
-$admin = UserType::fromValue(UserType::Administrator);
+$admin = UserType::Administrator();
 
 $admin->in([UserType::Moderator, UserType::Administrator]);     // true
 $admin->in([UserType::Moderator(), UserType::Administrator()]); // true
@@ -213,6 +251,26 @@ $admin->notIn([UserType::Moderator(), UserType::Administrator()]); // false
 
 $admin->notIn([UserType::Moderator, UserType::Subscriber]);        // true
 $admin->notIn(['random-value']);                                   // true
+```
+
+The instantiated enums are not singletons, rather a new object is created every time.
+Thus, strict comparison `===` of different enum instances will always return `false`, no matter the value.
+In contrast, loose comparison `==` will depend on the value.
+
+```php
+$admin = UserType::Administrator();
+
+$admin === UserType::Administrator();                    // false
+UserType::Administrator() === UserType::Administrator(); // false
+$admin === UserType::Moderator();                        // false
+
+$admin === $admin;                                       // true
+
+$admin == UserType::Administrator(); // true
+$admin == UserType::Administrator;   // true
+
+$admin == UserType::Moderator();     // false
+$admin == UserType::Moderator;       // false
 ```
 
 ### Type Hinting
@@ -768,7 +826,9 @@ final class UserType extends Enum implements LocalizedEnum
 
 The `getDescription` method will now look for the value in your localization files. If a value doesn't exist for a given key, the default description is returned instead.
 
-## Customizing enum class description
+## Customizing descriptions
+
+### Customizing class description
 
 If you'd like to return a custom description for your enum class, add a `Description` attribute to your Enum class:
 
@@ -787,7 +847,7 @@ Calling `UserType::getClassDescription()` now returns `List of available User ty
 
 You may also override the `getClassDescription` method on the base Enum class if you wish to have more control of the description.
 
-## Customizing value descriptions
+### Customizing value descriptions
 
 If you'd like to return a custom description for your enum values, add a `Description` attribute to your Enum constants:
 
@@ -828,13 +888,13 @@ It's best to register the macro inside a service providers' boot method.
 
 Use the [nova-enum-field](https://github.com/simplesquid/nova-enum-field) package by Simple Squid to easily create fields for your Enums in Nova. See their readme for usage.
 
-## PHPStan integration
+## PHPStan Integration
 
-If you are using [PHPStan](https://github.com/phpstan/phpstan) for static
-analysis, you can enable the extension for proper recognition of the
-magic instantiation methods.
+If you are using [PHPStan](https://github.com/phpstan/phpstan) for static analysis, enable the extension for:
+- proper recognition of the magic instantiation methods
+- detection of duplicate enum values
 
-Add the following to your projects `phpstan.neon` includes:
+Use [PHPStan Extension Installer](https://github.com/phpstan/extension-installer) or add the following to your projects `phpstan.neon` includes:
 
 ```neon
 includes:
@@ -855,7 +915,7 @@ Generate DocBlock annotations for enum classes.
 
 ### `php artisan enum:to-native`
 
-Convert a class that extends `BenSampo\Enum\Enum` to a native PHP enum.
+See [migrate to native PHP enums](#migrate-to-native-php-enums).
 
 ## Enum Class Reference
 

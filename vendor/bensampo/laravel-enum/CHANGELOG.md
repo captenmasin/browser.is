@@ -7,6 +7,119 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 6.14.0
+
+### Added
+
+- Support Laravel 13
+
+## 6.13.0
+
+### Added
+
+- Convert `asArray()` to native enum automatically
+
+## 6.12.2
+
+### Changed
+
+- Simplify implementation of `Enum::fromKey` to native enum with dynamic class const fetch
+
+## 6.12.1
+
+### Fixed
+
+- Avoid false-positive addition of `->value` in `enum:to-native`
+
+## 6.12.0
+
+### Added
+
+- Support Laravel 11
+- Support Rector 2
+
+## 6.11.1
+
+### Fixed
+
+- Fix conversion of `in()` and `notIn()` to native enums when called with non-arrays
+
+## 6.11.0
+
+### Added
+
+- Support Laravel 11
+
+## 6.10.0
+
+### Added
+
+- Allow Allow installation alongside PHPUnit 11
+
+## 6.9.1
+
+### Fixed
+
+- Check if value is `int` or `string` in conversion of `Enum::hasValue()` to native enum
+
+## 6.9.0
+
+### Added
+
+- Add conversion of `Enum::hasValue()` to native enum
+
+## 6.8.0
+
+### Changed
+
+- Make `php artisan enum:to-native` compatible with rector `0.19`
+
+## 6.7.0
+
+### Added
+
+- Add PHPStan rule to detect duplicate enum values
+
+## 6.6.4
+
+### Fixed
+
+- Fix conversion of `Enum::fromKey()` to native enum
+
+## 6.6.3
+
+### Fixed
+
+- Remove leading backslash in class names passed to `php artisan enum:to-native`
+
+## 6.6.2
+
+### Fixed
+
+- Convert single classes in one step with `php artisan enum:to-native`
+
+## 6.6.1
+
+### Fixed
+
+- Disable timeout of rector calls in `php artisan enum:to-native`
+
+## 6.6.0
+
+### Changed
+
+- Use command `enum:to-native` for simplified one-step conversion of classes that extend `BenSampo\Enum\Enum` to native PHP enums
+
+## 6.5.0
+
+### Added
+
+- Add Rector rules for conversion of classes that extend `BenSampo\Enum\Enum` to native PHP enums
+
+### Deprecated
+
+- Deprecate command `enum:to-native` in favor of Rector conversion
+
 ## 6.4.1
 
 ### Fixed

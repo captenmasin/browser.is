@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Laravel\Horizon\Console\TerminateCommand;
 use Illuminate\Foundation\Console\ViewCacheCommand;
 use Illuminate\Foundation\Console\ViewClearCommand;
 use Illuminate\Foundation\Console\RouteCacheCommand;
@@ -43,9 +42,6 @@ class Deploy extends Command
 
         $this->info('Regenerating key');
         $this->call(KeyGenerateCommand::class, ['--force' => true]);
-
-//        $this->info('Restarting horizon');
-//        $this->call(TerminateCommand::class);
 
         $this->info('Caching');
         $this->call(RouteCacheCommand::class);

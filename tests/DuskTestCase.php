@@ -18,7 +18,7 @@ abstract class DuskTestCase extends BaseTestCase
      *
      * @return void
      */
-    public static function prepare()
+    public static function prepare(): void
     {
         if (! static::runningInSail()) {
             static::startChromeDriver();
@@ -30,7 +30,7 @@ abstract class DuskTestCase extends BaseTestCase
      *
      * @return \Facebook\WebDriver\Remote\RemoteWebDriver
      */
-    protected function driver()
+    protected function driver(): RemoteWebDriver
     {
         $options = (new ChromeOptions())->addArguments(collect([
             $this->shouldStartMaximized() ? '--start-maximized' : '--window-size=1920,1080',
@@ -55,7 +55,7 @@ abstract class DuskTestCase extends BaseTestCase
      *
      * @return bool
      */
-    protected function hasHeadlessDisabled()
+    protected function hasHeadlessDisabled(): bool
     {
         return isset($_SERVER['DUSK_HEADLESS_DISABLED']) ||
             isset($_ENV['DUSK_HEADLESS_DISABLED']);
@@ -66,7 +66,7 @@ abstract class DuskTestCase extends BaseTestCase
      *
      * @return bool
      */
-    protected function shouldStartMaximized()
+    protected function shouldStartMaximized(): bool
     {
         return isset($_SERVER['DUSK_START_MAXIMIZED']) ||
             isset($_ENV['DUSK_START_MAXIMIZED']);

@@ -2,7 +2,6 @@
 
 namespace Laravel\Dusk\Concerns;
 
-use Carbon\Carbon;
 use Closure;
 use Exception;
 use Facebook\WebDriver\Exception\NoSuchElementException;
@@ -96,18 +95,19 @@ trait WaitsForElements
      *
      * @param  array|string  $text
      * @param  int|null  $seconds
+     * @param  bool  $ignoreCase
      * @return $this
      *
      * @throws \Facebook\WebDriver\Exception\TimeoutException
      */
-    public function waitForText($text, $seconds = null)
+    public function waitForText($text, $seconds = null, $ignoreCase = false)
     {
         $text = Arr::wrap($text);
 
         $message = $this->formatTimeOutMessage('Waited %s seconds for text', implode("', '", $text));
 
-        return $this->waitUsing($seconds, 100, function () use ($text) {
-            return Str::contains($this->resolver->findOrFail('')->getText(), $text);
+        return $this->waitUsing($seconds, 100, function () use ($text, $ignoreCase) {
+            return Str::contains($this->resolver->findOrFail('')->getText(), $text, $ignoreCase);
         }, $message);
     }
 
@@ -117,16 +117,17 @@ trait WaitsForElements
      * @param  string  $selector
      * @param  array|string  $text
      * @param  int|null  $seconds
+     * @param  bool  $ignoreCase
      * @return $this
      *
      * @throws \Facebook\WebDriver\Exception\TimeoutException
      */
-    public function waitForTextIn($selector, $text, $seconds = null)
+    public function waitForTextIn($selector, $text, $seconds = null, $ignoreCase = false)
     {
         $message = 'Waited %s seconds for text "'.$this->escapePercentCharacters($text).'" in selector '.$selector;
 
-        return $this->waitUsing($seconds, 100, function () use ($selector, $text) {
-            return $this->assertSeeIn($selector, $text);
+        return $this->waitUsing($seconds, 100, function () use ($selector, $text, $ignoreCase) {
+            return $this->assertSeeIn($selector, $text, $ignoreCase);
         }, $message);
     }
 
@@ -394,26 +395,16 @@ trait WaitsForElements
 
         $this->pause($interval);
 
-        $started = Carbon::now();
-
-        while (true) {
-            try {
-                if ($callback()) {
-                    break;
+        $this->driver->wait($seconds, $interval)->until(
+            function ($driver) use ($callback) {
+                try {
+                    return $callback();
+                } catch (Exception $e) {
+                    return false;
                 }
-            } catch (Exception $e) {
-                //
-            }
-
-            if ($started->lt(Carbon::now()->subSeconds($seconds))) {
-                throw new TimeoutException($message
-                    ? sprintf($message, $seconds)
-                    : "Waited {$seconds} seconds for callback."
-                );
-            }
-
-            $this->pause($interval);
-        }
+            },
+            $message ? sprintf($message, $seconds) : "Waited {$seconds} seconds for callback."
+        );
 
         return $this;
     }

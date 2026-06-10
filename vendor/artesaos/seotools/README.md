@@ -44,6 +44,8 @@ composer require artesaos/seotools
 
 You need to update your application configuration in order to register the package so it can be loaded by Laravel, just update your `config/app.php` file adding the following code at the end of your `'providers'` section:
 
+> **Note**: If you are using Laravel 11+, you will have to update `bootstrap/providers.php` instead. [Package Discovery](https://laravel.com/docs/12.x/packages#package-discovery).
+
 > `config/app.php`
 
 ```php
@@ -197,7 +199,7 @@ use Artesaos\SEOTools\Facades\JsonLdMulti;
 // OR
 use Artesaos\SEOTools\Facades\SEOTools;
 
-class CommomController extends Controller
+class CommonController extends Controller
 {
     public function index()
     {
@@ -432,7 +434,7 @@ namespace App\Http\Controllers;
 
 use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 
-class CommomController extends Controller
+class CommonController extends Controller
 {
     use SEOToolsTrait;
 
@@ -552,6 +554,8 @@ SEOMeta::addKeyword($keyword);
 SEOMeta::addMeta($meta, $value = null, $name = 'name');
 SEOMeta::addAlternateLanguage($lang, $url);
 SEOMeta::addAlternateLanguages(array $languages);
+SEOMeta::setAlternateLanguage($lang, $url);
+SEOMeta::setAlternateLanguages(array $languages);
 SEOMeta::setTitleSeparator($separator);
 SEOMeta::setTitle($title);
 SEOMeta::setTitleDefault($default);

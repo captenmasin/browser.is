@@ -6,37 +6,40 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Lorisleiva\Actions\AttributeValidator;
 
+/**
+ * @method void prepareForValidation(\Lorisleiva\Actions\ActionRequest $request)
+ * @method bool|\Illuminate\Auth\Access\Response authorize(\Lorisleiva\Actions\ActionRequest $request)
+ * @method array rules()
+ * @method void withValidator(\Illuminate\Validation\Validator $validator, \Lorisleiva\Actions\ActionRequest $request)
+ * @method void afterValidator(\Illuminate\Validation\Validator $validator, \Lorisleiva\Actions\ActionRequest $request)
+ * @method \Illuminate\Validation\Validator getValidator(\Illuminate\Validation\Factory $factory, \Lorisleiva\Actions\ActionRequest $request)
+ * @method array getValidationData(\Lorisleiva\Actions\ActionRequest $request)
+ * @method array getValidationMessages()
+ * @method array getValidationAttributes()
+ * @method string getValidationRedirect(\Illuminate\Routing\UrlGenerator $url)
+ * @method string getValidationErrorBag()
+ * @method void getValidationFailure()
+ * @method void getAuthorizationFailure()
+ */
 trait WithAttributes
 {
     protected array $attributes = [];
 
-    /**
-     * @param array $attributes
-     * @return static
-     */
-    public function setRawAttributes(array $attributes): self
+    public function setRawAttributes(array $attributes): static
     {
         $this->attributes = $attributes;
 
         return $this;
     }
 
-    /**
-     * @param array $attributes
-     * @return static
-     */
-    public function fill(array $attributes): self
+    public function fill(array $attributes): static
     {
         $this->attributes = array_merge($this->attributes, $attributes);
 
         return $this;
     }
 
-    /**
-     * @param Request $request
-     * @return static
-     */
-    public function fillFromRequest(Request $request): self
+    public function fillFromRequest(Request $request): static
     {
         $route = $request->route();
 
@@ -74,12 +77,7 @@ trait WithAttributes
         return Arr::get($this->attributes, $key, $default);
     }
 
-    /**
-     * @param string $key
-     * @param mixed $value
-     * @return static
-     */
-    public function set(string $key, $value): self
+    public function set(string $key, mixed $value): static
     {
         Arr::set($this->attributes, $key, $value);
 

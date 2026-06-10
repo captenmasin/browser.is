@@ -28,6 +28,8 @@ class ActionManager
     /** @var bool[] */
     protected array $extended = [];
 
+    protected int $backtraceLimit = 10;
+
     public function __construct(array $designPatterns = [])
     {
         $this->setDesignPatterns($designPatterns);
@@ -49,6 +51,13 @@ class ActionManager
         static::$uniqueJobDecorator = $uniqueJobDecoratorClass;
     }
 
+    public function setBacktraceLimit(int $backtraceLimit): ActionManager
+    {
+        $this->backtraceLimit = $backtraceLimit;
+
+        return $this;
+    }
+
     public function setDesignPatterns(array $designPatterns): ActionManager
     {
         $this->designPatterns = $designPatterns;
@@ -59,6 +68,13 @@ class ActionManager
     public function getDesignPatterns(): array
     {
         return $this->designPatterns;
+    }
+
+    public function registerDesignPattern(DesignPattern $designPattern): ActionManager
+    {
+        $this->designPatterns[] = $designPattern;
+        
+        return $this;
     }
 
     public function getDesignPatternsMatching(array $usedTraits): array
@@ -100,7 +116,7 @@ class ActionManager
             || in_array(AsFake::class, $usedTraits);
     }
 
-    public function identifyAndDecorate($instance, $limit = 10)
+    public function identifyAndDecorate($instance)
     {
         $usedTraits = class_uses_recursive($instance);
 
@@ -108,20 +124,25 @@ class ActionManager
             $instance = $instance::mock();
         }
 
-        if (! $designPattern = $this->identifyFromBacktrace($usedTraits, $limit, $frame)) {
+        if (! $designPattern = $this->identifyFromBacktrace($usedTraits, $frame)) {
             return $instance;
         }
 
         return $designPattern->decorate($instance, $frame);
     }
 
-    public function identifyFromBacktrace($usedTraits, $limit = 10, BacktraceFrame &$frame = null): ?DesignPattern
+    public function identifyFromBacktrace($usedTraits, ?BacktraceFrame &$frame = null): ?DesignPattern
     {
         $designPatterns = $this->getDesignPatternsMatching($usedTraits);
         $backtraceOptions = DEBUG_BACKTRACE_PROVIDE_OBJECT
             | DEBUG_BACKTRACE_IGNORE_ARGS;
-
-        foreach (debug_backtrace($backtraceOptions, $limit) as $frame) {
+        
+        $ownNumberOfFrames = 2;
+        $frames = array_slice(
+            debug_backtrace($backtraceOptions, $ownNumberOfFrames + $this->backtraceLimit),
+            $ownNumberOfFrames
+        );
+        foreach ($frames as $frame) {
             $frame = new BacktraceFrame($frame);
 
             /** @var DesignPattern $designPattern */

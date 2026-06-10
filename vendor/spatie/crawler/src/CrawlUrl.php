@@ -2,41 +2,16 @@
 
 namespace Spatie\Crawler;
 
-use Psr\Http\Message\UriInterface;
+use Spatie\Crawler\Enums\ResourceType;
 
 class CrawlUrl
 {
-    public UriInterface $url;
-
-    public ?UriInterface $foundOnUrl = null;
-
-    protected mixed $id;
-
-    public static function create(UriInterface $url, ?UriInterface $foundOnUrl = null, $id = null): static
-    {
-        $static = new static($url, $foundOnUrl);
-
-        if ($id !== null) {
-            $static->setId($id);
-        }
-
-        return $static;
-    }
-
-    protected function __construct(UriInterface $url, $foundOnUrl = null)
-    {
-        $this->url = $url;
-
-        $this->foundOnUrl = $foundOnUrl;
-    }
-
-    public function getId(): mixed
-    {
-        return $this->id;
-    }
-
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
+    public function __construct(
+        public string $url,
+        public ?string $foundOnUrl = null,
+        public ?string $linkText = null,
+        public int $depth = 0,
+        public mixed $id = null,
+        public ?ResourceType $resourceType = null,
+    ) {}
 }

@@ -4,8 +4,7 @@ namespace Lorisleiva\Actions\Concerns;
 
 trait DecorateActions
 {
-    /** @var mixed */
-    protected $action;
+    protected mixed $action = null;
 
     public function setAction($action): self
     {
@@ -31,7 +30,7 @@ trait DecorateActions
 
     protected function hasMethod(string $method): bool
     {
-        return method_exists($this->action, $method);
+        return isset($this->action) && method_exists($this->action, $method);
     }
 
     protected function callMethod(string $method, array $parameters = [])
