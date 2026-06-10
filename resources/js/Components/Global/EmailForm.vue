@@ -3,6 +3,7 @@ import TextInput from "../Inputs/TextInput.vue";
 import {ref} from "vue";
 import {usePost} from "@/Composables/usePost";
 import {usePage} from "@inertiajs/vue3";
+import {route} from "@/Composables/useRoute";
 
 const props = defineProps({
     uuid: String,

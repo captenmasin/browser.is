@@ -4,9 +4,9 @@ import {usePage, Link, router} from '@inertiajs/vue3'
 
 import AppLogo from '@/Components/Global/AppLogo.vue'
 import AppLogoWhite from '@/Components/Global/AppLogoWhite.vue'
+import {route} from '@/Composables/useRoute'
 
 const navOpen = ref(false)
-const route = window.route
 const tools = computed(() => usePage<AppPageProps>().props.tools)
 const isResultsPage = ref(usePage<AppPageProps>().props.is_results && usePage().component !== 'Errors/404')
 

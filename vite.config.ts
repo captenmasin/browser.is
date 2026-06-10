@@ -9,6 +9,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': path.resolve('./resources/js'),
+			'ziggy-js': path.resolve('./vendor/tightenco/ziggy'),
 		}
 	},
 	plugins: [
@@ -24,7 +25,12 @@ export default defineConfig({
 				},
 			}
 		}),
-		inertia(),
+		inertia({
+			ssr: {
+				entry: 'resources/js/ssr.ts',
+				host: '127.0.0.1',
+			},
+		}),
 		tailwindcss(),
 	]
 });

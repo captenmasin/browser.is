@@ -21,11 +21,15 @@ declare global {
         is_results: boolean
         meta: AppMeta
         tools: AppTool[]
+        ziggy: Record<string, unknown>
     }
 
     interface Window {
         pirsch?: (eventName: string) => void
         route: RouteFunction
+        Ziggy?: {
+            routes: Record<string, unknown>
+        }
     }
 
     const route: RouteFunction
@@ -40,6 +44,7 @@ declare module '@inertiajs/core' {
         is_results: boolean
         meta: AppMeta
         tools: AppTool[]
+        ziggy: Record<string, unknown>
     }
 }
 

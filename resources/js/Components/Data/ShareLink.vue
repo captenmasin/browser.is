@@ -6,6 +6,7 @@ import AppModal from "@/Components/Global/AppModal.vue";
 import EmailForm from "@/Components/Global/EmailForm.vue";
 import {usePage} from "@inertiajs/vue3";
 import {withQuery} from "@/Composables/useUrl";
+import {route} from "@/Composables/useRoute";
 
 const props = defineProps({
     uuid: {

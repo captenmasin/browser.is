@@ -4,10 +4,11 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
+        "build:ssr": "vite build && vite build --ssr",
         "test": "pnpm run test:pest && pnpm run test:typecheck && pnpm run test:build",
         "test:pest": "php artisan test",
         "test:typecheck": "vue-tsc --noEmit",
-        "test:build": "vite build"
+        "test:build": "pnpm run build"
     },
     "devDependencies": {
         "@inertiajs/vite": "^3.3.1",

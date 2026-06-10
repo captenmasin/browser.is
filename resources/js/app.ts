@@ -5,11 +5,12 @@ import.meta.glob([
     '../images/**',
 ]);
 import mitt from 'mitt';
-import {createApp, h} from 'vue'
+import {createSSRApp, h} from 'vue'
 import NProgress from 'nprogress'
 import { router } from '@inertiajs/vue3'
 import Layout from "./Layouts/Layout.vue";
 import {createInertiaApp} from '@inertiajs/vue3'
+import {route, setRouteConfig} from '@/Composables/useRoute'
 
 const emitter = mitt();
 
@@ -26,11 +27,13 @@ createInertiaApp({
         return page as any
     },
     setup({el, App, props, plugin}) {
-        const app = createApp({
+        setRouteConfig((props.initialPage.props as any).ziggy)
+
+        const app = createSSRApp({
             render: () => h(App, props)
         });
         app.use(plugin)
-        app.config.globalProperties.route = window.route
+        app.config.globalProperties.route = route
         app.provide('emitter', emitter);
 
         app.mount(el)

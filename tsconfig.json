@@ -11,7 +11,8 @@
     "noEmit": true,
     "noImplicitAny": false,
     "paths": {
-      "@/*": ["resources/js/*"]
+      "@/*": ["resources/js/*"],
+      "ziggy-js": ["vendor/tightenco/ziggy"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

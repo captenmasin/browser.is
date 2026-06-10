@@ -11,6 +11,7 @@ import PageContainer from "@/Components/Global/PageContainer.vue";
 import {useEnum} from "@/Composables/useEnum";
 import AppAccordion from "@/Components/Global/AppAccordion.vue";
 import SingleFaq from "@/Components/Global/SingleFaq.vue";
+import {route} from "@/Composables/useRoute";
 
 const props = defineProps({
     uuid: String,
@@ -19,7 +20,6 @@ const props = defineProps({
     content: String || null,
 })
 
-const route = window.route
 const tools = computed(() => usePage<AppPageProps>().props.tools)
 const isResultsPage = ref(usePage<AppPageProps>().props.is_results)
 </script>

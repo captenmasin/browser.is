@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Enums\Tool;
 use Inertia\Middleware;
 use Illuminate\Http\Request;
+use Tightenco\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -31,6 +32,13 @@ class HandleInertiaRequests extends Middleware
             'enums' => [
                 'Tool' => Tool::asArray(),
             ],
+            'ziggy' => fn () => array_merge((new Ziggy)->toArray(), [
+                'location' => [
+                    'host' => $request->getHost(),
+                    'pathname' => $request->getPathInfo(),
+                    'search' => $request->getQueryString() ? '?'.$request->getQueryString() : '',
+                ],
+            ]),
         ]);
     }
 }
