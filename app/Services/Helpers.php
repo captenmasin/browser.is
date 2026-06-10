@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Str;
 use App\Models\Result;
+use Illuminate\Support\Str;
 
 class Helpers
 {
@@ -12,14 +12,23 @@ class Helpers
         return parse_url($url)['host'];
     }
 
-    public static function generateId($length = 10): string
+    public static function generateId(): string
     {
-        $string = Str::random($length);
-        if (Result::where('uuid', $string)->exists()) {
-            $string = self::generateId($length);
+        $uuid = (string) Str::uuid();
+        if (self::findResult($uuid) !== null) {
+            $uuid = self::generateId();
         }
 
-        return $string;
+        return $uuid;
+    }
+
+    public static function findResult(?string $uuid): ?Result
+    {
+        if (! $uuid || ! Str::isUuid($uuid)) {
+            return null;
+        }
+
+        return Result::where('uuid', $uuid)->first();
     }
 
     public static function getContent(string $filename = ''): ?string

@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use Browser;
 use App\Enums\Tool;
-use App\Models\Result;
+use App\Services\Helpers;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
@@ -16,7 +16,7 @@ class GetBrowserData
 
     public function handle(): array
     {
-        $data = new Browser();
+        $data = new Browser;
 
         $data = [
             'window_dimensions' => [
@@ -51,11 +51,12 @@ class GetBrowserData
         return $data;
     }
 
-    public function asController(GetDataRequest $request, string $uuid = null): array
+    public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
-        $result = Result::where('uuid', $uuid);
-        if ($uuid && $result->exists()) {
-            $data = ! empty($result->first()->data[Tool::Browser]) ? decrypt($result->first()->data[Tool::Browser]) : '{}';
+        $uuid ??= $request->route('uuid');
+        $result = Helpers::findResult($uuid);
+        if ($result !== null) {
+            $data = ! empty($result->data[Tool::Browser]) ? decrypt($result->data[Tool::Browser]) : '{}';
 
             return json_decode($data, true);
         }

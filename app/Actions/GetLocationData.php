@@ -2,10 +2,10 @@
 
 namespace App\Actions;
 
-use Str;
 use Storage;
 use App\Enums\Tool;
-use App\Models\Result;
+use App\Services\Helpers;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
@@ -94,11 +94,12 @@ class GetLocationData
         return Storage::url($mapPath);
     }
 
-    public function asController(GetDataRequest $request, string $uuid = null): array
+    public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
-        $result = Result::where('uuid', $uuid);
-        if ($uuid && $result->exists()) {
-            $data = ! empty($result->first()->data[Tool::Location]) ? decrypt($result->first()->data[Tool::Location]) : '{}';
+        $uuid ??= $request->route('uuid');
+        $result = Helpers::findResult($uuid);
+        if ($result !== null) {
+            $data = ! empty($result->data[Tool::Location]) ? decrypt($result->data[Tool::Location]) : '{}';
 
             return json_decode($data, true);
         }

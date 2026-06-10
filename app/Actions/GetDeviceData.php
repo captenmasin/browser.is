@@ -3,7 +3,7 @@
 namespace App\Actions;
 
 use App\Enums\Tool;
-use App\Models\Result;
+use App\Services\Helpers;
 use App\Http\Requests\GetDataRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Lorisleiva\Actions\Concerns\AsController;
@@ -16,7 +16,7 @@ class GetDeviceData
 
     public function handle(string $ip = ''): array
     {
-        $browser = new Browser();
+        $browser = new Browser;
         $device = 'Desktop';
         if ($browser::isMobile()) {
             $device = 'Mobile';
@@ -60,11 +60,12 @@ class GetDeviceData
 
     }
 
-    public function asController(GetDataRequest $request, string $uuid = null): array
+    public function asController(GetDataRequest $request, ?string $uuid = null): array
     {
-        $result = Result::where('uuid', $uuid);
-        if ($uuid && $result->exists()) {
-            $data = ! empty($result->first()->data[Tool::Device]) ? decrypt($result->first()->data[Tool::Device]) : '{}';
+        $uuid ??= $request->route('uuid');
+        $result = Helpers::findResult($uuid);
+        if ($result !== null) {
+            $data = ! empty($result->data[Tool::Device]) ? decrypt($result->data[Tool::Device]) : '{}';
 
             return json_decode($data, true);
         }

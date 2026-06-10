@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use Cookie;
 use App\Models\Result;
+use App\Services\Helpers;
 use Lorisleiva\Actions\Concerns\AsAction;
 use App\Http\Requests\StoreResultsRequest;
 
@@ -14,9 +15,9 @@ class SaveResults
     public function handle($resultType = '', $data = [])
     {
         $uuid = Cookie::get(config('site.cookie_name'));
-        $model = Result::where(['uuid' => $uuid]);
-        if ($model->exists()) {
-            $currentData = $model->first()->data;
+        $model = Helpers::findResult($uuid);
+        if ($model !== null) {
+            $currentData = $model->data;
             $currentData[$resultType] = encrypt($data);
 
             $model->update([
@@ -24,7 +25,7 @@ class SaveResults
             ]);
         } else {
             Result::create([
-                'uuid' => Cookie::get(config('site.cookie_name')),
+                'uuid' => Helpers::generateId(),
                 'data' => [
                     $resultType => encrypt($data),
                 ],

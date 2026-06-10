@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Enums\Tool;
 use Inertia\Inertia;
-use App\Models\Result;
 use App\Services\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -12,9 +11,9 @@ use Illuminate\Support\Facades\Cookie;
 
 class ToolController extends Controller
 {
-    public function tool(Tool $type, string $uuid = null)
+    public function tool(Tool $type, ?string $uuid = null)
     {
-        if ($uuid && ! Result::where('uuid', $uuid)->exists()) {
+        if ($uuid && Helpers::findResult($uuid) === null) {
             abort(404);
         }
 
@@ -33,18 +32,24 @@ class ToolController extends Controller
         ]);
     }
 
-    public function browser(Request $request, string $uuid = null)
+    public function browser(Request $request, ?string $uuid = null)
     {
+        $uuid ??= $request->route('uuid');
+
         return $this->tool(new Tool(Tool::Browser), $uuid);
     }
 
-    public function device(Request $request, string $uuid = null)
+    public function device(Request $request, ?string $uuid = null)
     {
+        $uuid ??= $request->route('uuid');
+
         return $this->tool(new Tool(Tool::Device), $uuid);
     }
 
-    public function location(Request $request, string $uuid = null)
+    public function location(Request $request, ?string $uuid = null)
     {
+        $uuid ??= $request->route('uuid');
+
         return $this->tool(new Tool(Tool::Location), $uuid);
     }
 }

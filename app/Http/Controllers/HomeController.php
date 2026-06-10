@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use App\Models\Result;
 use App\Services\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -11,14 +10,16 @@ use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
-    public function __invoke(Request $request, string $uuid = null)
+    public function __invoke(Request $request, ?string $uuid = null)
     {
-        if ($uuid && ! Result::where('uuid', $uuid)->exists()) {
+        $uuid ??= $request->route('uuid');
+        $result = Helpers::findResult($uuid);
+
+        if ($uuid && $result === null) {
             abort(404);
         }
 
         $routeUuid = $uuid ?? Cookie::get(config('site.cookie_name'));
-        $result = Result::where('uuid', $uuid)->first();
 
         return Inertia::render('Home', [
             'uuid' => $uuid,

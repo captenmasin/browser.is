@@ -13,12 +13,14 @@ class RegisterTrackingId
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->hasCookie(config('site.cookie_name'))) {
+        $cookieName = config('site.cookie_name');
+
+        if (Helpers::findResult($request->cookie($cookieName)) !== null) {
             return $next($request);
         }
 
         $cookieUuid = Helpers::generateId();
-        $cookie = Cookie::make(config('site.cookie_name'), $cookieUuid, 5);
+        $cookie = Cookie::make($cookieName, $cookieUuid, 5);
         Result::create([
             'uuid' => $cookieUuid,
             'data' => [],
