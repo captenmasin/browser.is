@@ -12,7 +12,7 @@ class GetShareUrl
 {
     use AsAction;
 
-    public function handle(Tool $type, string $uuid = null): array
+    public function handle(Tool $type, ?string $uuid = null): array
     {
         if (! $uuid) {
             $uuid = Cookie::get(config('site.cookie_name'));

@@ -2,6 +2,4 @@
 
 namespace App\Actions;
 
-abstract class BaseAction
-{
-}
+abstract class BaseAction {}

@@ -1,4 +1,7 @@
 <?php
 
-uses(Tests\TestCase::class)->in('Feature', 'Unit');
-uses(Tests\DuskTestCase::class)->in('Browser');
+use Tests\TestCase;
+use Tests\DuskTestCase;
+
+uses(TestCase::class)->in('Feature', 'Unit');
+uses(DuskTestCase::class)->in('Browser');

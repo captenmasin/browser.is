@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use App\Enums\Tool;
 use Inertia\Middleware;
-use Illuminate\Http\Request;
 use Tightenco\Ziggy\Ziggy;
+use Illuminate\Http\Request;
 
 class HandleInertiaRequests extends Middleware
 {

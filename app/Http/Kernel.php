@@ -2,11 +2,15 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\TrustHosts;
+use App\Http\Middleware\TrimStrings;
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\TrustProxies;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Auth\Middleware\Authorize;
 use App\Http\Middleware\ValidateSignature;
+use Illuminate\Http\Middleware\HandleCors;
 use App\Http\Middleware\RegisterTrackingId;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Auth\Middleware\RequirePassword;
@@ -19,8 +23,11 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
+use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
 
 class Kernel extends HttpKernel
 {
@@ -33,13 +40,13 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         HandleInertiaRequests::class,
-        \App\Http\Middleware\TrustHosts::class,
-        \App\Http\Middleware\TrustProxies::class,
-        \Illuminate\Http\Middleware\HandleCors::class,
-        \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
-        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \App\Http\Middleware\TrimStrings::class,
-        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        TrustHosts::class,
+        TrustProxies::class,
+        HandleCors::class,
+        PreventRequestsDuringMaintenance::class,
+        ValidatePostSize::class,
+        TrimStrings::class,
+        ConvertEmptyStringsToNull::class,
     ];
 
     /**

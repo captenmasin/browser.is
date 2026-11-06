@@ -4,11 +4,12 @@ namespace App\Exceptions;
 
 use Throwable;
 use Inertia\Inertia;
+use Inertia\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
-    public function render($request, Throwable $e): \Inertia\Response|\Illuminate\Http\Response
+    public function render($request, Throwable $e): Response|\Illuminate\Http\Response
     {
         $response = parent::render($request, $e);
 
