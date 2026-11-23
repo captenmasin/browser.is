@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Services\PageMeta;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -14,9 +15,7 @@ class Handler extends ExceptionHandler
         $response = parent::render($request, $e);
 
         if (in_array($response->status(), [404, 403])) {
-            return Inertia::render('Errors/404')->withMeta([
-                'title' => 'Error 404',
-            ]);
+            return Inertia::render('Errors/404')->withMeta(PageMeta::for('missing'));
         }
 
         return $response;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Services\Helpers;
+use App\Services\PageMeta;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
@@ -26,10 +27,6 @@ class HomeController extends Controller
             'date' => $result->updated_at ?? null,
             'content' => Helpers::getContent('home'),
             'url' => route('home', ['uuid' => $routeUuid]),
-        ])->withMeta([
-            'image' => url('/images/social/general.png'),
-            'title' => $result ? 'Results' : 'All info',
-            'description' => Helpers::getDescription('home'),
-        ]);
+        ])->withMeta(PageMeta::for('home', $uuid !== null));
     }
 }

@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+
+class RobotsController extends Controller
+{
+    public function __invoke(): Response
+    {
+        $lines = [
+            'User-agent: *',
+            'Disallow:',
+            '',
+            'Sitemap: '.url('/sitemap.xml'),
+            '',
+        ];
+
+        return response(implode("\n", $lines), 200, [
+            'Content-Type' => 'text/plain; charset=UTF-8',
+        ]);
+    }
+}

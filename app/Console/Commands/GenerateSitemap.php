@@ -2,15 +2,21 @@
 
 namespace App\Console\Commands;
 
+use App\Services\PublicSitemap;
 use Illuminate\Console\Command;
-use Spatie\Sitemap\SitemapGenerator;
 
 class GenerateSitemap extends Command
 {
     protected $signature = 'sitemap:generate';
 
-    public function handle(): void
+    protected $description = 'Write the public XML sitemap to public/sitemap.xml';
+
+    public function handle(PublicSitemap $sitemap): int
     {
-        SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));
+        $sitemap->build()->writeToFile(public_path('sitemap.xml'));
+
+        $this->info('Sitemap written to public/sitemap.xml');
+
+        return self::SUCCESS;
     }
 }
