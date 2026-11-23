@@ -41,12 +41,4 @@ class Helpers
 
         return null;
     }
-
-    public static function getDescription(string $filename = '', int $length = 140): ?string
-    {
-        $content = Helpers::getContent($filename);
-        $content = preg_replace("/\r|\n/", '', $content);
-
-        return Str::limit(strip_tags($content), $length);
-    }
 }

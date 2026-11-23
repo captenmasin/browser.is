@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\Tool;
 use Inertia\Inertia;
 use App\Services\Helpers;
+use App\Services\PageMeta;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
@@ -25,11 +26,7 @@ class ToolController extends Controller
             'uuid' => $uuid,
             'title' => $type->key,
             'content' => Helpers::getContent($type->value),
-        ])->withMeta([
-            'title' => $type->key.' info',
-            'description' => Helpers::getDescription($type->value),
-            'image' => url('/images/social/'.$type->value.'.png'),
-        ]);
+        ])->withMeta(PageMeta::for($type->value, $uuid !== null));
     }
 
     public function browser(Request $request, ?string $uuid = null)

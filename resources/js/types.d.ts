@@ -3,7 +3,10 @@ declare global {
 
     type AppMeta = {
         description: string
+        image: string | null
+        robots: string | null
         title: string
+        url: string | null
     }
 
     type AppTool = {
